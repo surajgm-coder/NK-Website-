@@ -20,16 +20,15 @@ a {
 
 /* ===== HEADER ===== */
 .site-header {
-  background: #111;
-  color: #fff;
+  background: #ffffff;
+  color: #222;
   padding: 15px 20px;
-}
-
-.sticky {
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid #e5e5e5;
 }
+
 
 .header-inner {
   max-width: 1200px;
