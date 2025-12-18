@@ -1,3 +1,23 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== GLOBAL ===== */
+body {
+  font-family: Arial, sans-serif;
+  color: #222;
+  background: #fff;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* ===== HEADER ===== */
 .site-header {
   background: #111;
@@ -5,24 +25,64 @@
   padding: 15px 20px;
 }
 
-.site-header .logo {
-  font-size: 20px;
-  font-weight: bold;
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* ===== NAVIGATION ===== */
-.main-nav {
-  margin-top: 10px;
+.header-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 48px;
+  width: auto;
 }
 
 .main-nav a {
+  margin: 0 12px;
   color: #fff;
-  margin-right: 15px;
-  text-decoration: none;
+  font-weight: 500;
 }
 
-.main-nav a:hover {
-  text-decoration: underline;
+.btn {
+  padding: 10px 18px;
+  border: 1px solid #fff;
+}
+
+.header-cta {
+  background: #f28c28;
+  border: none;
+  color: #fff;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 70px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.light-bg {
+  background: #f5f5f5;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+/* ===== LIST ===== */
+.check-list {
+  margin-top: 15px;
+}
+
+.check-list li {
+  margin-bottom: 8px;
 }
 
 /* ===== FOOTER ===== */
@@ -30,45 +90,19 @@
   background: #111;
   color: #fff;
   text-align: center;
-  padding: 15px;
-  margin-top: 40px;
-}
-/* ===== RESPONSIVE DESIGN ===== */
-
-/* Mobile first (default styles already work well) */
-
-/* Tablets (min-width: 600px) */
-@media (min-width: 600px) {
-  main {
-    max-width: 720px;
-    margin: auto;
-  }
+  padding: 30px 20px;
 }
 
-/* Desktop (min-width: 900px) */
-@media (min-width: 900px) {
-  main {
-    max-width: 1100px;
-    margin: auto;
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 12px;
   }
 
-  /* Services & Products layout */
-  .service-list,
-  .product-list {
-    flex-wrap: nowrap;
-  }
-}
-
-/* Small screens (phones) */
-@media (max-width: 599px) {
   .main-nav {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .service-list,
-  .product-list {
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
