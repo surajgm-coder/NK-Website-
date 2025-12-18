@@ -1,10 +1,36 @@
-/* ===== HERO ===== */
-.hero {
-  min-height: 90vh;
-  background: #000;
+/* ===== HERO SLIDER ===== */
+
+.hero-slider {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* TEMPORARY SLIDE BACKGROUNDS */
+.slide-1 {
+  background: linear-gradient(135deg, #111, #2f80ed);
+}
+
+.slide-2 {
+  background: linear-gradient(135deg, #222, #27ae60);
+}
+
+.slide-3 {
+  background: linear-gradient(135deg, #000, #f28c28);
 }
 
 .hero-content {
@@ -15,17 +41,9 @@
   text-align: center;
 }
 
-.hero h1 {
-  font-size: 38px;
+.hero-content h1 {
+  font-size: 42px;
   margin-bottom: 15px;
-}
-
-.hero-actions {
-  margin-top: 20px;
-}
-
-.hero-actions .btn {
-  margin: 0 10px;
 }
 
 /* ===== SERVICES ===== */
