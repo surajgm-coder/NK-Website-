@@ -1,0 +1,15 @@
+/* ===== ABOUT PAGE ONLY ===== */
+
+.about-page h1 {
+  color: #27ae60;
+}
+
+.about-page p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Optional: about content box */
+.about-page main {
+  padding: 20px;
+}
