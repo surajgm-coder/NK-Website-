@@ -1,11 +1,19 @@
-/* ===== HERO ===== */
+/* ===== HERO (WITH IMAGE) ===== */
 .hero {
   min-height: 90vh;
-  background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1581092160562-40aa08e78837");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 
 .hero-content {
   background: rgba(0,0,0,0.6);
