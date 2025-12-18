@@ -179,4 +179,42 @@ img {
     height: 48px;
   }
 
+}/* ===== MOBILE MENU ===== */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
+
+/* Mobile styles */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    padding: 15px 0;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .main-nav a {
+    margin: 10px 0;
+  }
+
+  .main-nav.open {
+    display: flex;
+  }
+
+  .header-cta {
+    display: none;
+  }
+}
+
