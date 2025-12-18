@@ -33,3 +33,42 @@
   padding: 15px;
   margin-top: 40px;
 }
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Mobile first (default styles already work well) */
+
+/* Tablets (min-width: 600px) */
+@media (min-width: 600px) {
+  main {
+    max-width: 720px;
+    margin: auto;
+  }
+}
+
+/* Desktop (min-width: 900px) */
+@media (min-width: 900px) {
+  main {
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  /* Services & Products layout */
+  .service-list,
+  .product-list {
+    flex-wrap: nowrap;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 599px) {
+  .main-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .service-list,
+  .product-list {
+    flex-direction: column;
+  }
+}
