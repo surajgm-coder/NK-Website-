@@ -52,7 +52,7 @@
   background-position: center;
 }
 
-/* CONTENT BOX */
+/* ================= HERO CONTENT ================= */
 .hero-content {
   background: rgba(0,0,0,0.55);
   color: #ffffff;
@@ -88,7 +88,7 @@
 
 .btn-outline:hover {
   background: #ffffff;
-  color: #111;
+  color: #111111;
 }
 
 /* ================= SERVICES ================= */
@@ -104,24 +104,50 @@
   padding: 25px;
   border: 1px solid #dddddd;
   transition: all 0.3s ease;
+  border-radius: 4px;
 }
 
+/* 🟢 STEP 2 — CARD IMAGE STYLING (IMPORTANT PART) */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+/* Card hover effects */
 .card:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card:hover img {
+  transform: scale(1.03);
 }
 
 .card h3 {
   margin-bottom: 10px;
 }
 
+.card p {
+  font-size: 14px;
+  color: #555555;
+}
+
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
+
   .hero-content h1 {
     font-size: 32px;
   }
 
   .hero-content {
     padding: 35px 25px;
+  }
+
+  .card img {
+    height: 160px;
   }
 }
