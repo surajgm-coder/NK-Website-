@@ -104,3 +104,16 @@ a {
     gap: 12px;
   }
 }
+/* HEADER LOGO */
+.logo img {
+  height: 55px;
+  width: auto;
+  display: block;
+}
+
+/* FOOTER LOGO */
+.footer-logo {
+  height: 65px;
+  width: auto;
+  margin-bottom: 10px;
+}
