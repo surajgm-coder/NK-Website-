@@ -31,3 +31,26 @@ setInterval(() => {
   index = (index + 1) % slides.length;
   slides[index].classList.add("active");
 }, 5000);
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+    dots[i].classList.toggle('active', i === index);
+  });
+  currentSlide = index;
+}
+
+// Auto slide
+setInterval(() => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}, 6000);
+
+// Dot click
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => showSlide(index));
+});
