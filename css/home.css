@@ -196,7 +196,6 @@ body {
 .hero-bg-3 { background-image: url("../images/hero/hero3.png"); }
 .hero-bg-4 { background-image: url("../images/hero/hero4.png"); }
 
-/* ================= HOME ABOUT (FINAL – CLEAN) ================= */
 /* ================= ABOUT (FULL SCREEN – HERO STYLE) ================= */
 
 .about-space {
@@ -326,31 +325,61 @@ body {
 
 /* Service card */
 .room-card {
-  background: rgba(255,255,255,0.95);
-  color: #222;
-  padding: 40px 30px;
+  height: 260px;
+  padding: 26px;
   border-radius: 22px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
-  transition: all 0.35s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #fff;
   text-decoration: none;
+
+  position: relative;
+  overflow: hidden;
+
+  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+  transition: 0.35s ease;
+}
+
+/* Dark overlay */
+.room-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 0;
+}
+
+/* Text above overlay */
+.room-card h3,
+.room-card p {
+  position: relative;
+  z-index: 1;
+}
+
+.room-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+
+.room-card p {
+  font-size: 0.95rem;
+  opacity: 0.9;
 }
 
 /* Hover effect */
 .room-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 40px 90px rgba(0,0,0,0.35);
+  transform: translateY(-8px);
 }
 
-/* Card title */
-.room-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 14px;
-}
-
-/* Card text */
-.room-card p {
-  font-size: 0.95rem;
-  color: #555;
+.room-card:hover::before {
+  background: rgba(0,0,0,0.65);
 }
 
 /* Mobile */
