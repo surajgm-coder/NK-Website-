@@ -1,131 +1,248 @@
-/* ================= HERO SLIDER ================= */
-.hero {
-  position: relative;
-  height: 90vh;
-  overflow: hidden;
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Slides */
-.hero-slide {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  background-size: cover;
-  background-position: center;
-}
-
-/* Active slide */
-.hero-slide.active {
-  opacity: 1;
-  z-index: 1;
-}
-
-/* Background images */
-.slide-1 {
-  background-image:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-    url("https://images.unsplash.com/photo-1581091215367-59ab6b4bfa63");
-}
-
-.slide-2 {
-  background-image:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-    url("https://images.unsplash.com/photo-1581092160562-40aa08e78837");
-}
-
-.slide-3 {
-  background-image:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-    url("https://images.unsplash.com/photo-1503387762-592deb58ef4e");
-}
-
-.slide-4 {
-  background-image:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-    url("https://images.unsplash.com/photo-1524758631624-e2822e304c36");
-}
-
-/* Hero content */
-.hero-content {
-  max-width: 900px;
-  padding: 60px 40px;
-  text-align: center;
-  color: #ffffff;
-}
-
-.hero-content h1 {
-  font-size: 44px;
-  margin-bottom: 15px;
-  font-weight: 700;
-}
-
-.hero-content p {
-  font-size: 18px;
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f5f5;
+  color: #222;
   line-height: 1.6;
 }
 
-/* Hero buttons */
-.hero-actions {
-  margin-top: 30px;
+/* ================= GLOBAL ================= */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 20px;
 }
 
-.hero-actions .btn {
-  margin: 0 10px;
-}
-
-/* ================= SERVICES ================= */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  margin-top: 40px;
-}
-
-.card {
-  background: #ffffff;
-  padding: 25px;
-  border: 1px solid #dddddd;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 50px;
   text-align: center;
 }
 
-.card h3 {
-  margin-bottom: 10px;
+/* ================= HEADER ================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: #111;
+  z-index: 1000;
 }
 
-.card p {
-  font-size: 14px;
-  color: #555555;
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* Hover */
-.card:hover {
+.logo {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.logo span {
+  color: #c9a46a;
+}
+
+.main-nav a {
+  margin: 0 15px;
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #c9a46a;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+.nav-cta {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* ================= BUTTONS ================= */
+.btn-primary {
+  background: #c9a46a;
+  color: #111;
+  padding: 14px 28px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.btn-outline {
+  border: 2px solid #c9a46a;
+  color: #c9a46a;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+/* ================= SPACES ================= */
+.space {
+  padding: 100px 20px;
+}
+
+/* Entrance */
+.entrance {
+  min-height: 90vh;
+  background: linear-gradient(to right, #111, #222);
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.space-content {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.space-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-actions {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* About */
+.about-space {
+  background: #fff;
+}
+
+.about-card {
+  max-width: 700px;
+  margin: auto;
+  padding: 60px;
+  background: #fdfdfd;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #c9a46a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Services */
+.services-space {
+  background: #f2f2f2;
+}
+
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.room-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.room-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Products */
+.products-space {
+  background: #fff;
+}
+
+.product-zones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.zone {
+  padding: 50px 20px;
+  text-align: center;
+  background: #f7f7f7;
+  border-radius: 16px;
+  font-weight: 500;
+}
+
+/* CTA */
+.cta-space {
+  background: linear-gradient(to right, #c9a46a, #b08d57);
+  color: #111;
+}
+
+.cta-box {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Footer */
+.site-footer {
+  background: #111;
+  color: #aaa;
+  padding: 30px 20px;
+  text-align: center;
 }
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-
-  .hero {
-    height: 80vh;
+  .main-nav {
+    display: none;
   }
 
-  .hero-content h1 {
-    font-size: 30px;
+  .menu-toggle {
+    display: block;
   }
 
-  .hero-content {
-    padding: 35px 25px;
+  .space-content h1 {
+    font-size: 2.2rem;
   }
 
-  .hero-content p {
-    font-size: 16px;
+  .hero-actions {
+    flex-direction: column;
   }
-
 }
