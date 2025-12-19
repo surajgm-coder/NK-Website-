@@ -232,25 +232,100 @@ body {
   text-decoration: underline;
 }
 
-/* ================= SERVICES ================= */
+/* ================= HOME SERVICES (FULL SCREEN) ================= */
 
-.services-space { background: #f2f2f2; }
+.services-space {
+  position: relative;
+  min-height: 90vh;
+  padding: 140px 20px;
+  overflow: hidden;
+}
 
+/* Background image */
+.services-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/services/services-home.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* Dark overlay for interior feel */
+.services-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.85)
+  );
+  z-index: 1;
+}
+
+/* Content */
+.services-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  color: #fff;
+}
+
+/* Section title */
+.services-content h2 {
+  font-size: 2.6rem;
+  margin-bottom: 60px;
+}
+
+/* Cards grid */
 .room-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 30px;
 }
 
+/* Service card */
 .room-card {
-  background: #fff;
-  padding: 40px;
-  border-radius: 18px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-  transition: 0.3s;
+  background: rgba(255,255,255,0.95);
+  color: #222;
+  padding: 40px 30px;
+  border-radius: 22px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+  transition: all 0.35s ease;
+  text-decoration: none;
 }
 
-.room-card:hover { transform: translateY(-6px); }
+/* Hover effect */
+.room-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 40px 90px rgba(0,0,0,0.35);
+}
+
+/* Card title */
+.room-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+}
+
+/* Card text */
+.room-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .services-content h2 {
+    font-size: 2.1rem;
+  }
+
+  .services-space {
+    padding: 100px 20px;
+  }
+}
 
 /* ================= PRODUCTS ================= */
 
