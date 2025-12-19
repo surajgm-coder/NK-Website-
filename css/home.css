@@ -197,11 +197,15 @@ body {
 .hero-bg-4 { background-image: url("../images/hero/hero4.png"); }
 
 /* ================= HOME ABOUT (FINAL – CLEAN) ================= */
+/* ================= ABOUT (FULL SCREEN – HERO STYLE) ================= */
 
 .about-space {
   position: relative;
   min-height: 90vh;
-  padding: 140px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   overflow: hidden;
 }
 
@@ -209,57 +213,60 @@ body {
 .about-bg {
   position: absolute;
   inset: 0;
-  background-image: url("../images/about/about-home.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url("../images/about/about-home.png") center / cover no-repeat;
   z-index: 0;
 }
 
-/* White overlay */
+/* Dark overlay for readability */
 .about-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.65);
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.45),
+    rgba(0,0,0,0.75)
+  );
   z-index: 1;
 }
 
-/* Card */
-.about-home-card {
+/* Content (NO CARD) */
+.about-content {
   position: relative;
   z-index: 2;
   max-width: 900px;
-  margin: auto;
-  padding: 80px 70px;
-  background: rgba(255,255,255,0.92);
-  border-radius: 26px;
-  box-shadow: 0 40px 90px rgba(0,0,0,0.15);
-  text-align: center;
-  backdrop-filter: blur(4px);
+  padding: 40px 20px;
+  color: #fff;
 }
 
-.about-home-card h2 {
-  font-size: 2.5rem;
+.about-content h2 {
+  font-size: 3rem;
   margin-bottom: 26px;
 }
 
-.about-home-card p {
+.about-content p {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: #444;
+  opacity: 0.9;
   margin-bottom: 18px;
 }
 
-.about-home-card .text-link {
+.about-content .text-link {
   display: inline-block;
-  margin-top: 24px;
+  margin-top: 30px;
   font-weight: 500;
   color: #c9a46a;
   text-decoration: none;
 }
 
-.about-home-card .text-link:hover {
+.about-content .text-link:hover {
   text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about-content h2 {
+    font-size: 2.2rem;
+  }
 }
 
 /* ================= HOME SERVICES (FULL SCREEN) ================= */
