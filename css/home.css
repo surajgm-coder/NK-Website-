@@ -268,8 +268,6 @@ body {
   }
 }
 
-/* ================= SERVICES (FULL SCREEN LIKE HERO) ================= */
-
 ./* ================= SERVICES (FULL SCREEN – FINAL) ================= */
 
 .services-space {
@@ -404,75 +402,6 @@ body {
 }
 
 /* ================= PRODUCTS ================= */
-.products-space {
-  min-height: calc(100vh - 140px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f5f5f5;
-}
-
-.products-content {
-  max-width: 1200px;
-  width: 100%;
-  padding: 0 20px;
-  text-align: center;
-}
-
-.products-content h2 {
-  font-size: 2.4rem;
-  margin-bottom: 60px;
-  color: #111;
-}
-
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-}
-
-.product-card {
-  background: #ffffff;
-  padding: 40px 30px;
-  border-radius: 20px;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
-  text-align: left;
-}
-
-.product-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 14px;
-  color: #111;
-}
-
-.product-card p {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.6;
-}
-
-.product-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 35px 80px rgba(0,0,0,0.15);
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 576px) {
-  .products-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .products-content h2 {
-    font-size: 2rem;
-  }
-}
 
 /* ================= CTA – GOLDEN VALUE SECTION (FINAL) ================= */
 
