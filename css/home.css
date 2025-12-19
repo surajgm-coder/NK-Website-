@@ -344,61 +344,89 @@ body {
   border-radius: 16px;
 }
 
-/* ================= CTA ================= */
+/* ================= CTA – GOLDEN VALUE SECTION (FINAL) ================= */
+
 .value-section {
-  min-height: 33vh; /* desktop target */
-  background: linear-gradient(135deg, #d4af37, #b8962e);
+  min-height: 90vh; /* full screen like other sections */
+  background: linear-gradient(
+    135deg,
+    #c9a46a,
+    #b08d57
+  );
+
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2.5rem 1.25rem;
+
+  padding: 120px 20px;
   text-align: center;
-  color: #1a1a1a;
+  color: #111;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle luxury overlay */
+.value-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.15),
+    rgba(0,0,0,0.15)
+  );
+  z-index: 1;
 }
 
 /* Content wrapper */
 .value-section .content {
   max-width: 1100px;
   width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 /* Heading */
 .value-section h2 {
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 /* Description */
 .value-section p {
-  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
-  max-width: 720px;
-  margin: 0 auto 2rem;
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  max-width: 760px;
+  margin: 0 auto 3rem;
   opacity: 0.9;
 }
 
-/* Points */
+/* Points grid */
 .value-points {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 2.5rem;
+  max-width: 900px;
+  margin: auto;
 }
 
 /* Each point */
 .value-points span {
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 
 /* 📱 Mobile Optimization */
 @media (max-width: 768px) {
   .value-section {
-    min-height: auto; /* allow content-driven height */
+    min-height: auto;
+    padding: 90px 20px;
   }
 
   .value-points {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.2rem;
   }
 }
 
