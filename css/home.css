@@ -399,7 +399,9 @@ body {
 .about-bg {
   position: absolute;
   inset: 0;
-  background: url("../images/about/about-home.jpg") center / cover no-repeat;
+  background: url("../images/about/about-home.jpg") 
+  background-size: cover;
+  background-position: center;
   z-index: 0;
 }
 
