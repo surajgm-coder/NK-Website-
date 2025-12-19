@@ -400,13 +400,18 @@ body {
   }
 }
 
-/* ================= FOOTER (STANDARD & LOCKED) ================= */
+/* ================= FOOTER (STANDARD & LOCKED – FINAL) ================= */
 
 .site-footer {
   background: #0f0f0f;
-  padding: 20px 0;
+  padding: 18px 0;
   color: #aaa;
   font-size: 0.9rem;
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
 }
 
 .footer-container {
@@ -417,9 +422,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
 }
 
-/* Left */
+/* ---------- LEFT ---------- */
+
 .footer-left {
   display: flex;
   align-items: center;
@@ -427,27 +434,25 @@ body {
 }
 
 .footer-left img {
-  height: 36px;
+  height: 34px;
 }
 
 .footer-left span {
   font-weight: 500;
   color: #fff;
+  font-size: 0.95rem;
 }
 
-/* Center */
+/* ---------- CENTER ---------- */
+
 .footer-center {
+  flex: 1;
   text-align: center;
   color: #aaa;
+  font-size: 0.9rem;
 }
 
-/* Right */
-.footer-right {
-  display: flex;
-  gap: 14px;
-}
-
-/* ===== PREMIUM SOCIAL ICONS ===== */
+/* ---------- RIGHT (SOCIAL ICONS) ---------- */
 
 .footer-right {
   display: flex;
@@ -465,17 +470,12 @@ body {
 
   border-radius: 50%;
 
-  background: linear-gradient(
-    145deg,
-    #1a1a1a,
-    #0d0d0d
-  );
-
+  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
   border: 1px solid rgba(255,255,255,0.08);
 
   color: #c9a46a;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
+
   text-decoration: none;
 
   box-shadow:
@@ -485,7 +485,6 @@ body {
   transition: all 0.35s ease;
 }
 
-/* Hover effect */
 .footer-right a:hover {
   background: #c9a46a;
   color: #111;
@@ -496,10 +495,22 @@ body {
   transform: translateY(-3px);
 }
 
+/* ---------- MOBILE ---------- */
 
-.footer-right a:hover {
-  background: #c9a46a;
-  color: #111;
+@media (max-width: 768px) {
+  .site-footer {
+    position: relative;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .footer-center {
+    order: 3;
+  }
 }
 
 /* ================= MOBILE ================= */
