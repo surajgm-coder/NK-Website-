@@ -14,6 +14,8 @@
   justify-content: center;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  background-size: cover;
+  background-position: center;
 }
 
 /* ACTIVE SLIDE */
@@ -22,59 +24,58 @@
   z-index: 1;
 }
 
-/* BACKGROUNDS (NO UPLOAD REQUIRED) */
+/* ================= HERO BACKGROUNDS ================= */
+/* Precision fabrication / workshop */
 .slide-1 {
-  background:
+  background-image:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url("https://images.unsplash.com/photo-1581091215367-59ab6b4bfa63");
+}
+
+/* Office interior & modular furniture */
+.slide-2 {
+  background-image:
     linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
     url("https://images.unsplash.com/photo-1581092160562-40aa08e78837");
 }
 
-.slide-2 {
-  background:
+/* Retail / commercial interiors */
+.slide-3 {
+  background-image:
     linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
     url("https://images.unsplash.com/photo-1503387762-592deb58ef4e");
 }
 
-.slide-3 {
-  background:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-    url("https://images.unsplash.com/photo-1541976590-713941681591");
-}
-
+/* Turnkey execution / professional workspace */
 .slide-4 {
-  background:
+  background-image:
     linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-    url("https://images.unsplash.com/photo-1523413651479-597eb2da0ad6");
-}
-
-.hero-slide {
-  background-size: cover;
-  background-position: center;
+    url("https://images.unsplash.com/photo-1524758631624-e2822e304c36");
 }
 
 /* ================= HERO CONTENT ================= */
 .hero-content {
-  background: rgba(0,0,0,0.55);
   color: #ffffff;
-  padding: 50px 40px;
+  padding: 60px 40px;
   max-width: 900px;
   text-align: center;
-  border-radius: 6px;
 }
 
 .hero-content h1 {
-  font-size: 42px;
+  font-size: 44px;
   margin-bottom: 15px;
+  font-weight: 700;
 }
 
 .hero-content p {
   font-size: 18px;
-  opacity: 0.9;
+  opacity: 0.95;
+  line-height: 1.6;
 }
 
 /* HERO BUTTONS */
 .hero-actions {
-  margin-top: 25px;
+  margin-top: 30px;
 }
 
 .hero-actions .btn {
@@ -84,6 +85,7 @@
 .btn-outline {
   border: 2px solid #ffffff;
   color: #ffffff;
+  background: transparent;
 }
 
 .btn-outline:hover {
@@ -107,7 +109,7 @@
   border-radius: 4px;
 }
 
-/* 🟢 STEP 2 — CARD IMAGE STYLING (IMPORTANT PART) */
+/* SERVICE IMAGES */
 .card img {
   width: 100%;
   height: 180px;
@@ -124,7 +126,7 @@
 }
 
 .card:hover img {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
 .card h3 {
@@ -139,12 +141,20 @@
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
 
+  .hero {
+    height: 80vh;
+  }
+
   .hero-content h1 {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .hero-content {
     padding: 35px 25px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
   }
 
   .card img {
