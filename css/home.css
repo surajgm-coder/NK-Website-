@@ -586,12 +586,30 @@ body {
 /* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
-  .main-nav { display: none; }
-  .menu-toggle { display: block; }
 
-  .hero-content h1 { font-size: 2.2rem; }
-  .hero-actions { flex-direction: column; }
+  /* HERO – mobile full screen */
+  .hero-slider {
+    height: calc(100vh - 120px);
+  }
 
+  .hero-content h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  /* HEADER */
+  .main-nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* ABOUT */
   .about-home-card {
     padding: 50px 30px;
   }
