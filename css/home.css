@@ -405,8 +405,13 @@ body {
 .site-footer {
   background: #111;
   color: #aaa;
-  padding: 30px 20px;
+  padding: 40px 20px;
   text-align: center;
+}
+
+.site-footer img {
+  width: 140px;
+  margin-bottom: 12px;
 }
 
 /* ================= MOBILE ================= */
