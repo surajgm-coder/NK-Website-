@@ -106,12 +106,15 @@ body {
   text-decoration: none;
 }
 
-/* ================= HERO (SWIPER) ================= */
+/* ================= HERO (SWIPER) – UPDATED STYLE ================= */
 
 .hero-slider {
   height: 90vh;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Slide layout */
 .hero-slide {
   position: relative;
   display: flex;
@@ -121,42 +124,70 @@ body {
   color: #fff;
 }
 
-/* Overlay for readability */
+/* Interior-style overlay (soft lighting) */
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to right,
-    rgba(0,0,0,0.75),
-    rgba(0,0,0,0.55)
+    to bottom,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.85)
   );
   z-index: 1;
 }
 
-/* Content above overlay */
+/* Content container */
 .hero-content {
   position: relative;
   z-index: 2;
   max-width: 900px;
-  padding: 20px;
+  padding: 40px 20px;
 }
 
+/* Headline */
 .hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+  font-size: 3.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  margin-bottom: 22px;
 }
 
+/* Description text */
 .hero-content p {
-  max-width: 700px;
-  margin: auto;
-  opacity: 0.9;
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  opacity: 0.85;
 }
 
+/* Action buttons */
 .hero-actions {
-  margin-top: 35px;
+  margin-top: 42px;
   display: flex;
-  gap: 20px;
+  gap: 24px;
   justify-content: center;
+}
+
+/* Subtle glass effect (optional but premium) */
+.hero-content {
+  backdrop-filter: blur(2px);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 16px;
+  }
 }
 
 /* ===== HERO BACKGROUND IMAGES ===== */
