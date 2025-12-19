@@ -106,7 +106,7 @@ body {
   text-decoration: none;
 }
 
-/* ================= HERO (SWIPER) – UPDATED STYLE ================= */
+/* ================= HERO (SWIPER) ================= */
 
 .hero-slider {
   height: 90vh;
@@ -114,7 +114,6 @@ body {
   overflow: hidden;
 }
 
-/* Slide layout */
 .hero-slide {
   position: relative;
   display: flex;
@@ -124,7 +123,6 @@ body {
   color: #fff;
 }
 
-/* Interior-style overlay (soft lighting) */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -136,32 +134,25 @@ body {
   z-index: 1;
 }
 
-/* Content container */
 .hero-content {
   position: relative;
   z-index: 2;
   max-width: 900px;
   padding: 40px 20px;
+  backdrop-filter: blur(2px);
 }
 
-/* Headline */
 .hero-content h1 {
   font-size: 3.4rem;
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: 0.5px;
   margin-bottom: 22px;
 }
 
-/* Description text */
 .hero-content p {
   max-width: 720px;
-  margin: 0 auto;
-  font-size: 1.05rem;
+  margin: auto;
   opacity: 0.85;
 }
 
-/* Action buttons */
 .hero-actions {
   margin-top: 42px;
   display: flex;
@@ -169,91 +160,81 @@ body {
   justify-content: center;
 }
 
-/* Subtle glass effect (optional but premium) */
-.hero-content {
-  backdrop-filter: blur(2px);
-}
+/* Hero backgrounds */
+.hero-bg-1 { background: url("../images/hero/hero1.png") center/cover no-repeat; }
+.hero-bg-2 { background: url("../images/hero/hero2.png") center/cover no-repeat; }
+.hero-bg-3 { background: url("../images/hero/hero3.png") center/cover no-repeat; }
+.hero-bg-4 { background: url("../images/hero/hero4.png") center/cover no-repeat; }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.3rem;
-  }
+/* ================= HOME ABOUT (FINAL – CLEAN) ================= */
 
-  .hero-content p {
-    font-size: 0.95rem;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    gap: 16px;
-  }
-}
-
-/* ===== HERO BACKGROUND IMAGES ===== */
-.hero-bg-1 {
-  background: url("../images/hero/hero1.png") center / cover no-repeat;
-}
-
-.hero-bg-2 {
-  background: url("../images/hero/hero2.png") center / cover no-repeat;
-}
-
-.hero-bg-3 {
-  background: url("../images/hero/hero3.png") center / cover no-repeat;
-}
-
-.hero-bg-4 {
-  background: url("../images/hero/hero4.png") center / cover no-repeat;
-}
-
-/* Swiper controls */
-.swiper-button-next,
-.swiper-button-prev {
-  color: #c9a46a;
-}
-
-.swiper-pagination-bullet {
-  background: rgba(255,255,255,0.4);
-  opacity: 1;
-}
-
-.swiper-pagination-bullet-active {
-  background: #c9a46a;
-}
-
-/* ================= SPACES ================= */
-.space {
-  padding: 100px 20px;
-}
-
-/* About */
 .about-space {
-  background: #fff;
+  position: relative;
+  min-height: 90vh;
+  padding: 140px 20px;
+  overflow: hidden;
 }
 
-.about-card {
-  max-width: 700px;
+/* Background image */
+.about-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/about/about-home.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* White overlay */
+.about-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.65);
+  z-index: 1;
+}
+
+/* Card */
+.about-home-card {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
   margin: auto;
-  padding: 60px;
-  background: #fdfdfd;
-  border-radius: 20px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+  padding: 80px 70px;
+  background: rgba(255,255,255,0.92);
+  border-radius: 26px;
+  box-shadow: 0 40px 90px rgba(0,0,0,0.15);
   text-align: center;
+  backdrop-filter: blur(4px);
 }
 
-.text-link {
+.about-home-card h2 {
+  font-size: 2.5rem;
+  margin-bottom: 26px;
+}
+
+.about-home-card p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 18px;
+}
+
+.about-home-card .text-link {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 24px;
+  font-weight: 500;
   color: #c9a46a;
   text-decoration: none;
-  font-weight: 500;
 }
 
-/* Services */
-.services-space {
-  background: #f2f2f2;
+.about-home-card .text-link:hover {
+  text-decoration: underline;
 }
+
+/* ================= SERVICES ================= */
+
+.services-space { background: #f2f2f2; }
 
 .room-grid {
   display: grid;
@@ -269,14 +250,11 @@ body {
   transition: 0.3s;
 }
 
-.room-card:hover {
-  transform: translateY(-6px);
-}
+.room-card:hover { transform: translateY(-6px); }
 
-/* Products */
-.products-space {
-  background: #fff;
-}
+/* ================= PRODUCTS ================= */
+
+.products-space { background: #fff; }
 
 .product-zones {
   display: grid;
@@ -289,10 +267,10 @@ body {
   text-align: center;
   background: #f7f7f7;
   border-radius: 16px;
-  font-weight: 500;
 }
 
-/* CTA */
+/* ================= CTA ================= */
+
 .cta-space {
   background: linear-gradient(to right, #c9a46a, #b08d57);
   color: #111;
@@ -304,7 +282,8 @@ body {
   text-align: center;
 }
 
-/* Footer */
+/* ================= FOOTER ================= */
+
 .site-footer {
   background: #111;
   color: #aaa;
@@ -312,152 +291,15 @@ body {
   text-align: center;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= MOBILE ================= */
+
 @media (max-width: 768px) {
-  .main-nav {
-    display: none;
-  }
+  .main-nav { display: none; }
+  .menu-toggle { display: block; }
 
-  .menu-toggle {
-    display: block;
-  }
+  .hero-content h1 { font-size: 2.2rem; }
+  .hero-actions { flex-direction: column; }
 
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-  }
-}
-/* ================= HOME ABOUT SECTION ================= */
-
-.about-space {
-  background: linear-gradient(
-    to bottom,
-    #ffffff,
-    #f6f6f6
-  );
-}
-
-.about-home-card {
-  max-width: 900px;
-  margin: auto;
-  padding: 80px 70px;
-  background: #ffffff;
-  border-radius: 26px;
-  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.08);
-  text-align: center;
-}
-
-/* Heading */
-.about-home-card h2 {
-  font-size: 2.5rem;
-  margin-bottom: 26px;
-}
-
-/* Text */
-.about-home-card p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #444;
-  margin-bottom: 18px;
-}
-
-/* Link */
-.about-home-card .text-link {
-  display: inline-block;
-  margin-top: 24px;
-  font-weight: 500;
-  color: #c9a46a;
-  text-decoration: none;
-}
-
-.about-home-card .text-link:hover {
-  text-decoration: underline;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .about-home-card {
-    padding: 50px 30px;
-  }
-
-  .about-home-card h2 {
-    font-size: 2rem;
-  }
-}
-/* ================= HOME ABOUT WITH IMAGE ================= */
-
-.about-space {
-  position: relative;
-  padding: 140px 20px;
-  overflow: hidden;
-}
-
-/* Background image */
-.about-bg {
-  position: absolute;
-  inset: 0;
-  background: url("../images/about/about-home.jpg") 
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-}
-
-/* Soft overlay for readability */
-.about-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(255,255,255,0.85),
-    rgba(255,255,255,0.95)
-  );
-}
-
-/* Card on top */
-.about-home-card {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  margin: auto;
-  padding: 80px 70px;
-  background: rgba(255,255,255,0.9);
-  border-radius: 26px;
-  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.12);
-  text-align: center;
-  backdrop-filter: blur(4px);
-}
-
-/* Text styles */
-.about-home-card h2 {
-  font-size: 2.5rem;
-  margin-bottom: 26px;
-}
-
-.about-home-card p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #444;
-  margin-bottom: 18px;
-}
-
-/* Link */
-.about-home-card .text-link {
-  display: inline-block;
-  margin-top: 24px;
-  font-weight: 500;
-  color: #c9a46a;
-  text-decoration: none;
-}
-
-.about-home-card .text-link:hover {
-  text-decoration: underline;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
   .about-home-card {
     padding: 50px 30px;
   }
