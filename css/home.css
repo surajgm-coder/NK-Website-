@@ -345,16 +345,59 @@ body {
 }
 
 /* ================= CTA ================= */
+/* ================= FINAL CTA (HOME – LAST SECTION) ================= */
 
-.cta-space {
-  background: linear-gradient(to right, #c9a46a, #b08d57);
-  color: #111;
+.cta-final {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
 }
 
-.cta-box {
-  max-width: 700px;
-  margin: auto;
-  text-align: center;
+/* Background image */
+.cta-bg {
+  position: absolute;
+  inset: 0;
+  background: url("../images/cta/cta-home.png") center / cover no-repeat;
+  z-index: 0;
+}
+
+/* Dark overlay for contrast */
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+/* Content */
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 40px 20px;
+  color: #fff;
+}
+
+.cta-content h2 {
+  font-size: 3rem;
+  margin-bottom: 22px;
+}
+
+.cta-content p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  margin-bottom: 40px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .cta-content h2 {
+    font-size: 2.2rem;
+  }
 }
 
 /* ================= FOOTER ================= */
