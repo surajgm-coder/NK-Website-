@@ -108,12 +108,23 @@ body {
 
 /* ================= HERO (SWIPER) ================= */
 
+/* ================= HERO (SWIPER – FIXED HEIGHT) ================= */
+
 .hero-slider {
-  height: 90vh;
+  height: calc(100vh - 140px); /* header (~80px) + footer (~60px) */
+  min-height: 520px;
   position: relative;
   overflow: hidden;
 }
 
+/* Make swiper fill parent */
+.hero-slider,
+.hero-slider .swiper-wrapper,
+.hero-slider .swiper-slide {
+  height: 100%;
+}
+
+/* Slide layout */
 .hero-slide {
   position: relative;
   display: flex;
@@ -123,17 +134,19 @@ body {
   color: #fff;
 }
 
+/* Overlay */
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.45),
     rgba(0,0,0,0.85)
   );
   z-index: 1;
 }
 
+/* Content */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -165,6 +178,7 @@ body {
 .hero-bg-2 { background: url("../images/hero/hero2.png") center/cover no-repeat; }
 .hero-bg-3 { background: url("../images/hero/hero3.png") center/cover no-repeat; }
 .hero-bg-4 { background: url("../images/hero/hero4.png") center/cover no-repeat; }
+
 
 /* ================= HOME ABOUT (FINAL – CLEAN) ================= */
 
