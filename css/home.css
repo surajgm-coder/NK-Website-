@@ -268,98 +268,72 @@ body {
   }
 }
 
-./* ================= SERVICES (FULL SCREEN – FINAL) ================= */
+/* ================= OUR SPACES – SINGLE SCREEN ================= */
 
 .services-space {
-  position: relative;
-  height: calc(100vh - 140px); /* header + footer already fixed */
+  min-height: calc(100vh - 140px); /* header + footer */
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-}
-
-/* Background image */
-.services-bg {
-  position: absolute;
-  inset: 0;
-  background: url("../images/services/services-home.png") center / cover no-repeat;
-  z-index: 0;
-}
-
-/* Dark overlay */
-.services-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1;
+  padding: 120px 20px;
+  background: linear-gradient(to bottom, #f3f3f3, #e6e6e6);
 }
 
 /* Content wrapper */
 .services-content {
-  position: relative;
-  z-index: 2;
   width: 100%;
   max-width: 1200px;
-  padding: 0 20px;
   text-align: center;
-  color: #fff;
 }
 
-/* Section title */
+/* Heading */
 .services-content h2 {
   font-size: 2.6rem;
+  font-weight: 600;
   margin-bottom: 60px;
+  color: #111;
 }
 
-/* ================= GRID ================= */
-
+/* Grid */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
 
-/* ================= CARD ================= */
-
+/* Card */
 .service-card {
   position: relative;
   height: 340px;
   border-radius: 22px;
-  overflow: hidden;
-  text-decoration: none;
-
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-
-  display: flex;
-  align-items: flex-end;
-
-  box-shadow: 0 30px 70px rgba(0,0,0,0.5);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+  transition: all 0.35s ease;
 }
 
-/* Card overlay */
+/* Dark overlay */
 .service-card::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.8),
     rgba(0,0,0,0.25)
   );
-  z-index: 0;
 }
 
-/* Card text */
+/* Text */
 .service-text {
-  position: relative;
-  z-index: 1;
-  padding: 26px;
+  position: absolute;
+  bottom: 26px;
+  left: 26px;
+  right: 26px;
   color: #fff;
-  text-align: left;
+  z-index: 2;
 }
 
 .service-text h3 {
@@ -372,10 +346,10 @@ body {
   opacity: 0.9;
 }
 
-/* Hover effect */
+/* Hover */
 .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 45px 110px rgba(0,0,0,0.85);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.35);
 }
 
 /* ================= RESPONSIVE ================= */
@@ -388,8 +362,8 @@ body {
 
 @media (max-width: 576px) {
   .services-space {
-    height: auto;
-    padding: 100px 0;
+    min-height: auto;
+    padding: 100px 20px;
   }
 
   .services-grid {
@@ -400,8 +374,6 @@ body {
     font-size: 2.1rem;
   }
 }
-
-/* ================= PRODUCTS ================= */
 
 /* ================= CTA – GOLDEN VALUE SECTION (FINAL) ================= */
 
