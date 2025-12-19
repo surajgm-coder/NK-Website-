@@ -270,10 +270,14 @@ body {
 
 /* ================= HOME SERVICES (FULL SCREEN) ================= */
 
+/* ================= SERVICES (FULL SCREEN LIKE HERO) ================= */
+
 .services-space {
   position: relative;
-  min-height: 90vh;
-  padding: 140px 20px;
+  height: calc(100vh - 140px); /* header + footer already fixed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 
@@ -281,22 +285,15 @@ body {
 .services-bg {
   position: absolute;
   inset: 0;
-  background-image: url("../images/services/services-home.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url("../images/services/services-home.png") center/cover no-repeat;
   z-index: 0;
 }
 
-/* Dark overlay for interior feel */
+/* Dark overlay */
 .services-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.55),
-    rgba(0,0,0,0.85)
-  );
+  background: rgba(0,0,0,0.7);
   z-index: 1;
 }
 
@@ -304,82 +301,91 @@ body {
 .services-content {
   position: relative;
   z-index: 2;
+  width: 100%;
   max-width: 1200px;
-  margin: auto;
+  padding: 0 20px;
   text-align: center;
   color: #fff;
 }
 
-/* Section title */
 .services-content h2 {
   font-size: 2.6rem;
   margin-bottom: 60px;
 }
 
-/* Cards grid */
-.room-grid {
+/* GRID – THIS FIXES YOUR PROBLEM */
+.services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
 
-/* Service card */
-.room-card {
-  height: 260px;
-  padding: 26px;
+/* CARD */
+.service-card {
+  height: 320px;
   border-radius: 22px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-
-  color: #fff;
-  text-decoration: none;
-
   position: relative;
+  text-decoration: none;
   overflow: hidden;
-
-  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.5);
   transition: 0.35s ease;
 }
 
-/* Dark overlay */
-.room-card::before {
+/* Overlay inside card */
+.service-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.55);
-  z-index: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.25)
+  );
 }
 
-/* Text above overlay */
-.room-card h3,
-.room-card p {
-  position: relative;
-  z-index: 1;
+/* Text */
+.service-text {
+  position: absolute;
+  bottom: 26px;
+  left: 26px;
+  right: 26px;
+  color: #fff;
 }
 
-.room-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 6px;
+.service-text h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
 }
 
-.room-card p {
+.service-text p {
   font-size: 0.95rem;
   opacity: 0.9;
 }
 
-/* Hover effect */
-.room-card:hover {
-  transform: translateY(-8px);
+/* Hover */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.8);
 }
 
-.room-card:hover::before {
-  background: rgba(0,0,0,0.65);
+/* MOBILE */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .services-space {
+    height: auto;
+    padding: 100px 0;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Mobile */
