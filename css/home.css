@@ -106,22 +106,20 @@ body {
   text-decoration: none;
 }
 
-/* ================= HERO (SWIPER) ================= */
-
-/* ================= HERO (SWIPER – FIXED HEIGHT) ================= */
+/* ================= HERO (ONE SCREEN PERFECT FIT) ================= */
 
 .hero-slider {
-  height: calc(100vh - 140px); /* header (~80px) + footer (~60px) */
-  min-height: 520px;
   position: relative;
+  height: calc(100vh - 140px); /* header + footer */
+  width: 100%;
   overflow: hidden;
 }
 
-/* Make swiper fill parent */
-.hero-slider,
+/* Swiper must fully occupy hero */
 .hero-slider .swiper-wrapper,
 .hero-slider .swiper-slide {
   height: 100%;
+  width: 100%;
 }
 
 /* Slide layout */
@@ -134,13 +132,20 @@ body {
   color: #fff;
 }
 
+/* Background images must not overflow */
+.hero-slide {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* Overlay */
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.45),
+    rgba(0,0,0,0.55),
     rgba(0,0,0,0.85)
   );
   z-index: 1;
@@ -151,34 +156,45 @@ body {
   position: relative;
   z-index: 2;
   max-width: 900px;
-  padding: 40px 20px;
-  backdrop-filter: blur(2px);
+  padding: 20px;
 }
 
 .hero-content h1 {
-  font-size: 3.4rem;
-  margin-bottom: 22px;
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 18px;
 }
 
 .hero-content p {
   max-width: 720px;
   margin: auto;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .hero-actions {
-  margin-top: 42px;
+  margin-top: 32px;
   display: flex;
-  gap: 24px;
+  gap: 20px;
   justify-content: center;
 }
 
-/* Hero backgrounds */
-.hero-bg-1 { background: url("../images/hero/hero1.png") center/cover no-repeat; }
-.hero-bg-2 { background: url("../images/hero/hero2.png") center/cover no-repeat; }
-.hero-bg-3 { background: url("../images/hero/hero3.png") center/cover no-repeat; }
-.hero-bg-4 { background: url("../images/hero/hero4.png") center/cover no-repeat; }
+/* Pagination stays inside hero */
+.swiper-pagination {
+  bottom: 18px !important;
+}
 
+/* Arrows stay centered */
+.swiper-button-next,
+.swiper-button-prev {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Hero backgrounds */
+.hero-bg-1 { background-image: url("../images/hero/hero1.png"); }
+.hero-bg-2 { background-image: url("../images/hero/hero2.png"); }
+.hero-bg-3 { background-image: url("../images/hero/hero3.png"); }
+.hero-bg-4 { background-image: url("../images/hero/hero4.png"); }
 
 /* ================= HOME ABOUT (FINAL – CLEAN) ================= */
 
