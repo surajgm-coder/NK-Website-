@@ -387,3 +387,80 @@ body {
     font-size: 2rem;
   }
 }
+/* ================= HOME ABOUT WITH IMAGE ================= */
+
+.about-space {
+  position: relative;
+  padding: 140px 20px;
+  overflow: hidden;
+}
+
+/* Background image */
+.about-bg {
+  position: absolute;
+  inset: 0;
+  background: url("../images/about/about-home.jpg") center / cover no-repeat;
+  z-index: 0;
+}
+
+/* Soft overlay for readability */
+.about-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0.85),
+    rgba(255,255,255,0.95)
+  );
+}
+
+/* Card on top */
+.about-home-card {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: auto;
+  padding: 80px 70px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 26px;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  backdrop-filter: blur(4px);
+}
+
+/* Text styles */
+.about-home-card h2 {
+  font-size: 2.5rem;
+  margin-bottom: 26px;
+}
+
+.about-home-card p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 18px;
+}
+
+/* Link */
+.about-home-card .text-link {
+  display: inline-block;
+  margin-top: 24px;
+  font-weight: 500;
+  color: #c9a46a;
+  text-decoration: none;
+}
+
+.about-home-card .text-link:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about-home-card {
+    padding: 50px 30px;
+  }
+
+  .about-home-card h2 {
+    font-size: 2rem;
+  }
+}
