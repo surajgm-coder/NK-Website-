@@ -268,8 +268,6 @@ body {
   }
 }
 
-/* ================= HOME SERVICES (FULL SCREEN) ================= */
-
 /* ================= SERVICES (FULL SCREEN LIKE HERO) ================= */
 
 .services-space {
@@ -368,6 +366,58 @@ body {
 .service-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+}
+/* ================= SERVICES LIVE IMAGES ================= */
+
+.services-space {
+  position: relative;
+  min-height: 100vh; /* single screen */
+  padding: 120px 20px;
+  background: #444;
+}
+
+/* cards */
+.room-card {
+  position: relative;
+  height: 360px;
+  border-radius: 22px;
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 26px;
+  text-decoration: none;
+}
+
+/* dark overlay */
+.room-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.15));
+  z-index: 0;
+}
+
+.room-card * {
+  position: relative;
+  z-index: 1;
+}
+
+/* individual images */
+.card-office {
+  background: url("../images/services/office.png") center / cover no-repeat;
+}
+
+.card-home {
+  background: url("../images/services/home.png") center / cover no-repeat;
+}
+
+.card-fabrication {
+  background: url("../images/services/fabrication.png") center / cover no-repeat;
+}
+
+.card-turnkey {
+  background: url("../images/services/turnkey.png") center / cover no-repeat;
 }
 
 /* MOBILE */
