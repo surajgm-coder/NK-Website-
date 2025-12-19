@@ -271,13 +271,25 @@ body {
 /* ================= OUR SPACES – SINGLE SCREEN ================= */
 
 .services-space {
-  min-height: calc(100vh - 140px); /* header + footer */
+  min-height: calc(100vh - 140px); /* one screen */
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 120px 20px;
-  background: linear-gradient(to bottom, #f3f3f3, #e6e6e6);
+
+  /* ✅ BACKGROUND IMAGE */
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.55),
+      rgba(0,0,0,0.75)
+    ),
+    url("../images/services/services-home.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 
 /* Content wrapper */
 .services-content {
