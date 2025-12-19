@@ -270,6 +270,8 @@ body {
 
 /* ================= SERVICES (FULL SCREEN LIKE HERO) ================= */
 
+./* ================= SERVICES (FULL SCREEN – FINAL) ================= */
+
 .services-space {
   position: relative;
   height: calc(100vh - 140px); /* header + footer already fixed */
@@ -283,7 +285,7 @@ body {
 .services-bg {
   position: absolute;
   inset: 0;
-  background: url("../images/services/services-home.png") center/cover no-repeat;
+  background: url("../images/services/services-home.png") center / cover no-repeat;
   z-index: 0;
 }
 
@@ -291,11 +293,11 @@ body {
 .services-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   z-index: 1;
 }
 
-/* Content */
+/* Content wrapper */
 .services-content {
   position: relative;
   z-index: 2;
@@ -306,32 +308,41 @@ body {
   color: #fff;
 }
 
+/* Section title */
 .services-content h2 {
   font-size: 2.6rem;
   margin-bottom: 60px;
 }
 
-/* GRID – THIS FIXES YOUR PROBLEM */
+/* ================= GRID ================= */
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
 
-/* CARD */
+/* ================= CARD ================= */
+
 .service-card {
-  height: 320px;
+  position: relative;
+  height: 340px;
   border-radius: 22px;
+  overflow: hidden;
+  text-decoration: none;
+
   background-size: cover;
   background-position: center;
-  position: relative;
-  text-decoration: none;
-  overflow: hidden;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: flex-end;
+
   box-shadow: 0 30px 70px rgba(0,0,0,0.5);
-  transition: 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* Overlay inside card */
+/* Card overlay */
 .service-card::before {
   content: "";
   position: absolute;
@@ -341,15 +352,16 @@ body {
     rgba(0,0,0,0.85),
     rgba(0,0,0,0.25)
   );
+  z-index: 0;
 }
 
-/* Text */
+/* Card text */
 .service-text {
-  position: absolute;
-  bottom: 26px;
-  left: 26px;
-  right: 26px;
+  position: relative;
+  z-index: 1;
+  padding: 26px;
   color: #fff;
+  text-align: left;
 }
 
 .service-text h3 {
@@ -362,68 +374,17 @@ body {
   opacity: 0.9;
 }
 
-/* Hover */
+/* Hover effect */
 .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 40px 100px rgba(0,0,0,0.8);
-}
-/* ================= SERVICES LIVE IMAGES ================= */
-
-.services-space {
-  position: relative;
-  min-height: 100vh; /* single screen */
-  padding: 120px 20px;
-  background: #444;
+  box-shadow: 0 45px 110px rgba(0,0,0,0.85);
 }
 
-/* cards */
-.room-card {
-  position: relative;
-  height: 360px;
-  border-radius: 22px;
-  color: #fff;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  padding: 26px;
-  text-decoration: none;
-}
+/* ================= RESPONSIVE ================= */
 
-/* dark overlay */
-.room-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.15));
-  z-index: 0;
-}
-
-.room-card * {
-  position: relative;
-  z-index: 1;
-}
-
-/* individual images */
-.card-office {
-  background: url("../images/services/office.png") center / cover no-repeat;
-}
-
-.card-home {
-  background: url("../images/services/home.png") center / cover no-repeat;
-}
-
-.card-fabrication {
-  background: url("../images/services/fabrication.png") center / cover no-repeat;
-}
-
-.card-turnkey {
-  background: url("../images/services/turnkey.png") center / cover no-repeat;
-}
-
-/* MOBILE */
 @media (max-width: 992px) {
   .services-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -436,16 +397,9 @@ body {
   .services-grid {
     grid-template-columns: 1fr;
   }
-}
 
-/* Mobile */
-@media (max-width: 768px) {
   .services-content h2 {
     font-size: 2.1rem;
-  }
-
-  .services-space {
-    padding: 100px 20px;
   }
 }
 
