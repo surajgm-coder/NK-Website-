@@ -1,56 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const slides = document.querySelectorAll(".hero-slide");
-  let current = 0;
+document.addEventListener("DOMContentLoaded", function () {
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove("active");
-      if (i === index) {
-        slide.classList.add("active");
-      }
-    });
-  }
+  const swiper = new Swiper(".hero-slider", {
+    loop: true,
+    speed: 1200,
 
-  setInterval(() => {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-  }, 5000); // change slide every 5 seconds
-});
-// MOBILE MENU
-const menuBtn = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".main-nav");
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
 
-menuBtn.addEventListener("click", () => {
-  nav.classList.toggle("open");
-});
-let slides = document.querySelectorAll(".hero-slide");
-let index = 0;
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
 
-setInterval(() => {
-  slides[index].classList.remove("active");
-  index = (index + 1) % slides.length;
-  slides[index].classList.add("active");
-}, 5000);
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
 
-let currentSlide = 0;
-
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === index);
-    dots[i].classList.toggle('active', i === index);
+    effect: "slide",
   });
-  currentSlide = index;
-}
 
-// Auto slide
-setInterval(() => {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-}, 6000);
-
-// Dot click
-dots.forEach((dot, index) => {
-  dot.addEventListener('click', () => showSlide(index));
 });
