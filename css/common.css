@@ -23,11 +23,46 @@ img {
   display: block;
 }
 
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+}
+
 /* ================= HEADER ================= */
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  width: 100%;
+}
+
+/* TOP BAR */
+.top-bar {
+  background: #111;
+  color: #fff;
+  font-size: 13px;
+}
+
+.top-bar-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* MAIN HEADER */
+.main-header {
   background: #ffffff;
   border-bottom: 1px solid #e5e5e5;
 }
@@ -35,38 +70,46 @@ img {
 .header-inner {
   max-width: 1200px;
   margin: auto;
-  padding: 14px 20px;
+  padding: 15px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* LOGO (HEADER) */
+/* LOGO */
 .logo img {
-  height: 52px;              /* fixed height – header size will NOT change */
+  height: 55px;
   width: auto;
-  object-fit: contain;
+  display: block;
 }
 
-/* NAVIGATION */
+/* NAV */
+.main-nav {
+  display: flex;
+  gap: 25px;
+}
+
 .main-nav a {
-  margin: 0 14px;
-  font-weight: 500;
+  text-decoration: none;
   color: #222;
+  font-weight: 500;
   position: relative;
-  padding-bottom: 4px;
 }
 
-/* Hover + Active underline effect */
+.main-nav a:hover,
+.main-nav a.active {
+  color: #f28c28;
+}
+
 .main-nav a::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
+  width: 0;
   height: 2px;
   background: #f28c28;
-  transition: width 0.3s ease;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
 }
 
 .main-nav a:hover::after,
@@ -74,23 +117,56 @@ img {
   width: 100%;
 }
 
-/* BUTTONS */
-.btn {
-  padding: 10px 18px;
-  font-size: 14px;
-  border-radius: 4px;
-  cursor: pointer;
+/* CTA */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .header-cta {
   background: #f28c28;
-  color: #ffffff;
-  border: none;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .header-cta:hover {
-  background: #e07c1e;
+  background: #d9771f;
 }
+
+/* MOBILE MENU ICON */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .main-nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .top-bar-inner {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+
+  .logo img {
+    height: 45px;
+  }
+}
+
 
 /* ================= SECTIONS ================= */
 .section {
