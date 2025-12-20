@@ -348,28 +348,49 @@ section {
 /* =====================================================
    TESTIMONIALS
 ===================================================== */
+/* ================= TESTIMONIALS (TOP HALF) ================= */
+
 .testimonials {
-  background: #111;
+  background: #0f0f0f;
   color: #fff;
-  padding: 120px 20px;
+
+  height: 60vh; /* TOP PART */
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
 }
 
-.testimonial-grid {
+.testimonials .container {
   max-width: 900px;
-  margin: auto;
+  width: 100%;
+}
+
+/* Heading */
+.testimonials .section-heading {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  color: #c9a46a;
+}
+
+/* Testimonials */
+.testimonial-grid {
   display: grid;
-  gap: 30px;
+  gap: 24px;
 }
 
 .testimonial {
-  background: #1c1c1c;
-  padding: 40px;
+  background: linear-gradient(145deg, #1a1a1a, #111);
+  padding: 28px 32px;
   border-radius: 20px;
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
 .testimonial span {
   display: block;
-  margin-top: 18px;
+  margin-top: 14px;
   color: #c9a46a;
 }
 
@@ -377,14 +398,30 @@ section {
    CTA
 ===================================================== */
 .cta-final {
+  height: 40vh; /* BOTTOM PART */
   background: linear-gradient(135deg, #c9a46a, #b8962e);
-  padding: 120px 20px;
-  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 20px;
 }
 
 .cta-content {
   max-width: 800px;
-  margin: auto;
+  text-align: center;
+  color: #111;
+}
+
+.cta-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+
+.cta-content p {
+  font-size: 1rem;
+  margin-bottom: 28px;
 }
 
 .cta-buttons {
@@ -393,6 +430,7 @@ section {
   justify-content: center;
   flex-wrap: wrap;
 }
+
 
 /* =====================================================
    FOOTER
