@@ -424,6 +424,38 @@ body {
   margin-top: 50px;
   opacity: 0.85;
 }
+.work-process {
+  background: #f5f5f5;
+  padding: 120px 20px;
+}
+
+.work-process .section-heading {
+  color: #111;
+}
+
+.process-steps {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.step {
+  background: #fff;
+  padding: 40px 25px;
+  border-radius: 18px;
+  text-align: center;
+  font-size: 1.1rem;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+.step span {
+  display: block;
+  margin-top: 14px;
+  font-size: 0.95rem;
+  color: #555;
+}
 
 /* ================= CTA – GOLDEN VALUE SECTION (FINAL) ================= */
 
