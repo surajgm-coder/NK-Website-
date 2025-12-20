@@ -1,13 +1,10 @@
-/* ================= RESET ================= */
+/* =====================================================
+   RESET & BASE
+===================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html, body {
-  width: 100%;
-  overflow-x: hidden;
 }
 
 body {
@@ -17,18 +14,37 @@ body {
   line-height: 1.6;
 }
 
-/* ================= GLOBAL ================= */
+section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* =====================================================
+   GLOBAL CONTAINERS
+===================================================== */
 .container {
   max-width: 1200px;
   margin: auto;
-  padding: 80px 20px;
+  padding: 120px 20px;
 }
 
-section {
-  margin: 0;
+.section-heading {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 60px;
+  color: #c9a46a;
 }
 
-/* ================= HEADER ================= */
+.section-note {
+  text-align: center;
+  margin-top: 40px;
+  opacity: 0.85;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
 .site-header {
   position: sticky;
   top: 0;
@@ -56,7 +72,7 @@ section {
 }
 
 .main-nav a {
-  margin: 0 15px;
+  margin: 0 14px;
   color: #ddd;
   text-decoration: none;
   font-weight: 500;
@@ -66,11 +82,11 @@ section {
 .main-nav a::after {
   content: "";
   position: absolute;
+  left: 0;
+  bottom: -6px;
   width: 0;
   height: 2px;
   background: #c9a46a;
-  left: 0;
-  bottom: -5px;
   transition: 0.3s;
 }
 
@@ -80,15 +96,17 @@ section {
 
 .menu-toggle {
   display: none;
-  font-size: 1.6rem;
   color: #fff;
+  font-size: 1.6rem;
 }
 
-/* ================= BUTTONS ================= */
+/* =====================================================
+   BUTTONS
+===================================================== */
 .btn-primary {
   background: #c9a46a;
   color: #111;
-  padding: 14px 28px;
+  padding: 14px 30px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: 500;
@@ -103,17 +121,18 @@ section {
 .btn-outline {
   border: 2px solid #c9a46a;
   color: #c9a46a;
-  padding: 14px 28px;
+  padding: 14px 30px;
   border-radius: 30px;
   text-decoration: none;
 }
 
-/* ================= HERO ================= */
+/* =====================================================
+   HERO (ONE SCREEN)
+===================================================== */
 .hero-slider {
-  height: calc(100vh - 70px);
-  width: 100%;
-  overflow: hidden;
+  height: calc(100vh - 80px);
   position: relative;
+  overflow: hidden;
 }
 
 .hero-slider .swiper-wrapper,
@@ -126,41 +145,10 @@ section {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #fff;
   background-size: cover;
   background-position: center;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.85));
-  z-index: 1;
-}
-
-.hero-content {
   position: relative;
-  z-index: 2;
-  max-width: 900px;
-  padding: 20px;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.hero-content p {
-  max-width: 720px;
-  margin: auto;
-  opacity: 0.9;
-}
-
-.hero-actions {
-  margin-top: 32px;
-  display: flex;
-  gap: 20px;
-  justify-content: center;
+  color: #fff;
 }
 
 .hero-bg-1 { background-image: url("../images/hero/hero1.png"); }
@@ -168,13 +156,46 @@ section {
 .hero-bg-3 { background-image: url("../images/hero/hero3.png"); }
 .hero-bg-4 { background-image: url("../images/hero/hero4.png"); }
 
-/* ================= ABOUT ================= */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.85));
+}
+
+.hero-content {
+  position: relative;
+  max-width: 900px;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 18px;
+}
+
+.hero-content p {
+  max-width: 700px;
+  margin: auto;
+  opacity: 0.9;
+}
+
+.hero-actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* =====================================================
+   ABOUT (FULL SCREEN)
+===================================================== */
 .about-space {
   min-height: 90vh;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .about-bg {
@@ -186,24 +207,35 @@ section {
 .about-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.75));
+  background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.75));
 }
 
 .about-content {
   position: relative;
-  z-index: 2;
   max-width: 900px;
   color: #fff;
-  text-align: center;
   padding: 40px 20px;
 }
 
 .about-content h2 {
-  font-size: 2.8rem;
-  margin-bottom: 26px;
+  font-size: 3rem;
+  margin-bottom: 25px;
 }
 
-/* ================= SERVICES ================= */
+.about-content p {
+  margin-bottom: 18px;
+  opacity: 0.9;
+}
+
+.text-link {
+  color: #c9a46a;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* =====================================================
+   OUR SPACES
+===================================================== */
 .services-space {
   background: #fff;
   padding: 120px 20px;
@@ -217,8 +249,8 @@ section {
 
 .services-content h2 {
   font-size: 2.6rem;
-  margin-bottom: 60px;
   color: #c9a46a;
+  margin-bottom: 60px;
 }
 
 .services-grid {
@@ -233,16 +265,17 @@ section {
   background-size: cover;
   background-position: center;
   position: relative;
-  text-decoration: none;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+  text-decoration: none;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.18);
+  transition: 0.35s;
 }
 
 .service-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,.2));
+  background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.2));
 }
 
 .service-text {
@@ -258,28 +291,112 @@ section {
   margin-bottom: 8px;
 }
 
-.service-text p {
-  font-size: 0.95rem;
-  opacity: 0.9;
-}
-
-/* ================= CTA ================= */
-.value-section {
-  min-height: 90vh;
-  background: linear-gradient(135deg, #c9a46a, #b08d57);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+/* =====================================================
+   WHY CHOOSE
+===================================================== */
+.why-choose {
+  background: #111;
+  color: #fff;
   padding: 120px 20px;
 }
 
-.value-section h2 {
-  font-size: 2.6rem;
-  margin-bottom: 20px;
+.strengths-grid {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
 }
 
-/* ================= FOOTER ================= */
+.strength-item {
+  background: #1a1a1a;
+  padding: 22px;
+  border-radius: 14px;
+}
+
+/* =====================================================
+   WORK PROCESS
+===================================================== */
+.work-process {
+  background: #f5f5f5;
+  padding: 120px 20px;
+}
+
+.process-steps {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.step {
+  background: #fff;
+  padding: 40px 25px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+.step span {
+  display: block;
+  margin-top: 14px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* =====================================================
+   TESTIMONIALS
+===================================================== */
+.testimonials {
+  background: #111;
+  color: #fff;
+  padding: 120px 20px;
+}
+
+.testimonial-grid {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  gap: 30px;
+}
+
+.testimonial {
+  background: #1c1c1c;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.testimonial span {
+  display: block;
+  margin-top: 18px;
+  color: #c9a46a;
+}
+
+/* =====================================================
+   CTA
+===================================================== */
+.cta-final {
+  background: linear-gradient(135deg, #c9a46a, #b8962e);
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
 .site-footer {
   background: #0f0f0f;
   padding: 18px 0;
@@ -291,19 +408,60 @@ section {
   margin: auto;
   padding: 0 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-/* ================= RESPONSIVE ================= */
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-left img {
+  height: 34px;
+}
+
+.footer-left span {
+  color: #fff;
+}
+
+.footer-right {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-right a {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a1a;
+  border-radius: 50%;
+  color: #c9a46a;
+  text-decoration: none;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 @media (max-width: 992px) {
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
-  .hero-slider { height: calc(100vh - 60px); }
+  .hero-content h1 { font-size: 2.2rem; }
   .hero-actions { flex-direction: column; }
   .main-nav { display: none; }
   .menu-toggle { display: block; }
-  .services-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 576px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
 }
