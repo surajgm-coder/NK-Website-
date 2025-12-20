@@ -185,53 +185,6 @@ section {
   gap: 20px;
   justify-content: center;
 }
-
-/* =====================================================
-   ABOUT (FULL SCREEN)
-===================================================== */
-.about-space {
-  min-height: 90vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.about-bg {
-  position: absolute;
-  inset: 0;
-  background: url("../images/about/about-home.png") center / cover no-repeat;
-}
-
-.about-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.75));
-}
-
-.about-content {
-  position: relative;
-  max-width: 900px;
-  color: #fff;
-  padding: 40px 20px;
-}
-
-.about-content h2 {
-  font-size: 3rem;
-  margin-bottom: 25px;
-}
-
-.about-content p {
-  margin-bottom: 18px;
-  opacity: 0.9;
-}
-
-.text-link {
-  color: #c9a46a;
-  font-weight: 500;
-  text-decoration: none;
-}
 /* =====================================================
    ABOUT (FULL SCREEN)
 ===================================================== */
@@ -263,11 +216,11 @@ section {
 .about-content {
   position: relative;
   max-width: 900px;
-  color: #fff;
+  color: #ffffff;
   padding: 40px 20px;
 }
 
-/* GOLD HEADING */
+/* GOLD HEADING – SAME AS "OUR STRENGTHS" */
 .gold-heading {
   font-size: 3rem;
   margin-bottom: 25px;
@@ -278,12 +231,20 @@ section {
 .about-content p {
   margin-bottom: 18px;
   opacity: 0.9;
+  line-height: 1.6;
 }
 
 .text-link {
+  display: inline-block;
+  margin-top: 15px;
   color: #c9a46a;
   font-weight: 500;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.text-link:hover {
+  color: #e2c27c;
 }
 
 /* =====================================================
