@@ -232,6 +232,59 @@ section {
   font-weight: 500;
   text-decoration: none;
 }
+/* =====================================================
+   ABOUT (FULL SCREEN)
+===================================================== */
+.about-space {
+  min-height: 90vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-bg {
+  position: absolute;
+  inset: 0;
+  background: url("../images/about/about-home.png") center / cover no-repeat;
+}
+
+.about-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.45),
+    rgba(0,0,0,0.75)
+  );
+}
+
+.about-content {
+  position: relative;
+  max-width: 900px;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+/* GOLD HEADING */
+.gold-heading {
+  font-size: 3rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #d6b46a;
+}
+
+.about-content p {
+  margin-bottom: 18px;
+  opacity: 0.9;
+}
+
+.text-link {
+  color: #c9a46a;
+  font-weight: 500;
+  text-decoration: none;
+}
 
 /* =====================================================
    OUR SPACES
