@@ -148,7 +148,7 @@ section {
   background-size: cover;
   background-position: center;
   position: relative;
-  color: #fff;
+  color: #222; /* CHANGED from white */
 }
 
 .hero-bg-1 { background-image: url("../images/hero/hero1.png"); }
@@ -156,10 +156,11 @@ section {
 .hero-bg-3 { background-image: url("../images/hero/hero3.png"); }
 .hero-bg-4 { background-image: url("../images/hero/hero4.png"); }
 
+/* LIGHT OVERLAY FOR WHITE BACKGROUND */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.85));
+  background: rgba(255, 255, 255, 0.65);
 }
 
 .hero-content {
@@ -168,23 +169,30 @@ section {
   padding: 20px;
 }
 
+/* GOLD HEADING */
 .hero-content h1 {
   font-size: 3rem;
   margin-bottom: 18px;
+  font-weight: 700;
+  color: #d6b46a; /* GOLD */
 }
 
+/* DARK SUBTEXT */
 .hero-content p {
   max-width: 700px;
   margin: auto;
-  opacity: 0.9;
+  color: #333333;
+  opacity: 1;
 }
 
+/* ACTION BUTTONS */
 .hero-actions {
   margin-top: 30px;
   display: flex;
   gap: 20px;
   justify-content: center;
 }
+
 /* =====================================================
    ABOUT (FULL SCREEN)
 ===================================================== */
