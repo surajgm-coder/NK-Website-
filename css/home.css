@@ -542,6 +542,62 @@ body {
     gap: 1.2rem;
   }
 }
+.testimonials {
+  background: #111;
+  color: #fff;
+  padding: 120px 20px;
+}
+
+.testimonial-grid {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  gap: 30px;
+}
+
+.testimonial {
+  background: #1c1c1c;
+  padding: 40px;
+  border-radius: 20px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.testimonial span {
+  display: block;
+  margin-top: 18px;
+  color: #c9a46a;
+  font-weight: 500;
+}
+.cta-final {
+  background: linear-gradient(135deg, #c9a46a, #b8962e);
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: auto;
+  color: #111;
+}
+
+.cta-content h2 {
+  font-size: 2.6rem;
+  margin-bottom: 24px;
+}
+
+.cta-content p {
+  font-size: 1.05rem;
+  margin-bottom: 40px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
 /* ================= FOOTER (STANDARD & LOCKED – FINAL) ================= */
 
