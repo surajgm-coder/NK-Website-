@@ -348,87 +348,90 @@ section {
 /* =====================================================
    TESTIMONIALS
 ===================================================== */
-/* ================= TESTIMONIALS (TOP HALF) ================= */
+.testimonial-cta {
+  height: calc(100vh - 140px); /* header + footer */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- TESTIMONIALS ---------- */
 
 .testimonials {
+  flex: 1;
   background: #0f0f0f;
   color: #fff;
 
-  height: 60vh; /* TOP PART */
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 
-  padding: 0 20px;
-}
-
-.testimonials .container {
-  max-width: 900px;
-  width: 100%;
-}
-
-/* Heading */
-.testimonials .section-heading {
+  padding: 40px 20px;
   text-align: center;
+}
+
+.testimonials h2 {
   font-size: 2.4rem;
-  margin-bottom: 40px;
   color: #c9a46a;
+  margin-bottom: 30px;
 }
 
-/* Testimonials */
-.testimonial-grid {
-  display: grid;
-  gap: 24px;
-}
-
-.testimonial {
+.testimonial-box {
+  max-width: 720px;
+  width: 100%;
   background: linear-gradient(145deg, #1a1a1a, #111);
-  padding: 28px 32px;
-  border-radius: 20px;
+  padding: 26px 30px;
+  border-radius: 18px;
+  margin-bottom: 20px;
+}
+
+.testimonial-box p {
   font-size: 1.05rem;
   line-height: 1.6;
 }
 
-.testimonial span {
+.testimonial-box span {
   display: block;
-  margin-top: 14px;
+  margin-top: 12px;
   color: #c9a46a;
+  font-weight: 500;
 }
+
 
 /* =====================================================
    CTA
 ===================================================== */
-.cta-final {
-  height: 40vh; /* BOTTOM PART */
+
+.cta {
+  flex: 0.9;
   background: linear-gradient(135deg, #c9a46a, #b8962e);
 
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 
-  padding: 0 20px;
-}
-
-.cta-content {
-  max-width: 800px;
+  padding: 40px 20px;
   text-align: center;
   color: #111;
 }
 
-.cta-content h2 {
-  font-size: 2.2rem;
+.cta h2 {
+  font-size: 2.3rem;
   margin-bottom: 16px;
 }
 
-.cta-content p {
-  font-size: 1rem;
+.cta p {
+  max-width: 760px;
   margin-bottom: 28px;
+  font-size: 1.05rem;
 }
 
 .cta-buttons {
   display: flex;
-  gap: 20px;
-  justify-content: center;
+  gap: 18px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 
