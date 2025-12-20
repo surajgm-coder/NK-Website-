@@ -271,102 +271,76 @@ body {
 /* ================= OUR SPACES – SINGLE SCREEN ================= */
 
 .services-space {
-  min-height: calc(100vh - 140px); /* one screen */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  min-height: 100vh;
   padding: 120px 20px;
-
-  /* ✅ BACKGROUND IMAGE */
-  background:
-    linear-gradient(
-      rgba(0,0,0,0.55),
-      rgba(0,0,0,0.75)
-    ),
-    url("../images/services/services-home.png");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: #ffffff;   /* WHITE BACKGROUND */
 }
 
+/* REMOVE dark background image */
+.services-bg,
+.services-overlay {
+  display: none;
+}
 
-/* Content wrapper */
+/* Content */
 .services-content {
-  width: 100%;
   max-width: 1200px;
+  margin: auto;
   text-align: center;
 }
 
-/* Heading */
+/* GOLD HEADING */
 .services-content h2 {
   font-size: 2.6rem;
   margin-bottom: 60px;
-
-  color: #ffffff;              /* WHITE TEXT */
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-shadow: 0 4px 18px rgba(0,0,0,0.6); /* readable on image */
+  color: #c9a46a;   /* GOLD */
 }
 
-
-/* Grid */
+/* GRID */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
 
-/* Card */
+/* CARD */
 .service-card {
-  position: relative;
   height: 340px;
   border-radius: 22px;
   background-size: cover;
   background-position: center;
-  overflow: hidden;
+  position: relative;
   text-decoration: none;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
-  transition: all 0.35s ease;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.18);
+  transition: 0.35s ease;
 }
 
-/* Dark overlay */
+/* DARK GRADIENT ON IMAGE (FOR READABILITY) */
 .service-card::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0,0,0,0.8),
-    rgba(0,0,0,0.25)
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.2)
   );
 }
 
-/* Text */
+/* TEXT */
 .service-text {
   position: absolute;
-  bottom: 26px;
-  left: 26px;
-  right: 26px;
-  color: #fff;
-  z-index: 2;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  color: #ffffff;
 }
 
 .service-text h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-}
-
-.service-text p {
-  font-size: 0.95rem;
-  opacity: 0.9;
-}
-
-/* Hover */
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 35px 80px rgba(0,0,0,0.35);
-}
+  font-size: 1.25rem;
+  margin-botto
 
 /* ================= RESPONSIVE ================= */
 
