@@ -12,12 +12,11 @@ body {
   background: #f5f5f5;
   color: #222;
   line-height: 1.6;
+  padding-bottom: 72px; /* fixed footer space */
 }
 
 section {
   width: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 /* =====================================================
@@ -101,203 +100,110 @@ section {
 }
 
 /* =====================================================
-   BUTTONS
+   GLOBAL BUTTONS (DEFAULT)
 ===================================================== */
 .btn-primary {
-  background: #c9a46a;
+  background: linear-gradient(135deg, #e0c27a, #c9a856);
   color: #111;
-  padding: 14px 30px;
-  border-radius: 30px;
+  padding: 14px 34px;
+  border-radius: 50px;
   text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
 .btn-outline {
-  border: 2px solid #c9a46a;
-  color: #c9a46a;
-  padding: 14px 30px;
-  border-radius: 30px;
+  border: 2px solid #e0c27a;
+  color: #e0c27a;
+  padding: 14px 34px;
+  border-radius: 50px;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
-/* =====================================================
-   HERO SLIDER (ONE SCREEN – CORRECT HEIGHT)
-===================================================== */
 
+.btn-outline:hover {
+  background: #e0c27a;
+  color: #111;
+}
+
+/* =====================================================
+   HERO SLIDER (ONE SCREEN)
+===================================================== */
 .hero-slider {
-  height: calc(100vh - 80px - 72px); /* header + fixed footer */
+  height: calc(100vh - 80px - 72px);
   position: relative;
   overflow: hidden;
 }
 
-/* Swiper must use fixed height */
-.hero-slider .swiper,
 .hero-slider .swiper-wrapper,
 .hero-slider .swiper-slide {
   height: 100%;
 }
 
-/* =====================================================
-   HERO SLIDE
-===================================================== */
-
 .hero-slide {
   position: relative;
-  height: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-
-  color: #ffffff;
+  color: #fff;
 }
-
-/* =====================================================
-   HERO BACKGROUND IMAGES
-===================================================== */
 
 .hero-bg-1 { background-image: url("../images/hero/hero1.png"); }
 .hero-bg-2 { background-image: url("../images/hero/hero2.png"); }
 .hero-bg-3 { background-image: url("../images/hero/hero3.png"); }
 .hero-bg-4 { background-image: url("../images/hero/hero4.png"); }
 
-/* =====================================================
-   SMART DARK OVERLAY (IMAGE SAFE)
-===================================================== */
-
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.45),
-    rgba(0, 0, 0, 0.70)
-  );
+  background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.7));
   z-index: 1;
 }
-
-/* =====================================================
-   HERO CONTENT (CLARITY ZONE)
-===================================================== */
 
 .hero-content {
   position: relative;
   z-index: 2;
   max-width: 900px;
   padding: 28px 30px;
-
-  background: rgba(0, 0, 0, 0.18);
+  background: rgba(0,0,0,0.18);
   backdrop-filter: blur(2px);
   border-radius: 18px;
 }
-
-/* =====================================================
-   GOLD HEADING (HIGH CONTRAST)
-===================================================== */
 
 .hero-content h1 {
   font-size: 3rem;
   margin-bottom: 22px;
   font-weight: 700;
-  line-height: 1.25;
   color: #e0c27a;
-
-  text-shadow:
-    0 4px 20px rgba(0, 0, 0, 0.75),
-    0 1px 2px rgba(0, 0, 0, 0.8);
+  line-height: 1.25;
 }
-
-/* =====================================================
-   SUBTEXT
-===================================================== */
 
 .hero-content p {
   max-width: 720px;
   margin: 0 auto 40px;
   font-size: 1.1rem;
-  line-height: 1.6;
   color: #f5f5f5;
-
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
 }
 
-/* =====================================================
-   HERO BUTTON GROUP
-===================================================== */
-
-.hero-buttons {
+/* SUPPORTS BOTH hero-buttons & hero-actions */
+.hero-buttons,
+.hero-actions {
   display: flex;
   justify-content: center;
   gap: 18px;
   flex-wrap: wrap;
 }
 
-/* PRIMARY BUTTON */
-.hero-buttons .btn-primary {
-  padding: 14px 34px;
-  background: linear-gradient(135deg, #e0c27a, #c9a856);
-  color: #111;
-  font-weight: 600;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.hero-buttons .btn-primary:hover {
-  background: linear-gradient(135deg, #c9a856, #b89445);
-  transform: translateY(-2px);
-}
-
-/* OUTLINE BUTTON */
-.hero-buttons .btn-outline {
-  padding: 14px 34px;
-  border: 2px solid #e0c27a;
-  color: #e0c27a;
-  font-weight: 600;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.hero-buttons .btn-outline:hover {
-  background: #e0c27a;
-  color: #111;
-}
-
 /* =====================================================
-   MOBILE (HEADER + BIG FOOTER)
-===================================================== */
-
-@media (max-width: 768px) {
-  .hero-slider {
-    height: calc(100vh - 70px - 96px);
-  }
-
-  .hero-content {
-    padding: 22px 20px;
-  }
-
-  .hero-content h1 {
-    font-size: 2.1rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-}
-
-/* =====================================================
-   ABOUT (FULL SCREEN)
+   ABOUT
 ===================================================== */
 .about-space {
   min-height: 90vh;
@@ -317,21 +223,16 @@ section {
 .about-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.45),
-    rgba(0,0,0,0.75)
-  );
+  background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.75));
 }
 
 .about-content {
   position: relative;
   max-width: 900px;
-  color: #ffffff;
+  color: #fff;
   padding: 40px 20px;
 }
 
-/* GOLD HEADING – SAME AS "OUR STRENGTHS" */
 .gold-heading {
   font-size: 3rem;
   margin-bottom: 25px;
@@ -339,97 +240,31 @@ section {
   color: #d6b46a;
 }
 
-.about-content p {
-  margin-bottom: 18px;
-  opacity: 0.9;
-  line-height: 1.6;
-}
-
 .text-link {
-  display: inline-block;
-  margin-top: 15px;
   color: #c9a46a;
-  font-weight: 500;
   text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.text-link:hover {
-  color: #e2c27c;
 }
 
 /* =====================================================
-   OUR SPACES (LIVE BACKGROUND THEME)
+   SERVICES
 ===================================================== */
-
 .services-space {
   position: relative;
   padding: 120px 20px;
-
-  /* Live subtle background */
-  background: linear-gradient(
-    120deg,
-    #ffffff,
-    #f7f5f0,
-    #ffffff
-  );
-  background-size: 300% 300%;
-  animation: servicesBgMove 14s ease infinite;
-  overflow: hidden;
+  background: linear-gradient(120deg, #fff, #f7f5f0, #fff);
 }
-
-/* Soft gold light spots (depth effect) */
-.services-space::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(201,164,106,0.12), transparent 45%),
-    radial-gradient(circle at 80% 60%, rgba(201,164,106,0.08), transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Background animation */
-@keyframes servicesBgMove {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* =====================================================
-   CONTENT WRAPPER
-===================================================== */
 
 .services-content {
-  position: relative;
-  z-index: 1;
   max-width: 1200px;
   margin: auto;
   text-align: center;
 }
-
-/* SECTION TITLE */
-.services-content h2 {
-  font-size: 2.6rem;
-  color: #c9a46a; /* gold */
-  margin-bottom: 60px;
-  font-weight: 700;
-}
-
-/* =====================================================
-   GRID
-===================================================== */
 
 .services-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
-
-/* =====================================================
-   SERVICE CARD
-===================================================== */
 
 .service-card {
   height: 340px;
@@ -438,77 +273,22 @@ section {
   background-position: center;
   position: relative;
   overflow: hidden;
-  text-decoration: none;
-
   box-shadow: 0 25px 60px rgba(0,0,0,0.18);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* Dark gradient overlay on cards */
 .service-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.75),
-    rgba(0,0,0,0.2)
-  );
+  background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.2));
 }
-
-/* Card hover effect (premium) */
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 35px 80px rgba(0,0,0,0.25);
-}
-
-/* =====================================================
-   CARD TEXT
-===================================================== */
 
 .service-text {
   position: absolute;
   bottom: 24px;
   left: 24px;
   right: 24px;
-  color: #ffffff;
-  z-index: 2;
-}
-
-.service-text h3 {
-  font-size: 1.25rem;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.service-text p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  opacity: 0.95;
-}
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media (max-width: 1024px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .services-space {
-    padding: 80px 16px;
-  }
-
-  .services-content h2 {
-    font-size: 2rem;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
+  color: #fff;
 }
 
 /* =====================================================
@@ -520,20 +300,6 @@ section {
   padding: 120px 20px;
 }
 
-.strengths-grid {
-  max-width: 900px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 22px;
-}
-
-.strength-item {
-  background: #1a1a1a;
-  padding: 22px;
-  border-radius: 14px;
-}
-
 /* =====================================================
    WORK PROCESS
 ===================================================== */
@@ -542,143 +308,22 @@ section {
   padding: 120px 20px;
 }
 
-.process-steps {
-  max-width: 1100px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-}
-
-.step {
-  background: #fff;
-  padding: 40px 25px;
-  border-radius: 18px;
-  text-align: center;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
-}
-
-.step span {
-  display: block;
-  margin-top: 14px;
-  font-size: 0.95rem;
-  color: #555;
-}
-
 /* =====================================================
-   FINAL SCREEN WRAPPER
+   TESTIMONIALS + CTA
 ===================================================== */
-
-.final-screen {
-  width: 100%;
-}
-
-/* =====================================================
-   TESTIMONIALS + CTA — ONE SCREEN (HARD LOCK)
-===================================================== */
-
-.testimonials-cta-screen {
-  height: calc(100vh - 80px); /* header height */
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  overflow: hidden;
-}
-
-/* =====================================================
-   TESTIMONIALS SECTION (DARK)
-===================================================== */
-
 .testimonials-section {
-  height: 100%;
   background: radial-gradient(circle at top, #1a1a1a, #0d0d0d);
-
-  display: grid;
-  place-items: center;
-
-  padding: 24px 20px;
+  padding: 100px 20px;
   text-align: center;
-  overflow: hidden;
 }
-
-.testimonials-section h2 {
-  font-size: clamp(1.6rem, 2.2vw, 2.4rem);
-  color: #c9a46a;
-  margin-bottom: 28px;
-  font-weight: 700;
-}
-
-/* TESTIMONIAL CARD */
-
-.testimonial-card {
-  max-width: 680px;
-  margin: 0 auto 18px;
-  padding: 22px 26px;
-
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 16px;
-  box-shadow: inset 0 0 30px rgba(0,0,0,0.6);
-}
-
-.testimonial-card p {
-  font-size: 0.95rem;
-  line-height: 1.55;
-  color: #f1f1f1;
-  margin-bottom: 8px;
-}
-
-.testimonial-card span {
-  font-size: 0.85rem;
-  color: #c9a46a;
-}
-
-/* =====================================================
-   CTA SECTION (GOLDEN THEME)
-===================================================== */
 
 .cta-section {
-  height: 100%;
   background: linear-gradient(135deg, #caa24d, #d8b56a);
-
-  display: grid;
-  place-items: center;
-
-  padding: 24px 20px;
+  padding: 100px 20px;
   text-align: center;
-  overflow: hidden;
 }
 
-/* CTA CONTENT WIDTH */
-
-.cta-section h2,
-.cta-section p,
-.cta-buttons {
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* CTA HEADING */
-
-.cta-section h2 {
-  font-size: clamp(1.8rem, 2.6vw, 2.6rem);
-  color: #111111;
-  margin-bottom: 14px;
-  font-weight: 700;
-}
-
-/* CTA TEXT */
-
-.cta-section p {
-  font-size: 0.95rem;
-  line-height: 1.55;
-  color: #2a2a2a;
-  margin-bottom: 22px;
-}
-
-/* =====================================================
-   CTA BUTTONS
-===================================================== */
-
+/* CTA BUTTONS (GOLD SECTION) */
 .cta-buttons {
   display: flex;
   justify-content: center;
@@ -686,197 +331,52 @@ section {
   flex-wrap: wrap;
 }
 
-/* PRIMARY BUTTON */
-
-.btn-primary {
-  padding: 12px 30px;
-  background: #111111;
-  color: #ffffff;
-  font-weight: 600;
-  border-radius: 36px;
-  text-decoration: none;
-  transition: all 0.3s ease;
+.cta-buttons .btn-primary {
+  background: #111;
+  color: #fff;
 }
 
-.btn-primary:hover {
-  background: #222222;
-}
-
-/* SECONDARY BUTTON */
-
-.btn-secondary {
-  padding: 12px 30px;
-  background: transparent;
-  border: 1px solid #111111;
-  color: #111111;
-  font-weight: 600;
-  border-radius: 36px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background: #111111;
-  color: #ffffff;
+.cta-buttons .btn-secondary {
+  border: 1px solid #111;
+  color: #111;
 }
 
 /* =====================================================
-   MOBILE — STILL ONE SCREEN
+   FOOTER
 ===================================================== */
-
-@media (max-width: 768px) {
-  .cta-buttons {
-    flex-direction: column;
-  }
-}
-
-
-/* =====================================================
-   FOOTER (FIXED – BLACK & GLOBAL)
-===================================================== */
-
 .site-footer {
   position: fixed;
   bottom: 0;
-  left: 0;
   width: 100%;
-
-  background: #000000;        /* PURE BLACK */
+  background: #000;
   padding: 18px 0;
-  color: #9a9a9a;
-  font-size: 0.9rem;
-
   z-index: 9999;
 }
-
-/* =====================================================
-   FOOTER CONTAINER
-===================================================== */
 
 .footer-container {
   max-width: 1200px;
   margin: auto;
   padding: 0 20px;
-
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 20px;
-}
-
-/* =====================================================
-   LEFT
-===================================================== */
-
-.footer-left {
-  display: flex;
   align-items: center;
-  gap: 12px;
 }
-
-.footer-left img {
-  height: 34px;
-}
-
-.footer-left span {
-  color: #ffffff;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-}
-
-/* =====================================================
-   CENTER
-===================================================== */
-
-.footer-center {
-  flex: 1;
-  text-align: center;
-  color: #8f8f8f;
-  font-size: 0.85rem;
-}
-
-/* =====================================================
-   RIGHT (SOCIAL ICONS)
-===================================================== */
-
-.footer-right {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.footer-right a {
-  width: 38px;
-  height: 38px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #121212;
-  border-radius: 50%;
-
-  color: #c9a46a;             /* GOLD */
-  font-size: 15px;
-  text-decoration: none;
-
-  transition: all 0.3s ease;
-}
-
-.footer-right a:hover {
-  background: #c9a46a;
-  color: #000000;
-  transform: translateY(-2px);
-}
-
-/* =====================================================
-   REQUIRED SPACE FOR FIXED FOOTER
-===================================================== */
-
-/* prevents footer from covering content */
-body {
-  padding-bottom: 72px;
-}
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 12px;
-  }
-
-  .footer-center {
-    order: 3;
-  }
-
-  body {
-    padding-bottom: 96px;
-  }
-}
-
 
 /* =====================================================
    RESPONSIVE
 ===================================================== */
 @media (max-width: 992px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .hero-content h1 { font-size: 2.2rem; }
-  .hero-actions { flex-direction: column; }
+  body { padding-bottom: 96px; }
   .main-nav { display: none; }
   .menu-toggle { display: block; }
+  .services-grid { grid-template-columns: 1fr; }
+  .hero-content h1 { font-size: 2.2rem; }
 }
 
 @media (max-width: 576px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
+  .services-grid { grid-template-columns: 1fr; }
 }
