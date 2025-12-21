@@ -662,21 +662,22 @@ section {
   justify-content: center;
 }
 
-
 /* =====================================================
-   FOOTER (FINAL – BLACK & GLOBAL)
+   FOOTER (FIXED – BLACK & GLOBAL)
 ===================================================== */
 
 .site-footer {
-  background: #000000;          /* PURE BLACK */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  background: #000000;        /* PURE BLACK */
   padding: 18px 0;
   color: #9a9a9a;
   font-size: 0.9rem;
 
-  /* ensures footer consistency */
-  width: 100%;
-  position: relative;
-  z-index: 10;
+  z-index: 9999;
 }
 
 /* =====================================================
@@ -743,7 +744,7 @@ section {
   align-items: center;
   justify-content: center;
 
-  background: #121212;        /* dark but visible */
+  background: #121212;
   border-radius: 50%;
 
   color: #c9a46a;             /* GOLD */
@@ -760,18 +761,12 @@ section {
 }
 
 /* =====================================================
-   GLOBAL FOOTER FIX (ALL SECTIONS)
+   REQUIRED SPACE FOR FIXED FOOTER
 ===================================================== */
 
-/* prevents footer overlap issues */
+/* prevents footer from covering content */
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex: 1;
+  padding-bottom: 72px;
 }
 
 /* =====================================================
@@ -788,7 +783,12 @@ main {
   .footer-center {
     order: 3;
   }
+
+  body {
+    padding-bottom: 96px;
+  }
 }
+
 
 /* =====================================================
    RESPONSIVE
