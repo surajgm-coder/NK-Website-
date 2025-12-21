@@ -131,3 +131,42 @@ section {
   color: #111;
 }
 
+/* =====================================================
+   FOOTER
+===================================================== */
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #000;
+  padding: 18px 0;
+  z-index: 9999;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 992px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  body { padding-bottom: 96px; }
+  .main-nav { display: none; }
+  .menu-toggle { display: block; }
+  .services-grid { grid-template-columns: 1fr; }
+  .hero-content h1 { font-size: 2.2rem; }
+}
+
+@media (max-width: 576px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
