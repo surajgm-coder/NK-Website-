@@ -126,19 +126,20 @@ section {
   text-decoration: none;
 }
 /* =====================================================
-   HERO SLIDER (ONE SCREEN – ADJUSTED FOR HEADER + FOOTER)
+   HERO SLIDER (ONE SCREEN – CORRECT HEIGHT)
 ===================================================== */
 
 .hero-slider {
-  min-height: calc(100vh - 80px - 72px); /* header + fixed footer */
+  height: calc(100vh - 80px - 72px); /* header + fixed footer */
   position: relative;
   overflow: hidden;
 }
 
-/* Swiper full height */
+/* Swiper must use fixed height */
+.hero-slider .swiper,
 .hero-slider .swiper-wrapper,
 .hero-slider .swiper-slide {
-  min-height: 100%;
+  height: 100%;
 }
 
 /* =====================================================
@@ -274,12 +275,12 @@ section {
 }
 
 /* =====================================================
-   MOBILE (HEADER + BIGGER FOOTER)
+   MOBILE (HEADER + BIG FOOTER)
 ===================================================== */
 
 @media (max-width: 768px) {
   .hero-slider {
-    min-height: calc(100vh - 70px - 96px);
+    height: calc(100vh - 70px - 96px);
   }
 
   .hero-content {
