@@ -179,7 +179,6 @@ section {
   position: absolute;
   inset: 0;
 
-  /* ONLY DARK TRANSPARENT OVERLAY */
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.25),
@@ -190,32 +189,75 @@ section {
 }
 
 /* =====================================================
-   HERO CONTENT
+   HERO CONTENT (FIXED VISIBILITY + SPACING)
 ===================================================== */
 
 .hero-content {
   position: relative;
   z-index: 2;
   max-width: 900px;
-  padding: 20px;
+  padding: 20px 24px;
 }
 
 /* GOLD HEADING */
 .hero-content h1 {
   font-size: 3rem;
-  margin-bottom: 18px;
+  margin-bottom: 22px; /* MORE BREATHING SPACE */
   font-weight: 700;
+  line-height: 1.25;
   color: #d6b46a; /* gold */
 }
 
 /* WHITE SUBTEXT */
 .hero-content p {
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 720px;
+  margin: 0 auto 40px; /* SPACE BEFORE BUTTONS */
   font-size: 1.1rem;
   line-height: 1.6;
   color: #ffffff;
   opacity: 0.95;
+}
+
+/* =====================================================
+   HERO BUTTON GROUP (VISIBILITY FIX)
+===================================================== */
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* PRIMARY BUTTON */
+.hero-buttons .btn-primary {
+  padding: 14px 34px;
+  background: #d6b46a;
+  color: #111;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-buttons .btn-primary:hover {
+  background: #c9a856;
+}
+
+/* OUTLINE BUTTON */
+.hero-buttons .btn-outline {
+  padding: 14px 34px;
+  border: 2px solid #d6b46a;
+  color: #d6b46a;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-buttons .btn-outline:hover {
+  background: #d6b46a;
+  color: #111;
 }
 
 /* =====================================================
@@ -229,6 +271,10 @@ section {
 
   .hero-content h1 {
     font-size: 2.1rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
   }
 }
 
