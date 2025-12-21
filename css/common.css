@@ -1,202 +1,162 @@
-/* ================= RESET ================= */
+/* =====================================================
+   RESET & BASE
+===================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-  font-family: "Segoe UI", Arial, sans-serif;
-  color: #1f1f1f;
-  background: #fafafa;
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f5f5;
+  color: #222;
   line-height: 1.6;
+  padding-bottom: 72px;
 }
 
-/* ================= LINKS ================= */
-a {
-  text-decoration: none;
-  color: inherit;
+section {
+  width: 100%;
 }
 
-/* ================= BUTTONS ================= */
-.btn {
-  display: inline-block;
-  padding: 12px 28px;
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+/* =====================================================
+   GLOBAL CONTAINERS
+===================================================== */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 120px 20px;
 }
 
-.header-cta {
-  background: #f28c28;
-  color: #ffffff;
+.section-heading {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 60px;
+  color: #c9a46a;
 }
 
-.header-cta:hover {
-  background: #d8741f;
+.section-note {
+  text-align: center;
+  margin-top: 40px;
+  opacity: 0.85;
 }
 
-.btn-outline {
-  border: 2px solid #ffffff;
-  color: #ffffff;
-  background: transparent;
-}
-
-.btn-outline:hover {
-  background: #ffffff;
-  color: #111111;
-}
-
-/* ================= HEADER ================= */
+/* =====================================================
+   HEADER
+===================================================== */
 .site-header {
   position: sticky;
   top: 0;
-  width: 100%;
+  background: #111;
   z-index: 1000;
 }
 
-.dark-header {
-  background: #111111;
-}
-
-.header-inner {
+.nav-container {
   max-width: 1200px;
   margin: auto;
-  height: 90px;
-  padding: 0 20px;
+  padding: 18px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.logo img {
-  height: 55px;
+.logo {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
 }
 
-/* Navigation */
-.main-nav {
-  display: flex;
-  gap: 30px;
+.logo span {
+  color: #c9a46a;
 }
 
 .main-nav a {
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 600;
+  margin: 0 14px;
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 500;
   position: relative;
 }
 
-.main-nav a.active,
-.main-nav a:hover {
-  color: #f28c28;
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #c9a46a;
+  transition: 0.3s;
 }
 
-/* ================= SECTIONS ================= */
-.section {
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+/* =====================================================
+   GLOBAL BUTTONS
+===================================================== */
+.btn-primary {
+  background: linear-gradient(135deg, #e0c27a, #c9a856);
+  color: #111;
+  padding: 14px 34px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.btn-outline {
+  border: 2px solid #e0c27a;
+  color: #e0c27a;
+  padding: 14px 34px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: #e0c27a;
+  color: #111;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #000;
+  padding: 18px 0;
+  z-index: 9999;
+}
+
+.footer-container {
   max-width: 1200px;
   margin: auto;
-  padding: 80px 20px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.light-bg {
-  background: #ffffff;
-}
-
-.section h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.section p {
-  max-width: 900px;
-  margin: 0 auto 20px;
-  text-align: center;
-  color: #444444;
-}
-
-/* ================= LISTS ================= */
-.check-list {
-  max-width: 700px;
-  margin: 30px auto 0;
-  list-style: none;
-}
-
-.check-list li {
-  padding: 10px 0;
-  font-weight: 500;
-}
-
-/* Process list */
-.process-list {
-  max-width: 700px;
-  margin: 30px auto;
-}
-
-.process-list li {
-  margin-bottom: 12px;
-  font-weight: 500;
-}
-
-/* ================= TESTIMONIALS ================= */
-blockquote {
-  max-width: 800px;
-  margin: 25px auto;
-  padding: 20px;
-  background: #ffffff;
-  border-left: 5px solid #f28c28;
-  font-style: italic;
-}
-
-/* ================= FOOTER CTA ================= */
-.footer-cta {
-  background: #111111;
-  color: #ffffff;
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.footer-cta h2 {
-  font-size: 34px;
-  margin-bottom: 15px;
-}
-
-.footer-cta p {
-  max-width: 700px;
-  margin: 0 auto 25px;
-}
-
-/* ================= FOOTER ================= */
-.site-footer {
-  background: #000000;
-  color: #aaaaaa;
-  text-align: center;
-  padding: 30px 20px;
-  font-size: 13px;
-}
-
-/* ================= RESPONSIVE ================= */
+/* =====================================================
+   RESPONSIVE (GLOBAL)
+===================================================== */
 @media (max-width: 768px) {
-
-  .header-inner {
-    flex-direction: column;
-    height: auto;
-    padding: 15px;
-  }
-
-  .main-nav {
-    margin: 15px 0;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .section h2 {
-    font-size: 26px;
-  }
-
+  body { padding-bottom: 96px; }
+  .main-nav { display: none; }
+  .menu-toggle { display: block; }
 }
