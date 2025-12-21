@@ -125,13 +125,12 @@ section {
   border-radius: 30px;
   text-decoration: none;
 }
-
 /* =====================================================
-   HERO SLIDER (ONE SCREEN – CLEAR IMAGE)
+   HERO SLIDER (ONE SCREEN – ADJUSTED FOR HEADER + FOOTER)
 ===================================================== */
 
 .hero-slider {
-  height: calc(100vh - 80px); /* header height */
+  min-height: calc(100vh - 80px - 72px); /* header + fixed footer */
   position: relative;
   overflow: hidden;
 }
@@ -139,7 +138,7 @@ section {
 /* Swiper full height */
 .hero-slider .swiper-wrapper,
 .hero-slider .swiper-slide {
-  height: 100%;
+  min-height: 100%;
 }
 
 /* =====================================================
@@ -178,14 +177,11 @@ section {
 .hero-overlay {
   position: absolute;
   inset: 0;
-
-  /* stronger but premium */
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.45),
     rgba(0, 0, 0, 0.70)
   );
-
   z-index: 1;
 }
 
@@ -199,7 +195,6 @@ section {
   max-width: 900px;
   padding: 28px 30px;
 
-  /* subtle contrast block */
   background: rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(2px);
   border-radius: 18px;
@@ -214,17 +209,15 @@ section {
   margin-bottom: 22px;
   font-weight: 700;
   line-height: 1.25;
+  color: #e0c27a;
 
-  color: #e0c27a; /* PREMIUM GOLD */
-
-  /* key visibility fix */
   text-shadow:
     0 4px 20px rgba(0, 0, 0, 0.75),
     0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 /* =====================================================
-   SUBTEXT (CLEAN & READABLE)
+   SUBTEXT
 ===================================================== */
 
 .hero-content p {
@@ -232,9 +225,7 @@ section {
   margin: 0 auto 40px;
   font-size: 1.1rem;
   line-height: 1.6;
-
   color: #f5f5f5;
-  opacity: 1;
 
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
 }
@@ -250,7 +241,7 @@ section {
   flex-wrap: wrap;
 }
 
-/* PRIMARY BUTTON (GOLD) */
+/* PRIMARY BUTTON */
 .hero-buttons .btn-primary {
   padding: 14px 34px;
   background: linear-gradient(135deg, #e0c27a, #c9a856);
@@ -266,7 +257,7 @@ section {
   transform: translateY(-2px);
 }
 
-/* OUTLINE BUTTON (GOLD) */
+/* OUTLINE BUTTON */
 .hero-buttons .btn-outline {
   padding: 14px 34px;
   border: 2px solid #e0c27a;
@@ -283,12 +274,12 @@ section {
 }
 
 /* =====================================================
-   MOBILE
+   MOBILE (HEADER + BIGGER FOOTER)
 ===================================================== */
 
 @media (max-width: 768px) {
   .hero-slider {
-    height: calc(100vh - 70px);
+    min-height: calc(100vh - 70px - 96px);
   }
 
   .hero-content {
