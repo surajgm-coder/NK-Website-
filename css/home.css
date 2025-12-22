@@ -197,90 +197,68 @@ section {
 ========================= */
 
 .nk-services {
-  padding: 100px 6%;
+  padding: 70px 6%;
   background: #ffffff;
 }
 
 /* HEADER */
 .nk-services-header {
-  max-width: 900px;
-  margin-bottom: 70px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .nk-services-header h2 {
-  font-size: 44px;
+  font-size: 40px;
   font-weight: 800;
-  color: #d4af37; /* Luxury Gold */
-  margin-bottom: 22px;
+  color: #d4af37; /* GOLD */
+  margin-bottom: 12px;
 }
 
 .nk-services-header p {
-  font-size: 16px;
-  line-height: 1.9;
-  color: #333;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #000; /* BLACK */
 }
 
 /* CARDS WRAPPER */
 .nk-services-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 26px;
 }
 
 /* SERVICE CARD */
 .nk-service-card {
-  position: relative;
-  padding: 42px 36px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-  transition: transform .4s ease, box-shadow .4s ease;
-  overflow: hidden;
+  padding: 24px 26px; /* compact size */
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.10);
+  transition: all .3s ease;
 }
 
-/* SOFT WHITE OVERLAY */
-.nk-service-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.94);
-}
-
-/* CONTENT ABOVE OVERLAY */
-.nk-service-card * {
-  position: relative;
-  z-index: 2;
-}
-
-/* SERVICE TITLE */
+/* CARD TITLE */
 .nk-service-card h3 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
-  color: #000;
-  margin-bottom: 10px;
+  color: #d4af37; /* GOLD */
+  margin-bottom: 8px;
+  text-align: center;
 }
 
-/* GOLD ACCENT LINE */
-.nk-gold-line {
-  display: block;
-  width: 48px;
-  height: 3px;
-  background: #d4af37;
-  margin-bottom: 18px;
-}
-
-/* DESCRIPTION */
+/* CARD TEXT */
 .nk-service-card p {
-  font-size: 15px;
-  line-height: 1.8;
-  color: #444;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #000; /* BLACK */
+  text-align: center;
 }
 
-/* 3D HOVER EFFECT */
+/* HOVER EFFECT */
 .nk-service-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.22);
+  transform: translateY(-6px);
+  box-shadow: 0 22px 44px rgba(0,0,0,0.18);
 }
 
 /* ===== PROCESS ===== */
