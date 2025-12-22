@@ -1,19 +1,24 @@
-const slides = document.querySelectorAll('.nk-slide');
-const dots = document.querySelectorAll('.dot');
-let index = 0;
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-function showSlide(i) {
-  slides.forEach(s => s.classList.remove('active'));
-  dots.forEach(d => d.classList.remove('active'));
+  const slides = document.querySelectorAll('.nk-slide');
+  const dots = document.querySelectorAll('.dot');
+  let index = 0;
 
-  slides[i].classList.add('active');
-  dots[i].classList.add('active');
+  function showSlide(i) {
+    slides.forEach(s => s.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
 
-  index = i;
-}
+    slides[i].classList.add('active');
+    dots[i].classList.add('active');
 
-/* AUTO SLIDE */
-setInterval(() => {
-  index = (index + 1) % slides.length;
-  showSlide(index);
-}, 6000); // comfortable premium timing
+    index = i;
+  }
+
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }, 6000);
+
+});
+</script>
