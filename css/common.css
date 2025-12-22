@@ -105,16 +105,54 @@ body {
   width: 100%;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
+
 .site-footer {
   background: #000;
-  padding: 20px 0;
+  color: #c9a14a;
 }
 
-.footer-wrap {
+/* Gold Upper Line */
+.footer-divider {
+  height: 1px;
+  background: #c9a14a;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 16px 40px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  color: #c9a44c;
+  justify-content: space-between;
+}
+
+/* Logo */
+.footer-left img {
+  height: 34px;
+}
+
+/* Center Text */
+.footer-center {
+  font-size: 13px;
+  text-align: center;
+}
+
+/* Social Icons */
+.footer-right {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-right a {
+  color: #c9a14a;
+  text-decoration: none;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+}
+
+.footer-right a:hover {
+  opacity: 0.7;
 }
 
