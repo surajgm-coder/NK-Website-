@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     slides[i].classList.add('active');
     dots[i].classList.add('active');
-
     index = i;
   }
 
