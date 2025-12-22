@@ -93,6 +93,16 @@ body {
   transition: background 0.3s ease;
 }
 
+.nk-cta:hover {
+  background: #b8943f;
+}
+
+/* GOLD DIVIDER */
+.nk-divider {
+  height: 2px;
+  background: #c9a44c;
+}
+
 /* ===============================
    FOOTER – NK ENTERPRISES
 ================================ */
