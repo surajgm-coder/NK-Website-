@@ -111,47 +111,45 @@ section {
   background: #d4af37;
 }
 
-/* ===============================
-   ABOUT / WHO WE ARE
-   =============================== */
-
+/* ABOUT SECTION */
 .nk-about-section {
   position: relative;
   width: 100%;
-  height: calc(100vh - 140px); /* Fits below fixed header */
+  min-height: calc(100vh - 140px);
   background: url("image/home/about-home.png") center / cover no-repeat;
   display: flex;
   align-items: center;
   overflow: hidden;
 }
 
-/* DARK LUXURY OVERLAY */
+/* DARK PREMIUM OVERLAY */
 .nk-about-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.78);
+  background: rgba(0, 0, 0, 0.65); /* ⬅ lighter so image shows */
   z-index: 1;
 }
 
-/* CONTENT WRAPPER */
+/* CONTENT */
 .nk-about-content {
   position: relative;
   z-index: 2;
-  max-width: 720px;
-  padding-left: 6%;
+  max-width: 760px;            /* ⬅ controls right empty space */
+  margin-left: 6%;
+  padding-right: 4%;
   color: #ffffff;
 }
 
-/* GOLD HEADING */
+/* HEADING */
 .nk-about-heading {
   font-size: 56px;
   font-weight: 800;
   letter-spacing: 1.5px;
   margin-bottom: 28px;
-  color: #d4af37; /* Luxury Gold */
+  color: #d4af37;
 }
 
-/* BODY TEXT */
+/* TEXT */
 .nk-about-text {
   font-size: 16.5px;
   line-height: 1.9;
@@ -159,29 +157,28 @@ section {
   margin-bottom: 18px;
 }
 
-/* LINKS CONTAINER */
+/* LINKS */
 .nk-about-links {
-  margin-top: 34px;
+  margin-top: 36px;
   display: flex;
-  gap: 32px;
+  gap: 36px;
 }
 
-/* GOLD ACCENT LINKS */
 .nk-about-link {
   font-size: 15px;
   font-weight: 500;
   color: #d4af37;
   text-decoration: none;
   position: relative;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .nk-about-link::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -4px;
-  width: 0%;
+  bottom: -5px;
+  width: 0;
   height: 1px;
   background: #d4af37;
   transition: width 0.3s ease;
