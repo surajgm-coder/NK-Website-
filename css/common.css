@@ -103,9 +103,8 @@ body {
   background: #c9a44c;
 }
 
-
 /* ===============================
-   FOOTER – CORPORATE FIXED
+   FOOTER – FINAL FIX
 ================================ */
 
 .nk-footer {
@@ -113,47 +112,55 @@ body {
   bottom: 0;
   width: 100%;
   background: #000;
-  padding: 16px 0;
   z-index: 999;
 }
 
+/* DIVIDER – TOUCHES FOOTER */
+.nk-footer-divider {
+  height: 2px;
+  background: #c9a44c;
+  width: 100%;
+}
+
+/* FOOTER CONTENT */
 .nk-footer-inner {
   max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
+  margin: 0 auto;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* LEFT */
+/* LOGO – FIXED SIZE */
 .nk-footer-left img {
-  height: 30px;
+  max-height: 28px;   /* 👈 THIS FIXES LOGO SIZE */
+  width: auto;
+  display: block;
 }
 
-/* CENTER */
+/* COPYRIGHT */
 .nk-footer-center {
   color: #c9a44c;
-  font-size: 14px;
+  font-size: 13px;
   text-align: center;
   flex: 1;
 }
 
-/* RIGHT */
-.nk-footer-right a {
+/* SOCIAL ICONS – VISIBLE */
+.nk-footer-right {
+  display: flex;
+  gap: 16px;
+}
+
+.nk-footer-right .social {
   color: #c9a44c;
   text-decoration: none;
-  margin-left: 12px;
   font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-.nk-footer-right a:hover {
-  opacity: 0.8;
-}
-
-/* FOOTER DIVIDER */
-.footer-divider {
-  position: fixed;
-  bottom: 54px;
-  width: 100%;
+.nk-footer-right .social:hover {
+  opacity: 0.85;
 }
