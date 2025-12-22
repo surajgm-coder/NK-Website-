@@ -192,37 +192,6 @@ section {
   width: 100%;
 }
 
-/* ===============================
-   RESPONSIVE
-   =============================== */
-
-@media (max-width: 1024px) {
-  .nk-about-heading {
-    font-size: 46px;
-  }
-}
-
-@media (max-width: 768px) {
-  .nk-about-section {
-    height: auto;
-    padding: 120px 0;
-  }
-
-  .nk-about-content {
-    padding: 0 8%;
-  }
-
-  .nk-about-heading {
-    font-size: 38px;
-  }
-
-  .nk-about-links {
-    flex-direction: column;
-    gap: 16px;
-  }
-}
-
-
 /* ===== SERVICES ===== */
 .nk-services {
   padding: 100px 6%;
