@@ -111,19 +111,120 @@ section {
   background: #d4af37;
 }
 
-/* ===== DARK SECTIONS ===== */
-.nk-about, .nk-products {
-  min-height: 80vh;
-  background-size: cover;
-  background-position: center;
-  display: flex; align-items: center;
+/* ===============================
+   ABOUT / WHO WE ARE
+   =============================== */
+
+.nk-about-section {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 140px); /* Fits below fixed header */
+  background: url("image/home/about-home.png") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
-.nk-dark-content {
-  max-width: 700px;
+
+/* DARK LUXURY OVERLAY */
+.nk-about-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  z-index: 1;
+}
+
+/* CONTENT WRAPPER */
+.nk-about-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
   padding-left: 6%;
-  color: #fff;
+  color: #ffffff;
 }
-.nk-dark-content h2 { color:#d4af37; }
+
+/* GOLD HEADING */
+.nk-about-heading {
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 28px;
+  color: #d4af37; /* Luxury Gold */
+}
+
+/* BODY TEXT */
+.nk-about-text {
+  font-size: 16.5px;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 18px;
+}
+
+/* LINKS CONTAINER */
+.nk-about-links {
+  margin-top: 34px;
+  display: flex;
+  gap: 32px;
+}
+
+/* GOLD ACCENT LINKS */
+.nk-about-link {
+  font-size: 15px;
+  font-weight: 500;
+  color: #d4af37;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nk-about-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: #d4af37;
+  transition: width 0.3s ease;
+}
+
+.nk-about-link:hover {
+  color: #ffe9a3;
+}
+
+.nk-about-link:hover::after {
+  width: 100%;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+
+@media (max-width: 1024px) {
+  .nk-about-heading {
+    font-size: 46px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nk-about-section {
+    height: auto;
+    padding: 120px 0;
+  }
+
+  .nk-about-content {
+    padding: 0 8%;
+  }
+
+  .nk-about-heading {
+    font-size: 38px;
+  }
+
+  .nk-about-links {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
 
 /* ===== SERVICES ===== */
 .nk-services {
