@@ -4,18 +4,18 @@ section {
 }
 
 /* ===============================
-   HERO SECTION – FIXED & FINAL
+   HERO SECTION – NK ENTERPRISES
    =============================== */
 
 .nk-hero {
   width: 100%;
-  height: calc(100vh - 140px); /* IMPORTANT: height, not min-height */
+  height: calc(100vh - 140px);
   position: relative;
   overflow: hidden;
   background: #fff;
 }
 
-/* SLIDER MUST HAVE HEIGHT */
+/* SLIDER */
 .nk-hero-slider {
   width: 100%;
   height: 100%;
@@ -34,12 +34,12 @@ section {
   transition: opacity 1s ease-in-out;
 }
 
-/* WHITE PREMIUM OVERLAY */
+/* SUBTLE WHITE OVERLAY (PREMIUM) */
 .nk-slide::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.55); /* NOT 0.85 */
 }
 
 /* ACTIVE SLIDE */
@@ -104,6 +104,7 @@ section {
   height: 10px;
   border-radius: 50%;
   background: #bbb;
+  cursor: pointer;
 }
 
 .dot.active {
