@@ -192,13 +192,69 @@ section {
   width: 100%;
 }
 
-/* ===== SERVICES ===== */
+/* SERVICES SECTION */
 .nk-services {
-  padding: 100px 6%;
-  background:#fff;
+  width: 100%;
+  height: calc(100vh - 140px);
+  position: relative;
+  background: url("image/home/services-home.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
 }
-.nk-services h2 { color:#d4af37; }
-.service-item h4 { color:#000; }
+
+/* SOFT WHITE OVERLAY */
+.nk-services-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+/* CONTENT WRAPPER */
+.nk-services-content {
+  position: relative;
+  max-width: 720px;
+  padding-left: 6%;
+}
+
+/* SECTION HEADING */
+.nk-services-content h2 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #d4af37; /* Luxury Gold */
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+/* INTRO TEXT */
+.nk-services-intro {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 42px;
+}
+
+/* SERVICES LIST */
+.nk-services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* SERVICE ITEM */
+.nk-service-item h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 6px;
+}
+
+.nk-service-item p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+  max-width: 600px;
+}
+
 
 /* ===== PROCESS ===== */
 .nk-process {
