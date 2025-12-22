@@ -15,144 +15,145 @@ body {
   margin: auto;
 }
 
-/* ================= HEADER ================= */
+/* ===============================
+   HEADER – CORPORATE
+================================ */
 
-.site-header {
-  background: #000;
-  position: sticky;
+.nk-header {
+  position: fixed;
   top: 0;
+  width: 100%;
+  background: #000;
   z-index: 1000;
 }
 
-.header-container {
-  max-width: 1400px;
+.nk-header-inner {
+  max-width: 1200px;
   margin: auto;
-  padding: 18px 40px;
+  padding: 22px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Brand */
-.brand {
+/* BRAND */
+.nk-brand {
   text-decoration: none;
   display: flex;
   align-items: baseline;
-  gap: 6px;
 }
 
-.brand-nk {
-  color: #fff;
+.nk-brand-nk {
+  color: #ffffff;
   font-size: 26px;
   font-weight: 800;
   letter-spacing: 1px;
 }
 
-.brand-enterprises {
-  color: #c9a14a; /* luxury gold */
-  font-size: 18px;
-  font-weight: 500;
+.nk-brand-ent {
+  color: #c9a44c;
+  font-size: 20px;
+  font-weight: 700;
+  margin-left: 6px;
 }
 
-/* Navigation */
-.main-nav {
-  display: flex;
-  gap: 30px;
-}
-
-.main-nav a {
-  color: #fff;
+/* NAVIGATION */
+.nk-nav a {
+  color: #ffffff;
   text-decoration: none;
+  margin: 0 14px;
   font-size: 15px;
+  font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
 }
 
-.main-nav a:hover {
-  color: #c9a14a;
+.nk-nav a:hover {
+  color: #c9a44c;
 }
 
-/* Active page underline */
-.main-nav a.active::after {
+.nk-nav a.active::after {
   content: "";
   position: absolute;
-  bottom: -6px;
   left: 0;
+  bottom: -6px;
   width: 100%;
   height: 2px;
-  background: #c9a14a;
+  background: #c9a44c;
 }
 
-/* CTA Button */
-.header-cta {
-  padding: 10px 18px;
-  border: 1px solid #c9a14a;
-  color: #c9a14a;
+/* CTA */
+.nk-cta {
+  background: #c9a44c;
+  color: #000;
+  padding: 10px 22px;
   text-decoration: none;
   font-size: 14px;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  transition: background 0.3s ease;
 }
 
-.header-cta:hover {
-  background: #c9a14a;
-  color: #000;
+.nk-cta:hover {
+  background: #b8943f;
 }
 
-/* Gold Divider */
-.header-divider {
-  height: 1px;
-  background: #c9a14a;
+/* GOLD DIVIDER */
+.nk-divider {
+  height: 2px;
+  background: #c9a44c;
+}
+
+
+/* ===============================
+   FOOTER – CORPORATE FIXED
+================================ */
+
+.nk-footer {
+  position: fixed;
+  bottom: 0;
   width: 100%;
-}
-
-/* ================= FOOTER ================= */
-
-.site-footer {
   background: #000;
-  color: #c9a14a;
+  padding: 16px 0;
+  z-index: 999;
 }
 
-/* Gold Upper Line */
-.footer-divider {
-  height: 1px;
-  background: #c9a14a;
-  width: 100%;
-}
-
-.footer-container {
-  max-width: 1400px;
+.nk-footer-inner {
+  max-width: 1200px;
   margin: auto;
-  padding: 16px 40px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Logo */
-.footer-left img {
-  height: 34px;
+/* LEFT */
+.nk-footer-left img {
+  height: 30px;
 }
 
-/* Center Text */
-.footer-center {
-  font-size: 13px;
-  text-align: center;
-}
-
-/* Social Icons */
-.footer-right {
-  display: flex;
-  gap: 18px;
-}
-
-.footer-right a {
-  color: #c9a14a;
-  text-decoration: none;
+/* CENTER */
+.nk-footer-center {
+  color: #c9a44c;
   font-size: 14px;
-  transition: opacity 0.3s ease;
+  text-align: center;
+  flex: 1;
 }
 
-.footer-right a:hover {
-  opacity: 0.7;
+/* RIGHT */
+.nk-footer-right a {
+  color: #c9a44c;
+  text-decoration: none;
+  margin-left: 12px;
+  font-size: 14px;
 }
 
+.nk-footer-right a:hover {
+  opacity: 0.8;
+}
+
+/* FOOTER DIVIDER */
+.footer-divider {
+  position: fixed;
+  bottom: 54px;
+  width: 100%;
+}
