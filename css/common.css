@@ -102,41 +102,41 @@ body {
   height: 2px;
   background: #c9a44c;
 }
-
 /* ===============================
-   FOOTER – NK ENTERPRISES
+   FIXED FOOTER – FINAL
 ================================ */
 
 .nk-footer {
+  position: fixed;      /* ✅ FIXED */
+  bottom: 0;
   width: 100%;
   background: #000;
+  z-index: 999;
 }
 
-/* GOLD DIVIDER */
+/* DIVIDER */
 .nk-footer-divider {
-  width: 100%;
   height: 2px;
+  width: 100%;
   background: #c9a44c;
 }
 
-/* FOOTER CONTENT */
+/* CONTENT */
 .nk-footer-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 18px 20px;
+  padding: 14px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* LEFT : LOGO */
+/* LOGO */
 .nk-footer-left img {
   max-height: 32px;
-  width: auto;
-  display: block;
 }
 
-/* CENTER : COPYRIGHT */
+/* COPYRIGHT */
 .nk-footer-center {
   flex: 1;
   text-align: center;
@@ -144,43 +144,30 @@ body {
   font-size: 14px;
 }
 
-/* RIGHT : SOCIAL ICONS CONTAINER */
+/* SOCIAL ICONS */
 .nk-footer-right {
   display: flex;
   gap: 16px;
 }
 
-/* ===============================
-   GOLD CIRCULAR SOCIAL ICONS
-================================ */
-
+/* GOLD ICON */
 .gold-social {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
+  background: radial-gradient(circle at top, #ffe9a3, #d4af37, #b8962e);
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* PREMIUM GOLD GRADIENT */
-  background: radial-gradient(
-    circle at top,
-    #ffe9a3,
-    #d4af37,
-    #b8962e
-  );
-
-  text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.gold-social i {
-  color: #000;
-  font-size: 16px;
+.gold-social svg {
+  width: 16px;
+  height: 16px;
+  fill: #000;            /* ✅ ICON NOW VISIBLE */
 }
 
-/* HOVER EFFECT */
 .gold-social:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(212, 175, 55, 0.45);
+  box-shadow: 0 6px 12px rgba(212,175,55,.45);
 }
