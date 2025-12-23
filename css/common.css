@@ -1,6 +1,6 @@
 :root {
-  --nk-header-height: 70px;
-  --nk-footer-height: 70px;
+  --nk-header-height: 80px;
+  --nk-footer-height: 80px;
   --gold: #c9a44c;
   --black: #000;
   --white: #fff;
@@ -17,31 +17,39 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   font-weight: 400;
   color: var(--dark-text);
-  padding-top: var(--nk-header-height);
-  padding-bottom: var(--nk-footer-height);
   background: #f9f9f9;
   line-height: 1.7;
+  padding-top: var(--nk-header-height);
+  padding-bottom: var(--nk-footer-height);
+}
+
+h1, h2, .section h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .container {
   width: 90%;
-  max-width: 1280px;
-  margin: auto;
-  padding: 0 20px;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 25px;
 }
 
-/* HEADER */
+/* Header */
 .nk-header {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
+  height: var(--nk-header-height);
   background: var(--black);
   z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.35);
 }
 
 .nk-header-inner {
-  height: var(--nk-header-height);
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -55,42 +63,49 @@ body {
 
 .nk-brand-nk {
   color: var(--white);
-  font-family: 'Playfair Display', serif;
-  font-size: 40px;
+  font-size: 44px;
   font-weight: 900;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
 .nk-brand-ent {
   color: var(--gold);
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 700;
-  margin-left: 8px;
+  margin-left: 10px;
   letter-spacing: 1px;
+}
+
+.nk-nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
 }
 
 .nk-nav a {
   color: var(--white);
   text-decoration: none;
-  margin: 0 20px;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
-.nk-nav a:hover, .nk-nav a.active {
-  color: var(--gold);
-}
+.nk-nav a:hover, .nk-nav a.active { color: var(--gold); }
 
 .nk-cta {
   background: var(--gold);
   color: var(--black);
-  padding: 12px 28px;
-  font-size: 15px;
+  padding: 12px 32px;
+  font-size: 16px;
   font-weight: 600;
-  border-radius: 4px;
+  border-radius: 6px;
   text-decoration: none;
+  transition: all 0.3s;
+}
+
+.nk-cta:hover {
+  background: #d4b16f;
+  transform: translateY(-2px);
 }
 
 .nk-divider {
@@ -103,11 +118,22 @@ body {
   box-shadow: 0 3px 12px rgba(201,164,76,0.5);
 }
 
-/* FOOTER */
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+/* Footer */
 .nk-footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+  height: var(--nk-footer-height);
   background: var(--black);
   color: var(--white);
   z-index: 999;
@@ -119,7 +145,7 @@ body {
 }
 
 .nk-footer-inner {
-  height: var(--nk-footer-height);
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -127,18 +153,18 @@ body {
 }
 
 .footer-logo {
-  height: 40px;
+  height: 48px;
   width: auto;
 }
 
 .footer-right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
 }
 
 .footer-right i {
-  font-size: 24px;
+  font-size: 26px;
   color: var(--gold);
   transition: color 0.3s;
 }
@@ -147,9 +173,9 @@ body {
   color: #d4b16f;
 }
 
-/* GENERAL SECTION */
+/* General section styles */
 .section {
-  padding: 100px 0;
+  padding: 120px 0;
   min-height: 70vh;
   position: relative;
   background-size: cover;
@@ -170,11 +196,9 @@ body {
 }
 
 .section h2 {
-  font-family: 'Playfair Display', serif;
   font-size: 3.8rem;
   color: var(--gold);
   margin-bottom: 1.8rem;
-  font-weight: 700;
 }
 
 .section p {
@@ -186,7 +210,7 @@ body {
 
 .section-links a {
   color: var(--gold);
-  margin-right: 2rem;
+  margin-right: 2.5rem;
   font-weight: 600;
   text-decoration: none;
 }
@@ -195,13 +219,13 @@ body {
   text-decoration: underline;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .menu-toggle { display: block; margin-left: auto; margin-right: 20px; font-size: 32px; background: none; border: none; color: white; cursor: pointer; }
+/* Responsive */
+@media (max-width: 992px) {
+  .menu-toggle { display: block; margin-left: auto; margin-right: 20px; }
   .nk-nav { display: none; flex-direction: column; position: absolute; top: var(--nk-header-height); left: 0; width: 100%; background: var(--black); padding: 20px 0; }
   .nk-nav.show { display: flex; }
-  .nk-nav a { padding: 15px 30px; margin: 0; text-align: center; }
-  .nk-cta { margin: 20px 30px; display: block; text-align: center; }
-  .section { padding: 80px 0; }
-  .section h2 { font-size: 2.8rem; }
+  .nk-nav a { padding: 16px 40px; text-align: center; font-size: 18px; }
+  .nk-cta { margin: 20px 40px; display: block; text-align: center; }
+  .section { padding: 90px 0; }
+  .section h2 { font-size: 3rem; }
 }
