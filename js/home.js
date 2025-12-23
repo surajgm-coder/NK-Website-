@@ -1,23 +1,19 @@
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const slides = document.querySelectorAll('.nk-slide');
-  const dots = document.querySelectorAll('.dot');
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".nk-slide");
+  const dots = document.querySelectorAll(".dot");
   let index = 0;
 
-  function showSlide(i) {
-    slides.forEach(s => s.classList.remove('active'));
-    dots.forEach(d => d.classList.remove('active'));
-
-    slides[i].classList.add('active');
-    dots[i].classList.add('active');
-    index = i;
-  }
+  console.log("Slides found:", slides.length); // DEBUG
 
   setInterval(() => {
-    index = (index + 1) % slides.length;
-    showSlide(index);
-  }, 6000);
+    slides[index].classList.remove("active");
+    dots[index].classList.remove("active");
 
+    index = (index + 1) % slides.length;
+
+    slides[index].classList.add("active");
+    dots[index].classList.add("active");
+  }, 4000);
 });
 </script>
