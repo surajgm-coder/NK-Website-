@@ -1,3 +1,7 @@
+:root {
+  --nk-header-height: 66px;
+  --nk-footer-height: 62px;
+}
 * {
   margin: 0;
   padding: 0;
