@@ -1,6 +1,10 @@
 :root {
   --nk-header-height: 66px;
-  --nk-footer-height: 62px;
+  --nk-footer-height: 66px;        /* Matched to header */
+  --gold: #c9a44c;
+  --black: #000;
+  --white: #fff;
+  --dark-text: #111;
 }
 
 * {
@@ -11,11 +15,12 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: #111;
-
-  /* REQUIRED FOR FIXED HEADER & FOOTER (HERO FIX) */
+  color: var(--dark-text);
+  /* Required for fixed header & footer */
   padding-top: var(--nk-header-height);
   padding-bottom: var(--nk-footer-height);
+  background: #f9f9f9;
+  line-height: 1.6;
 }
 
 .container {
@@ -24,61 +29,81 @@ body {
   margin: auto;
 }
 
-/* ===============================
-   HEADER – CORPORATE
-================================ */
-
+/* ── HEADER ─────────────────────────────────────────────────────────────── */
 .nk-header {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background: #000;
+  background: var(--black);
   z-index: 1000;
 }
 
 .nk-header-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 22px 20px;
+  padding: 18px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative; /* For absolute positioning of divider */
+  height: var(--nk-header-height);
 }
 
-/* BRAND */
 .nk-brand {
   text-decoration: none;
   display: flex;
   align-items: baseline;
+  font-family: 'Arial Black', Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 .nk-brand-nk {
-  color: #ffffff;
-  font-size: 26px;
-  font-weight: 800;
-  letter-spacing: 1px;
+  color: var(--white);
+  font-size: 34px;          /* Strong, bold presence */
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1;
 }
 
 .nk-brand-ent {
-  color: #c9a44c;
-  font-size: 20px;
+  color: var(--gold);
+  font-size: 26px;          /* Refined, elegant – balanced with NK */
   font-weight: 700;
-  margin-left: 6px;
+  letter-spacing: 1.2px;
+  margin-left: 8px;
+  line-height: 1;
 }
 
-/* NAVIGATION */
+/* Golden Header Divider – Prominent luxury style */
+.nk-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--gold) 20%, var(--gold) 80%, transparent);
+  box-shadow: 0 2px 10px rgba(201, 164, 76, 0.45); /* Soft premium glow */
+  z-index: 999;
+}
+
+/* Navigation */
+.nk-nav {
+  display: flex;
+  align-items: center;
+}
+
 .nk-nav a {
-  color: #ffffff;
+  color: var(--white);
   text-decoration: none;
-  margin: 0 14px;
+  margin: 0 16px;
   font-size: 15px;
   font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
 }
 
-.nk-nav a:hover {
-  color: #c9a44c;
+.nk-nav a:hover,
+.nk-nav a.active {
+  color: var(--gold);
 }
 
 .nk-nav a.active::after {
@@ -88,96 +113,161 @@ body {
   bottom: -6px;
   width: 100%;
   height: 2px;
-  background: #c9a44c;
+  background: var(--gold);
 }
 
-/* CTA */
+/* CTA Button */
 .nk-cta {
-  background: #c9a44c;
-  color: #000;
-  padding: 10px 22px;
+  background: var(--gold);
+  color: var(--black);
+  padding: 10px 24px;
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
+  border-radius: 4px;
   transition: background 0.3s ease;
+  white-space: nowrap;
 }
 
 .nk-cta:hover {
   background: #b8943f;
 }
 
-/* GOLD DIVIDER */
-.nk-divider {
-  height: 2px;
-  background: #c9a44c;
-}
-
-/* ===============================
-   FIXED FOOTER – FINAL
-================================ */
-
+/* ── FOOTER ─────────────────────────────────────────────────────────────── */
 .nk-footer {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
-  background: #000;
+  background: var(--black);
+  color: var(--white);
   z-index: 999;
 }
 
-/* DIVIDER */
 .nk-footer-divider {
-  height: 2px;
-  width: 100%;
-  background: #c9a44c;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--gold) 20%, var(--gold) 80%, transparent);
+  box-shadow: 0 -2px 10px rgba(201, 164, 76, 0.35);
 }
 
-/* CONTENT */
 .nk-footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 14px 20px;
+  padding: 18px 20px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  height: var(--nk-footer-height);
 }
 
-/* LOGO */
-.nk-footer-left img {
+.footer-left img.footer-logo {
+  height: auto;
   max-height: 32px;
 }
 
-/* COPYRIGHT */
-.nk-footer-center {
-  flex: 1;
+.footer-center {
   text-align: center;
-  color: #c9a44c;
-  font-size: 14px;
 }
 
-/* SOCIAL ICONS */
-.nk-footer-right {
-  display: flex;
-  gap: 16px;
-}
-
-/* GOLD ICON */
-.gold-social {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: radial-gradient(circle at top, #ffe9a3, #d4af37, #b8962e);
+.footer-right {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 12px;
 }
 
-.gold-social svg {
-  width: 16px;
-  height: 16px;
-  fill: #000;
+.footer-right a i {
+  color: var(--gold);
+  font-size: 18px;
+  transition: color 0.3s;
 }
 
-.gold-social:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(212,175,55,.45);
+.footer-right a:hover i {
+  color: #b8943f;
+}
+
+/* ── GENERAL SECTION STYLES ─────────────────────────────────────────────── */
+.section {
+  padding: 80px 0;
+  min-height: 60vh;
+}
+
+.section h2 {
+  color: var(--gold);
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.section p {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+.section.dark {
+  background: var(--black);
+  color: var(--white);
+}
+
+.section.light {
+  background: var(--white);
+  color: var(--dark-text);
+}
+
+.section-links a {
+  color: var(--gold);
+  margin-right: 2rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.section-links a:hover {
+  text-decoration: underline;
+}
+
+/* ── MOBILE RESPONSIVE ──────────────────────────────────────────────────── */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nk-header-inner {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+    margin-right: 15px;
+  }
+
+  .nk-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: var(--nk-header-height);
+    left: 0;
+    width: 100%;
+    background: var(--black);
+    padding: 10px 0;
+  }
+
+  .nk-nav.show {
+    display: flex;
+  }
+
+  .nk-nav a {
+    padding: 14px 20px;
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(201, 164, 76, 0.2);
+  }
+
+  .nk-cta {
+    margin: 10px 20px;
+    text-align: center;
+  }
 }
