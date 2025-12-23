@@ -96,9 +96,9 @@
 /* Section backgrounds */
 .section.about { background-image: url('../images/home/about-home.png'); }
 .section.services { background-image: url('../images/home/services-home.png'); }
-.section.products { background-image: url('../images/home/about-home.png'); } /* fallback */
+.section.products { background-image: url('../images/home/product-home.png'); } /* fallback */
 
-/* Split Section – horizontal on desktop, vertical on mobile */
+/* Split Section – vertical on desktop, vertical on mobile */
 .split-section {
   display: flex;
   flex-direction: column;
