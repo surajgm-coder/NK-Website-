@@ -1,10 +1,16 @@
+/* ==========================================
+   COMMON.CSS - Shared design system
+   ========================================== */
+
 :root {
   --header-height: 80px;
   --footer-height: 80px;
   --gold: #c9a44c;
   --black: #000000;
   --white: #ffffff;
-  --text: #111111;
+  --dark-text: #111111;
+  --gray-bg: #111111;
+  --transition: all 0.3s ease;
 }
 
 * {
@@ -13,20 +19,28 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-weight: 400;
-  color: var(--text);
-  background: #f9f9f9;
+  font-size: 16px;                    /* Minimum readable size even on mobile */
   line-height: 1.7;
+  color: var(--dark-text);
+  background: #0f0f0f;
+  overflow-x: hidden;
   padding-top: var(--header-height);
   padding-bottom: var(--footer-height);
 }
 
-h1, h2, h3, .section h2 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  letter-spacing: 0.4px;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+  line-height: 1.2;
 }
 
 .container {
@@ -36,7 +50,7 @@ h1, h2, h3, .section h2 {
   padding: 0 20px;
 }
 
-/* ── HEADER ─────────────────────────────────────────────── */
+/* Header */
 .nk-header {
   position: fixed;
   top: 0;
@@ -45,7 +59,7 @@ h1, h2, h3, .section h2 {
   height: var(--header-height);
   background: var(--black);
   z-index: 1000;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
 }
 
 .nk-header-inner {
@@ -65,7 +79,7 @@ h1, h2, h3, .section h2 {
   color: var(--white);
   font-size: 46px;
   font-weight: 900;
-  letter-spacing: 1.8px;
+  letter-spacing: 2px;
 }
 
 .nk-brand-ent {
@@ -87,20 +101,23 @@ h1, h2, h3, .section h2 {
   text-decoration: none;
   font-size: 17px;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: var(--transition);
 }
 
-.nk-nav a:hover, .nk-nav a.active { color: var(--gold); }
+.nk-nav a:hover,
+.nk-nav a.active {
+  color: var(--gold);
+}
 
 .nk-cta {
   background: var(--gold);
   color: var(--black);
-  padding: 12px 34px;
+  padding: 12px 32px;
   font-size: 16px;
   font-weight: 600;
   border-radius: 6px;
   text-decoration: none;
-  transition: all 0.3s;
+  transition: var(--transition);
 }
 
 .nk-cta:hover {
@@ -118,17 +135,17 @@ h1, h2, h3, .section h2 {
   box-shadow: 0 3px 12px rgba(201,164,76,0.5);
 }
 
-/* Mobile toggle only on smaller screens */
+/* Mobile menu toggle - hidden on desktop */
 .menu-toggle {
   display: none;
   background: none;
   border: none;
-  color: white;
+  color: var(--white);
   font-size: 34px;
   cursor: pointer;
 }
 
-/* ── FOOTER ─────────────────────────────────────────────── */
+/* Footer */
 .nk-footer {
   position: fixed;
   bottom: 0;
@@ -166,12 +183,63 @@ h1, h2, h3, .section h2 {
 .footer-right i {
   font-size: 28px;
   color: var(--gold);
-  transition: color 0.3s;
+  transition: var(--transition);
 }
 
-.footer-right a:hover i { color: #d4b16f; }
+.footer-right a:hover i {
+  color: #d4b16f;
+}
 
-/* ── RESPONSIVE ─────────────────────────────────────────── */
+/* General section base styles */
+.section {
+  padding: 120px 0;
+  min-height: 70vh;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* subtle parallax feel on desktop */
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 1;
+}
+
+.section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.section h2 {
+  font-size: 3.8rem;
+  margin-bottom: 1.8rem;
+  text-align: left;
+}
+
+.section p {
+  font-size: 1.25rem;
+  color: var(--white);
+  max-width: 900px;
+  margin-bottom: 1.6rem;
+}
+
+.section-links a {
+  color: var(--gold);
+  margin-right: 2.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.section-links a:hover {
+  text-decoration: underline;
+  color: #d4b16f;
+}
+
+/* Mobile responsive adjustments */
 @media (max-width: 992px) {
   .menu-toggle { display: block; margin-left: auto; margin-right: 20px; }
   .nk-nav {
@@ -185,11 +253,28 @@ h1, h2, h3, .section h2 {
     padding: 20px 0;
   }
   .nk-nav.show { display: flex; }
-  .nk-nav a { padding: 18px 40px; text-align: center; font-size: 18px; }
-  .nk-cta { margin: 20px 40px; display: block; text-align: center; }
+  .nk-nav a {
+    padding: 18px 40px;
+    text-align: center;
+    font-size: 18px;
+  }
+  .nk-cta {
+    margin: 20px 40px;
+    display: block;
+    text-align: center;
+  }
 
   .nk-brand-nk { font-size: 38px; }
   .nk-brand-ent { font-size: 26px; }
   .footer-logo { height: 42px; }
   .footer-right i { font-size: 24px; }
+
+  .section { padding: 90px 0; }
+  .section h2 { font-size: 3rem; }
+}
+
+@media (max-width: 576px) {
+  .container { padding: 0 15px; }
+  .section h2 { font-size: 2.6rem; }
+  .section p { font-size: 1.1rem; }
 }
