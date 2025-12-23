@@ -2,9 +2,8 @@
 section {
   width: 100%;
 }
-
 /* =====================================
-   HERO SECTION – FINAL (SPEC COMPLIANT)
+   HERO SECTION – IMAGE ONLY (FINAL)
    ===================================== */
 
 .nk-hero {
@@ -12,9 +11,9 @@ section {
   height: calc(100vh - var(--nk-header-height) - var(--nk-footer-height));
   position: relative;
   overflow: hidden;
-  background: #fff;
 }
 
+/* SLIDER */
 .nk-hero-slider {
   width: 100%;
   height: 100%;
@@ -29,26 +28,12 @@ section {
   align-items: center;
 
   background-size: cover;
-  background-position: center right;
+  background-position: center;
   background-repeat: no-repeat;
 
   opacity: 0;
-  z-index: 0;
   transition: opacity 1.1s ease-in-out;
-}
-
-/* WHITE + IMAGE BALANCE (KEY DESIGN POINT) */
-.nk-slide::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(255,255,255,0.94) 0%,
-    rgba(255,255,255,0.85) 35%,
-    rgba(255,255,255,0.55) 60%,
-    rgba(255,255,255,0.25) 100%
-  );
+  z-index: 0;
 }
 
 /* ACTIVE SLIDE */
@@ -66,40 +51,39 @@ section {
   padding-left: 6%;
 }
 
-/* TYPOGRAPHY */
+/* TEXT */
 .nk-hero-content h1 {
   font-size: 48px;
   font-weight: 700;
-  color: #000;
+  color: #ffffff;
   margin-bottom: 12px;
 }
 
 .nk-hero-content h3 {
   font-size: 22px;
-  font-weight: 500;
-  color: #c9a44c;
+  color: #f5d67b; /* luxury gold */
   margin-bottom: 18px;
 }
 
 .nk-hero-content p {
   font-size: 16px;
-  line-height: 1.75;
-  color: #333;
+  line-height: 1.7;
+  color: #f1f1f1;
   max-width: 520px;
   margin-bottom: 34px;
 }
 
-/* CTA – GOLD, REFINED, NON-AGGRESSIVE */
+/* CTA */
 .nk-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
 
   padding: 14px 36px;
-  border: 2px solid #c9a44c;
+  border: 2px solid #f5d67b;
   background: transparent;
 
-  color: #000;
+  color: #ffffff;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.35s ease;
@@ -111,7 +95,8 @@ section {
 }
 
 .nk-btn:hover {
-  background: #c9a44c;
+  background: #f5d67b;
+  color: #000;
 }
 
 .nk-btn:hover::after {
@@ -132,14 +117,13 @@ section {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #d6d6d6;
+  background: rgba(255,255,255,0.45);
   cursor: pointer;
 }
 
 .dot.active {
-  background: #c9a44c;
+  background: #f5d67b;
 }
-
 
 /* ABOUT SECTION */
 .nk-about-section {
