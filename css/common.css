@@ -14,7 +14,7 @@
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 400;
   color: var(--dark-text);
   background: #f9f9f9;
@@ -23,7 +23,7 @@ body {
   padding-bottom: var(--nk-footer-height);
 }
 
-h1, h2, h3, .section h2 {
+h1, h2, .section h2 {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -31,9 +31,9 @@ h1, h2, h3, .section h2 {
 
 .container {
   width: 90%;
-  max-width: 1360px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 0 25px;
+  padding: 0 20px;
 }
 
 /* Header */
@@ -118,7 +118,7 @@ h1, h2, h3, .section h2 {
   box-shadow: 0 3px 12px rgba(201,164,76,0.5);
 }
 
-/* Toggle (only mobile) */
+/* Mobile toggle */
 .menu-toggle {
   display: none;
   background: none;
@@ -173,15 +173,59 @@ h1, h2, h3, .section h2 {
   color: #d4b16f;
 }
 
+/* General section */
+.section {
+  padding: 120px 0;
+  min-height: calc(100vh - var(--nk-header-height) - var(--nk-footer-height));
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 1;
+}
+
+.section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.section h2 {
+  font-size: 3.8rem;
+  color: var(--gold);
+  margin-bottom: 1.8rem;
+}
+
+.section p {
+  font-size: 1.25rem;
+  color: var(--white);
+  max-width: 900px;
+  margin-bottom: 1.5rem;
+}
+
+.section-links a {
+  color: var(--gold);
+  margin-right: 2.5rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.section-links a:hover {
+  text-decoration: underline;
+}
+
 /* Mobile */
 @media (max-width: 992px) {
   .menu-toggle { display: block; margin-left: auto; margin-right: 20px; }
   .nk-nav { display: none; flex-direction: column; position: absolute; top: var(--nk-header-height); left: 0; width: 100%; background: var(--black); padding: 20px 0; }
-  .nk-nav.show { display: flex; }
+  .nk-nav.active { display: flex; }
   .nk-nav a { padding: 16px 40px; text-align: center; font-size: 18px; }
   .nk-cta { margin: 20px 40px; display: block; text-align: center; }
-  .nk-brand-nk { font-size: 38px; }
-  .nk-brand-ent { font-size: 26px; }
   .section { padding: 90px 0; }
   .section h2 { font-size: 3rem; }
 }
