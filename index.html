@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NK Enterprises - Premium Furniture & Interior Solutions</title>
 
-  <!-- Consistent premium fonts for entire website -->
+  <!-- Consistent premium fonts for entire site -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Font Awesome for social icons -->
@@ -18,7 +18,7 @@
 </head>
 <body>
 
-  <!-- FIXED HEADER -->
+  <!-- HEADER -->
   <header class="nk-header">
     <div class="nk-header-inner container">
       <a href="index.html" class="nk-brand">
@@ -132,7 +132,7 @@
     </div>
   </section>
 
-  <!-- PROCESS + CTA SPLIT SECTION -->
+  <!-- PROCESS + CTA -->
   <section class="split-section">
     <div class="split-left">
       <div class="split-content">
@@ -152,7 +152,7 @@
         <h2>Let’s Build Something Exceptional Together</h2>
         <p>From furniture and fabrication to complete interior solutions, we create spaces that define luxury, functionality, and long-lasting value.</p>
         <div class="cta-buttons">
-          <a href="contact.html" class="btn primary">Request a Consultation</a>
+          <a href="contact.html" class="btn">Request a Consultation</a>
           <a href="#" class="btn secondary">View Our Work</a>
         </div>
       </div>
@@ -185,31 +185,35 @@
       // Hero Slider
       const slides = document.querySelectorAll(".slide");
       const dots = document.querySelectorAll(".dot");
-      let current = 0;
+      let index = 0;
 
-      function showSlide(idx) {
+      function showSlide(i) {
         slides.forEach(s => s.classList.remove("active"));
         dots.forEach(d => d.classList.remove("active"));
-        slides[idx].classList.add("active");
-        dots[idx].classList.add("active");
+        slides[i].classList.add("active");
+        dots[i].classList.add("active");
       }
 
       setInterval(() => {
-        current = (current + 1) % slides.length;
-        showSlide(current);
+        index = (index + 1) % slides.length;
+        showSlide(index);
       }, 5000);
 
       dots.forEach((dot, i) => {
         dot.addEventListener("click", () => {
-          current = i;
-          showSlide(current);
+          index = i;
+          showSlide(index);
         });
       });
 
-      // Mobile menu toggle
-      const toggle = document.querySelector('.menu-toggle');
+      // Mobile Menu Toggle
+      const menuToggle = document.querySelector('.menu-toggle');
       const nav = document.querySelector('.nk-nav');
-      toggle?.addEventListener('click', () => nav.classList.toggle('show'));
+      if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+          nav.classList.toggle('show');
+        });
+      }
     });
   </script>
 </body>
