@@ -14,29 +14,26 @@
 
     slides[i].classList.add("active");
     dots[i].classList.add("active");
-
     index = i;
   }
 
-  function startAutoSlide() {
+  function startSlider() {
     timer = setInterval(() => {
       showSlide((index + 1) % slides.length);
-    }, 6000); // reader-friendly timing
+    }, 6000);
   }
 
-  // DOT CLICK (MANUAL CONTROL)
   dots.forEach((dot, i) => {
     dot.addEventListener("click", () => {
       clearInterval(timer);
       showSlide(i);
-      startAutoSlide();
+      startSlider();
     });
   });
 
-  // INIT
   window.addEventListener("load", () => {
     showSlide(0);
-    startAutoSlide();
+    startSlider();
   });
 
 })();
