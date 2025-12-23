@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NK Enterprises - Premium Furniture & Interior Solutions</title>
 
-  <!-- Premium Fonts: Playfair Display (headings) + Inter (body) -->
+  <!-- Google Fonts: Playfair Display (headings) + Inter (body) – consistent across site -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Font Awesome for social icons -->
@@ -13,12 +13,12 @@
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <link rel="stylesheet" href="css/common.css"/>
-  <link rel="stylesheet" href="css/home.css"/>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 
-  <!-- FIXED HEADER -->
+  <!-- HEADER -->
   <header class="nk-header">
     <div class="nk-header-inner container">
       <a href="index.html" class="nk-brand">
@@ -26,7 +26,7 @@
         <span class="nk-brand-ent">Enterprises</span>
       </a>
 
-      <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
 
       <nav class="nk-nav">
         <a href="index.html" class="active">Home</a>
@@ -40,7 +40,7 @@
       <a href="contact.html" class="nk-cta">Get a Quote</a>
     </div>
 
-    <!-- Luxury gold divider -->
+    <!-- Gold luxury divider -->
     <div class="nk-divider"></div>
   </header>
 
@@ -95,7 +95,7 @@
   <!-- WHO WE ARE -->
   <section class="section about dark">
     <div class="container">
-      <h2>WHO WE ARE</h2>
+      <h2>Who We Are</h2>
       <p>NK Enterprises is a premium furniture, fabrication, and interior solutions company, delivering custom-built environments for corporate offices, retail spaces, and luxury residences.</p>
       <p>Driven by precision craftsmanship, high-grade materials, and refined aesthetics, we transform ideas into functional, elegant, and enduring spaces.</p>
       <p>From concept to completion, our experienced team ensures every detail reflects superior quality, structural durability, and timeless design standards.</p>
@@ -109,7 +109,7 @@
   <!-- OUR SERVICES -->
   <section class="section services light">
     <div class="container">
-      <h2>OUR SERVICES</h2>
+      <h2>Our Services</h2>
       <p>We specialize in delivering high-quality furniture, fabrication, and interior solutions tailored to meet the unique requirements of residential, commercial, and retail environments.</p>
       <ul>
         <li><strong>Custom Furniture</strong> — Bespoke furniture designed and expertly fabricated to match your space, style, and luxury standards.</li>
@@ -123,7 +123,7 @@
   <!-- OUR PRODUCTS -->
   <section class="section products dark">
     <div class="container">
-      <h2>OUR PRODUCTS</h2>
+      <h2>Our Products</h2>
       <p>NK Enterprises offers a curated range of premium furniture and interior products designed to meet the demands of modern residential, commercial, and retail spaces.</p>
       <p>Each product is crafted using high-quality materials, precise fabrication techniques, and refined finishes to ensure durability, functionality, and timeless appeal.</p>
       <div class="section-links">
@@ -137,7 +137,7 @@
   <section class="split-section">
     <div class="split-left">
       <div class="split-content">
-        <h2>OUR PROCESS</h2>
+        <h2>Our Process</h2>
         <ol>
           <li><strong>Consultation</strong> — Understanding your vision, objectives, and functional requirements.</li>
           <li><strong>Design & Planning</strong> — Developing concepts, layouts, and material selections aligned with your space and style.</li>
@@ -160,7 +160,7 @@
     </div>
   </section>
 
-  <!-- FIXED FOOTER -->
+  <!-- FOOTER -->
   <footer class="nk-footer">
     <div class="nk-footer-divider"></div>
     <div class="nk-footer-inner container">
@@ -183,6 +183,7 @@
   <!-- JavaScript -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // Slider
       const slides = document.querySelectorAll(".slide");
       const dots = document.querySelectorAll(".dot");
       let index = 0;
@@ -206,9 +207,10 @@
         });
       });
 
+      // Mobile menu
       const menuToggle = document.querySelector('.menu-toggle');
       const nav = document.querySelector('.nk-nav');
-      menuToggle.addEventListener('click', () => {
+      menuToggle?.addEventListener('click', () => {
         nav.classList.toggle('show');
       });
     });
