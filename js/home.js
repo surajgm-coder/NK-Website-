@@ -1,10 +1,8 @@
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".nk-slide");
   const dots = document.querySelectorAll(".dot");
   let index = 0;
-
-  console.log("Slides found:", slides.length); // DEBUG
 
   setInterval(() => {
     slides[index].classList.remove("active");
@@ -14,6 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     slides[index].classList.add("active");
     dots[index].classList.add("active");
-  }, 4000);
+  }, 6000);
 });
 </script>
