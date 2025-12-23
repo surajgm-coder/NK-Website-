@@ -1,3 +1,6 @@
+/* ============================================= */
+/* HERO SLIDER - White text on dark semi-transparent overlay */
+/* ============================================= */
 .hero {
   height: calc(100vh - var(--nk-header-height) - var(--nk-footer-height));
   position: relative;
@@ -18,71 +21,78 @@
   transition: opacity 1.2s ease;
 }
 
-.slide.active { opacity: 1; }
+.slide.active {
+  opacity: 1;
+}
 
 .slide-content {
   position: absolute;
   left: 8%;
   top: 50%;
   transform: translateY(-50%);
-  max-width: 680px;
-  color: var(--white);
-  padding: 3rem 3.5rem;
-  background: rgba(0,0,0,0.5);
+  max-width: 720px;
+  color: var(--white); /* White text */
+  padding: 3.5rem 4rem;
+  background: rgba(0, 0, 0, 0.58); /* Semi-transparent black overlay */
   backdrop-filter: blur(8px);
   border-radius: 12px;
-  border: 1px solid rgba(201,164,76,0.25);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  border: 1px solid rgba(201, 164, 76, 0.25); /* subtle gold border */
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
 }
 
 .slide h1 {
-  font-size: 4.8rem;
-  margin-bottom: 0.8rem;
-  line-height: 1;
+  font-size: 5.2rem;
+  font-weight: 900;
+  margin-bottom: 0.6rem;
+  line-height: 1.05;
+  color: var(--white);
 }
 
 .slide h2 {
   font-size: 2.8rem;
   color: var(--gold);
   margin-bottom: 1.6rem;
+  font-weight: 700;
 }
 
 .slide p {
   font-size: 1.35rem;
-  line-height: 1.7;
-  margin-bottom: 2rem;
+  line-height: 1.75;
+  margin-bottom: 2.4rem;
 }
 
 .slide-cta {
   background: var(--gold);
   color: var(--black);
-  padding: 14px 36px;
-  font-size: 1.15rem;
+  padding: 16px 44px;
+  font-size: 1.2rem;
   font-weight: 600;
-  border-radius: 6px;
+  border-radius: 8px;
   text-decoration: none;
-  transition: all 0.3s;
+  transition: all 0.35s ease;
+  box-shadow: 0 6px 20px rgba(201, 164, 76, 0.4);
 }
 
 .slide-cta:hover {
   background: #d4b16f;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(201,164,76,0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(201, 164, 76, 0.6);
 }
 
 .slider-dots {
   position: absolute;
-  bottom: 40px;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 14px;
+  gap: 18px;
+  z-index: 10;
 }
 
 .dot {
   width: 14px;
   height: 14px;
-  background: rgba(255,255,255,0.4);
+  background: rgba(255, 255, 255, 0.45);
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s;
@@ -90,15 +100,79 @@
 
 .dot.active {
   background: var(--gold);
-  transform: scale(1.3);
+  transform: scale(1.4);
 }
 
-/* Section backgrounds */
+/* ============================================= */
+/* ALL SECTIONS - Same style as Hero (left-aligned + dark overlay + white text) */
+/* ============================================= */
+.section {
+  position: relative;
+  min-height: 80vh;
+  padding: 140px 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.58); /* Same dark overlay as hero */
+  z-index: 1;
+}
+
+.section .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1320px;
+}
+
+.section h2 {
+  font-size: 4.2rem;
+  color: var(--gold);
+  margin-bottom: 1.8rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.section p {
+  font-size: 1.32rem;
+  color: var(--white);
+  line-height: 1.8;
+  max-width: 920px;
+  margin-bottom: 2rem;
+}
+
+.section ul, .section ol {
+  font-size: 1.28rem;
+  color: var(--white);
+  line-height: 2;
+  margin-bottom: 2rem;
+}
+
+.section li {
+  margin-bottom: 1.2rem;
+}
+
+.section-links a {
+  color: var(--gold);
+  font-weight: 600;
+  margin-right: 2.5rem;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.section-links a:hover {
+  opacity: 0.85;
+}
+
+/* Specific background images */
 .section.about { background-image: url('../images/home/about-home.png'); }
 .section.services { background-image: url('../images/home/services-home.png'); }
-.section.products { background-image: url('../images/home/product-home.png'); } /* fallback */
+.section.products { background-image: url('../images/home/product-home.png'); } /* or fallback */
 
-/* Split Section – vertical on desktop, vertical on mobile */
+/* Split Section - Process + CTA (side-by-side on desktop, stacked on mobile) */
 .split-section {
   display: flex;
   flex-direction: column;
@@ -110,7 +184,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem 3rem;
+  padding: 6rem 4rem;
+  position: relative;
 }
 
 .split-left {
@@ -124,25 +199,26 @@
 }
 
 .split-content {
-  max-width: 520px;
+  max-width: 560px;
+  z-index: 2;
 }
 
 .split-content h2 {
-  font-size: 3rem;
+  font-size: 3.4rem;
   margin-bottom: 2rem;
 }
 
 .split-content ol {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 2;
 }
 
 .btn {
-  padding: 14px 32px;
-  border-radius: 6px;
-  text-decoration: none;
+  padding: 16px 40px;
+  border-radius: 8px;
   font-weight: 600;
-  transition: all 0.3s;
+  text-decoration: none;
+  transition: all 0.35s;
 }
 
 .btn.primary {
@@ -157,13 +233,25 @@
 }
 
 .btn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 }
 
-/* Desktop split layout */
+/* Desktop layout for split section */
 @media (min-width: 992px) {
   .split-section {
     flex-direction: row;
   }
 }
 
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .slide-content {
+    left: 5%;
+    right: 5%;
+    padding: 2.8rem 2.5rem;
+  }
+  .slide h1 { font-size: 3.8rem; }
+  .slide h2 { font-size: 2.4rem; }
+  .section { padding: 100px 0; }
+  .section h2 { font-size: 3.2rem; }
+}
