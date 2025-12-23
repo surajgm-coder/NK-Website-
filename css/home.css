@@ -3,9 +3,9 @@ section {
   width: 100%;
 }
 
-/* ===============================
-   HERO SECTION – FIXED & POLISHED
-   =============================== */
+/* =====================================
+   HERO SECTION – FINAL (SPEC COMPLIANT)
+   ===================================== */
 
 .nk-hero {
   width: 100%;
@@ -29,23 +29,23 @@ section {
   align-items: center;
 
   background-size: cover;
-  background-position: right center;
+  background-position: center right;
+  background-repeat: no-repeat;
 
   opacity: 0;
   z-index: 0;
-  transition: opacity 1.2s ease-in-out;
-  will-change: opacity;
+  transition: opacity 1.1s ease-in-out;
 }
 
-/* PREMIUM GRADIENT OVERLAY (KEY FIX) */
+/* WHITE + IMAGE BALANCE (KEY DESIGN POINT) */
 .nk-slide::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(255,255,255,0.92) 0%,
-    rgba(255,255,255,0.80) 35%,
+    rgba(255,255,255,0.94) 0%,
+    rgba(255,255,255,0.85) 35%,
     rgba(255,255,255,0.55) 60%,
     rgba(255,255,255,0.25) 100%
   );
@@ -60,12 +60,13 @@ section {
 /* CONTENT */
 .nk-hero-content {
   position: relative;
-  max-width: 620px;
+  z-index: 2;
+
+  max-width: 640px;
   padding-left: 6%;
-  padding-top: 32px;
 }
 
-/* TEXT */
+/* TYPOGRAPHY */
 .nk-hero-content h1 {
   font-size: 48px;
   font-weight: 700;
@@ -75,6 +76,7 @@ section {
 
 .nk-hero-content h3 {
   font-size: 22px;
+  font-weight: 500;
   color: #c9a44c;
   margin-bottom: 18px;
 }
@@ -83,17 +85,17 @@ section {
   font-size: 16px;
   line-height: 1.75;
   color: #333;
-  margin-bottom: 34px;
   max-width: 520px;
+  margin-bottom: 34px;
 }
 
-/* CTA – STRONG & CLEAR */
+/* CTA – GOLD, REFINED, NON-AGGRESSIVE */
 .nk-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
 
-  padding: 14px 38px;
+  padding: 14px 36px;
   border: 2px solid #c9a44c;
   background: transparent;
 
@@ -113,29 +115,31 @@ section {
 }
 
 .nk-btn:hover::after {
-  transform: translateX(6px);
+  transform: translateX(5px);
 }
 
-/* DOTS */
+/* DOT NAVIGATION */
 .nk-dots {
   position: absolute;
   bottom: 30px;
   left: 6%;
   display: flex;
   gap: 10px;
+  z-index: 3;
 }
 
 .dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #ccc;
+  background: #d6d6d6;
   cursor: pointer;
 }
 
 .dot.active {
   background: #c9a44c;
 }
+
 
 /* ABOUT SECTION */
 .nk-about-section {
