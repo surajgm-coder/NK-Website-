@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NK Enterprises - Premium Furniture & Interior Solutions</title>
 
-  <!-- Premium Google Fonts – consistent across whole site -->
+  <!-- Premium consistent fonts across whole website -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Font Awesome for social icons -->
@@ -39,10 +39,11 @@
 
       <a href="contact.html" class="nk-cta">Get a Quote</a>
     </div>
+
     <div class="nk-divider"></div>
   </header>
 
-  <!-- HERO SLIDER -->
+  <!-- HERO -->
   <section class="hero">
     <div class="slider">
       <div class="slide active" style="background-image: url('images/home/hero1.png');">
@@ -131,7 +132,7 @@
     </div>
   </section>
 
-  <!-- PROCESS + CTA SPLIT SECTION -->
+  <!-- PROCESS + CTA SPLIT -->
   <section class="split-section">
     <div class="split-left">
       <div class="split-content">
@@ -184,7 +185,7 @@
       // Hero slider
       const slides = document.querySelectorAll(".slide");
       const dots = document.querySelectorAll(".dot");
-      let current = 0;
+      let index = 0;
 
       function showSlide(i) {
         slides.forEach(s => s.classList.remove("active"));
@@ -194,18 +195,18 @@
       }
 
       setInterval(() => {
-        current = (current + 1) % slides.length;
-        showSlide(current);
+        index = (index + 1) % slides.length;
+        showSlide(index);
       }, 5000);
 
       dots.forEach((dot, i) => {
         dot.addEventListener("click", () => {
-          current = i;
-          showSlide(current);
+          index = i;
+          showSlide(index);
         });
       });
 
-      // Mobile menu toggle
+      // Mobile menu
       const toggle = document.querySelector('.menu-toggle');
       const nav = document.querySelector('.nk-nav');
       toggle?.addEventListener('click', () => nav.classList.toggle('active'));
