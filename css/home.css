@@ -4,7 +4,7 @@ section {
 }
 
 /* ===============================
-   HERO SECTION – FINAL
+   HERO SECTION – FIXED & POLISHED
    =============================== */
 
 .nk-hero {
@@ -27,20 +27,31 @@ section {
   inset: 0;
   display: flex;
   align-items: center;
+
   background-size: cover;
-  background-position: center;
+  background-position: right center;
+
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  z-index: 0;
+  transition: opacity 1.2s ease-in-out;
+  will-change: opacity;
 }
 
-/* SUBTLE WHITE OVERLAY */
+/* PREMIUM GRADIENT OVERLAY (KEY FIX) */
 .nk-slide::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.55);
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0.92) 0%,
+    rgba(255,255,255,0.80) 35%,
+    rgba(255,255,255,0.55) 60%,
+    rgba(255,255,255,0.25) 100%
+  );
 }
 
+/* ACTIVE SLIDE */
 .nk-slide.active {
   opacity: 1;
   z-index: 1;
@@ -49,10 +60,12 @@ section {
 /* CONTENT */
 .nk-hero-content {
   position: relative;
-  max-width: 680px;
+  max-width: 620px;
   padding-left: 6%;
+  padding-top: 32px;
 }
 
+/* TEXT */
 .nk-hero-content h1 {
   font-size: 48px;
   font-weight: 700;
@@ -68,9 +81,39 @@ section {
 
 .nk-hero-content p {
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.75;
   color: #333;
-  margin-bottom: 30px;
+  margin-bottom: 34px;
+  max-width: 520px;
+}
+
+/* CTA – STRONG & CLEAR */
+.nk-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 38px;
+  border: 2px solid #c9a44c;
+  background: transparent;
+
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.35s ease;
+}
+
+.nk-btn::after {
+  content: "→";
+  transition: transform 0.3s ease;
+}
+
+.nk-btn:hover {
+  background: #c9a44c;
+}
+
+.nk-btn:hover::after {
+  transform: translateX(6px);
 }
 
 /* DOTS */
@@ -86,14 +129,13 @@ section {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #bbb;
+  background: #ccc;
   cursor: pointer;
 }
 
 .dot.active {
   background: #c9a44c;
 }
-
 
 /* ABOUT SECTION */
 .nk-about-section {
