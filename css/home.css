@@ -61,7 +61,7 @@ section {
 
 .nk-hero-content h3 {
   font-size: 22px;
-  color: #f5d67b; /* luxury gold */
+  color: #f5d67b;
   margin-bottom: 18px;
 }
 
@@ -124,6 +124,7 @@ section {
 .dot.active {
   background: #f5d67b;
 }
+
 
 /* ABOUT SECTION */
 .nk-about-section {
