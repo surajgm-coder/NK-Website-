@@ -105,22 +105,28 @@ section {
   background: #f5d67b;
 }
 
-/* ABOUT SECTION */
+/* ===============================
+   ABOUT SECTION – BACKGROUND + HEIGHT
+   =============================== */
+
 .nk-about-section {
   position: relative;
   width: 100%;
-  min-height: calc(100vh - 140px);
-  background: url("image/home/about-home.png") center / cover no-repeat;
+  height: calc(100vh - 140px); /* ✅ PERFECT SLIDE HEIGHT */
+  background-image: url("image/home/about-home.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
-  align-items: center;
+  align-items: center; /* ✅ vertical centering */
   overflow: hidden;
 }
 
-/* DARK PREMIUM OVERLAY */
+/* DARK OVERLAY (IMAGE MUST SHOW) */
 .nk-about-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.65); /* ⬅ lighter so image shows */
+  background: rgba(0, 0, 0, 0.55); /* ✅ NOT TOO DARK */
   z-index: 1;
 }
 
@@ -128,9 +134,8 @@ section {
 .nk-about-content {
   position: relative;
   z-index: 2;
-  max-width: 760px;            /* ⬅ controls right empty space */
+  max-width: 760px;
   margin-left: 6%;
-  padding-right: 4%;
   color: #ffffff;
 }
 
@@ -147,43 +152,49 @@ section {
 .nk-about-text {
   font-size: 16.5px;
   line-height: 1.9;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.88);
   margin-bottom: 18px;
 }
 
 /* LINKS */
 .nk-about-links {
-  margin-top: 36px;
+  margin-top: 34px;
   display: flex;
-  gap: 36px;
+  gap: 32px;
 }
 
 .nk-about-link {
   font-size: 15px;
-  font-weight: 500;
   color: #d4af37;
   text-decoration: none;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-.nk-about-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0;
-  height: 1px;
-  background: #d4af37;
-  transition: width 0.3s ease;
 }
 
 .nk-about-link:hover {
   color: #ffe9a3;
 }
 
-.nk-about-link:hover::after {
-  width: 100%;
+/* ===============================
+   MOBILE FIX
+   =============================== */
+@media (max-width: 768px) {
+  .nk-about-section {
+    height: auto;
+    padding: 120px 0;
+  }
+
+  .nk-about-content {
+    margin-left: 0;
+    padding: 0 8%;
+  }
+
+  .nk-about-heading {
+    font-size: 38px;
+  }
+
+  .nk-about-links {
+    flex-direction: column;
+    gap: 16px;
+  }
 }
 
 /* =========================
