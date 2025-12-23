@@ -4,18 +4,17 @@ section {
 }
 
 /* ===============================
-   HERO SECTION – NK ENTERPRISES
+   HERO SECTION – FINAL
    =============================== */
 
 .nk-hero {
   width: 100%;
-  height: calc(100vh - 140px);
+  height: calc(100vh - var(--nk-header-height) - var(--nk-footer-height));
   position: relative;
   overflow: hidden;
   background: #fff;
 }
 
-/* SLIDER */
 .nk-hero-slider {
   width: 100%;
   height: 100%;
@@ -34,15 +33,14 @@ section {
   transition: opacity 1s ease-in-out;
 }
 
-/* SUBTLE WHITE OVERLAY (PREMIUM) */
+/* SUBTLE WHITE OVERLAY */
 .nk-slide::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.55); /* NOT 0.85 */
+  background: rgba(255, 255, 255, 0.55);
 }
 
-/* ACTIVE SLIDE */
 .nk-slide.active {
   opacity: 1;
   z-index: 1;
@@ -55,7 +53,6 @@ section {
   padding-left: 6%;
 }
 
-/* TEXT */
 .nk-hero-content h1 {
   font-size: 48px;
   font-weight: 700;
@@ -65,7 +62,7 @@ section {
 
 .nk-hero-content h3 {
   font-size: 22px;
-  color: #d4af37;
+  color: #c9a44c;
   margin-bottom: 18px;
 }
 
@@ -74,20 +71,6 @@ section {
   line-height: 1.7;
   color: #333;
   margin-bottom: 30px;
-}
-
-/* BUTTON */
-.nk-btn {
-  display: inline-block;
-  padding: 12px 28px;
-  border: 2px solid #d4af37;
-  color: #000;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.nk-btn:hover {
-  background: #d4af37;
 }
 
 /* DOTS */
@@ -108,8 +91,9 @@ section {
 }
 
 .dot.active {
-  background: #d4af37;
+  background: #c9a44c;
 }
+
 
 /* ABOUT SECTION */
 .nk-about-section {
