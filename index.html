@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NK Enterprises - Premium Furniture & Interior Solutions</title>
 
-  <!-- Google Fonts: Playfair Display (headings) + Inter (body) – consistent across site -->
+  <!-- Consistent premium fonts for entire website -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Font Awesome for social icons -->
@@ -18,7 +18,7 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- FIXED HEADER -->
   <header class="nk-header">
     <div class="nk-header-inner container">
       <a href="index.html" class="nk-brand">
@@ -40,7 +40,6 @@
       <a href="contact.html" class="nk-cta">Get a Quote</a>
     </div>
 
-    <!-- Gold luxury divider -->
     <div class="nk-divider"></div>
   </header>
 
@@ -133,7 +132,7 @@
     </div>
   </section>
 
-  <!-- PROCESS + CTA SPLIT -->
+  <!-- PROCESS + CTA SPLIT SECTION -->
   <section class="split-section">
     <div class="split-left">
       <div class="split-content">
@@ -153,7 +152,7 @@
         <h2>Let’s Build Something Exceptional Together</h2>
         <p>From furniture and fabrication to complete interior solutions, we create spaces that define luxury, functionality, and long-lasting value.</p>
         <div class="cta-buttons">
-          <a href="contact.html" class="btn">Request a Consultation</a>
+          <a href="contact.html" class="btn primary">Request a Consultation</a>
           <a href="#" class="btn secondary">View Our Work</a>
         </div>
       </div>
@@ -183,36 +182,34 @@
   <!-- JavaScript -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Slider
+      // Hero Slider
       const slides = document.querySelectorAll(".slide");
       const dots = document.querySelectorAll(".dot");
-      let index = 0;
+      let current = 0;
 
-      function showSlide(i) {
+      function showSlide(idx) {
         slides.forEach(s => s.classList.remove("active"));
         dots.forEach(d => d.classList.remove("active"));
-        slides[i].classList.add("active");
-        dots[i].classList.add("active");
+        slides[idx].classList.add("active");
+        dots[idx].classList.add("active");
       }
 
       setInterval(() => {
-        index = (index + 1) % slides.length;
-        showSlide(index);
+        current = (current + 1) % slides.length;
+        showSlide(current);
       }, 5000);
 
       dots.forEach((dot, i) => {
         dot.addEventListener("click", () => {
-          index = i;
-          showSlide(index);
+          current = i;
+          showSlide(current);
         });
       });
 
-      // Mobile menu
-      const menuToggle = document.querySelector('.menu-toggle');
+      // Mobile menu toggle
+      const toggle = document.querySelector('.menu-toggle');
       const nav = document.querySelector('.nk-nav');
-      menuToggle?.addEventListener('click', () => {
-        nav.classList.toggle('show');
-      });
+      toggle?.addEventListener('click', () => nav.classList.toggle('show'));
     });
   </script>
 </body>
