@@ -1,10 +1,5 @@
-/* ==========================================
-   HOME.CSS - Home page only
-   ========================================== */
-
-/* Hero Slider */
 .hero {
-  height: calc(100vh - var(--header-height) - var(--footer-height));
+  height: calc(100vh - var(--nk-header-height) - var(--nk-footer-height));
   position: relative;
   overflow: hidden;
 }
@@ -23,9 +18,7 @@
   transition: opacity 1.2s ease;
 }
 
-.slide.active {
-  opacity: 1;
-}
+.slide.active { opacity: 1; }
 
 .slide-content {
   position: absolute;
@@ -34,48 +27,47 @@
   transform: translateY(-50%);
   max-width: 680px;
   color: var(--white);
-  padding: 3.5rem 4rem;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(10px);
+  padding: 3rem 3.5rem;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
   border-radius: 12px;
   border: 1px solid rgba(201,164,76,0.25);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
 .slide h1 {
-  font-size: 5.2rem;
-  font-weight: 900;
+  font-size: 4.8rem;
   margin-bottom: 0.8rem;
   line-height: 1;
 }
 
 .slide h2 {
-  font-size: 3rem;
+  font-size: 2.8rem;
+  color: var(--gold);
   margin-bottom: 1.6rem;
 }
 
 .slide p {
   font-size: 1.35rem;
   line-height: 1.7;
-  margin-bottom: 2.2rem;
+  margin-bottom: 2rem;
 }
 
 .slide-cta {
   background: var(--gold);
   color: var(--black);
-  padding: 16px 40px;
-  font-size: 1.2rem;
+  padding: 14px 36px;
+  font-size: 1.15rem;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 6px;
   text-decoration: none;
-  display: inline-block;
-  transition: var(--transition);
+  transition: all 0.3s;
 }
 
 .slide-cta:hover {
   background: #d4b16f;
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(201,164,76,0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(201,164,76,0.5);
 }
 
 .slider-dots {
@@ -84,8 +76,7 @@
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 16px;
-  z-index: 10;
+  gap: 14px;
 }
 
 .dot {
@@ -94,7 +85,7 @@
   background: rgba(255,255,255,0.4);
   border-radius: 50%;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all 0.3s;
 }
 
 .dot.active {
@@ -107,20 +98,19 @@
 .section.services { background-image: url('../images/home/services-home.png'); }
 .section.products { background-image: url('../images/home/about-home.png'); } /* fallback */
 
-/* Split Section – Process + CTA */
+/* Split Section – horizontal on desktop, vertical on mobile */
 .split-section {
   display: flex;
-  min-height: 80vh;
+  flex-direction: column;
+  min-height: calc(100vh - var(--nk-header-height) - var(--nk-footer-height));
 }
 
-.split-left,
-.split-right {
+.split-left, .split-right {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6rem 5rem;
-  position: relative;
+  padding: 5rem 3rem;
 }
 
 .split-left {
@@ -134,38 +124,25 @@
 }
 
 .split-content {
-  max-width: 540px;
-  z-index: 2;
+  max-width: 520px;
 }
 
 .split-content h2 {
-  font-size: 3.4rem;
+  font-size: 3rem;
   margin-bottom: 2rem;
 }
 
-.split-content ol,
-.split-content ul {
-  font-size: 1.25rem;
+.split-content ol {
+  font-size: 1.2rem;
   line-height: 2;
 }
 
-.split-content li {
-  margin-bottom: 1.2rem;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 2rem;
-  margin-top: 2.5rem;
-}
-
 .btn {
-  padding: 16px 40px;
-  font-size: 1.15rem;
-  font-weight: 600;
-  border-radius: 8px;
+  padding: 14px 32px;
+  border-radius: 6px;
   text-decoration: none;
-  transition: var(--transition);
+  font-weight: 600;
+  transition: all 0.3s;
 }
 
 .btn.primary {
@@ -181,30 +158,11 @@
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
+/* Desktop split layout */
+@media (min-width: 992px) {
   .split-section {
-    flex-direction: column;
+    flex-direction: row;
   }
-  .split-left,
-  .split-right {
-    padding: 5rem 3rem;
-  }
-  .slide-content {
-    left: 5%;
-    max-width: 90%;
-    padding: 2.5rem 3rem;
-  }
-  .slide h1 { font-size: 4rem; }
-  .slide h2 { font-size: 2.4rem; }
-}
-
-@media (max-width: 576px) {
-  .slide h1 { font-size: 3.2rem; }
-  .slide h2 { font-size: 2rem; }
-  .slide p { font-size: 1.1rem; }
-  .slide-cta { padding: 14px 32px; font-size: 1.1rem; }
 }
