@@ -2,6 +2,7 @@
   --nk-header-height: 66px;
   --nk-footer-height: 62px;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +12,10 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: #111;
+
+  /* REQUIRED FOR FIXED HEADER & FOOTER (HERO FIX) */
+  padding-top: var(--nk-header-height);
+  padding-bottom: var(--nk-footer-height);
 }
 
 .container {
@@ -106,12 +111,13 @@ body {
   height: 2px;
   background: #c9a44c;
 }
+
 /* ===============================
    FIXED FOOTER – FINAL
 ================================ */
 
 .nk-footer {
-  position: fixed;      /* ✅ FIXED */
+  position: fixed;
   bottom: 0;
   width: 100%;
   background: #000;
@@ -168,7 +174,7 @@ body {
 .gold-social svg {
   width: 16px;
   height: 16px;
-  fill: #000;            /* ✅ ICON NOW VISIBLE */
+  fill: #000;
 }
 
 .gold-social:hover {
