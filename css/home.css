@@ -2,9 +2,7 @@
 section {
   width: 100%;
 }
-/* =====================================
-   HERO SECTION – FULL IMAGE (OPTION B)
-   ===================================== */
+/* ================= HERO – IMAGE SLIDER ================= */
 
 .nk-hero {
   width: 100%;
@@ -13,7 +11,6 @@ section {
   overflow: hidden;
 }
 
-/* SLIDER */
 .nk-hero-slider {
   width: 100%;
   height: 100%;
@@ -32,23 +29,22 @@ section {
   background-repeat: no-repeat;
 
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 1.2s ease-in-out;
   z-index: 0;
 }
 
-/* ACTIVE SLIDE */
 .nk-slide.active {
   opacity: 1;
   z-index: 1;
 }
 
-/* CONTENT */
+/* CONTENT BOX */
 .nk-hero-content {
-  position: relative;
-  z-index: 2;
-
-  max-width: 640px;
-  padding-left: 6%;
+  margin-left: 6%;
+  max-width: 620px;
+  padding: 40px;
+  background: rgba(0,0,0,0.45); /* readability */
+  border-radius: 6px;
 }
 
 /* TEXT */
@@ -69,29 +65,18 @@ section {
   font-size: 16px;
   line-height: 1.7;
   color: #f1f1f1;
-  max-width: 520px;
-  margin-bottom: 34px;
+  margin-bottom: 30px;
 }
 
-/* CTA */
+/* BUTTON */
 .nk-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-
+  display: inline-block;
   padding: 14px 36px;
   border: 2px solid #f5d67b;
-  background: transparent;
-
   color: #ffffff;
-  font-weight: 600;
   text-decoration: none;
-  transition: all 0.35s ease;
-}
-
-.nk-btn::after {
-  content: "→";
-  transition: transform 0.3s ease;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .nk-btn:hover {
@@ -99,32 +84,26 @@ section {
   color: #000;
 }
 
-.nk-btn:hover::after {
-  transform: translateX(5px);
-}
-
-/* DOT NAVIGATION */
+/* DOTS */
 .nk-dots {
   position: absolute;
   bottom: 30px;
   left: 6%;
   display: flex;
   gap: 10px;
-  z-index: 3;
+  z-index: 5;
 }
 
 .dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.45);
-  cursor: pointer;
+  background: rgba(255,255,255,0.4);
 }
 
 .dot.active {
   background: #f5d67b;
 }
-
 
 /* ABOUT SECTION */
 .nk-about-section {
