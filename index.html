@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NK Enterprises - Premium Furniture & Interior Solutions</title>
 
-  <!-- Consistent premium fonts for entire site -->
+  <!-- Premium Google Fonts – consistent across whole site -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Font Awesome for social icons -->
@@ -39,7 +39,6 @@
 
       <a href="contact.html" class="nk-cta">Get a Quote</a>
     </div>
-
     <div class="nk-divider"></div>
   </header>
 
@@ -92,7 +91,7 @@
   </section>
 
   <!-- WHO WE ARE -->
-  <section class="section about dark">
+  <section class="section about">
     <div class="container">
       <h2>Who We Are</h2>
       <p>NK Enterprises is a premium furniture, fabrication, and interior solutions company, delivering custom-built environments for corporate offices, retail spaces, and luxury residences.</p>
@@ -106,7 +105,7 @@
   </section>
 
   <!-- OUR SERVICES -->
-  <section class="section services light">
+  <section class="section services">
     <div class="container">
       <h2>Our Services</h2>
       <p>We specialize in delivering high-quality furniture, fabrication, and interior solutions tailored to meet the unique requirements of residential, commercial, and retail environments.</p>
@@ -120,7 +119,7 @@
   </section>
 
   <!-- OUR PRODUCTS -->
-  <section class="section products dark">
+  <section class="section products">
     <div class="container">
       <h2>Our Products</h2>
       <p>NK Enterprises offers a curated range of premium furniture and interior products designed to meet the demands of modern residential, commercial, and retail spaces.</p>
@@ -132,7 +131,7 @@
     </div>
   </section>
 
-  <!-- PROCESS + CTA -->
+  <!-- PROCESS + CTA SPLIT SECTION -->
   <section class="split-section">
     <div class="split-left">
       <div class="split-content">
@@ -152,7 +151,7 @@
         <h2>Let’s Build Something Exceptional Together</h2>
         <p>From furniture and fabrication to complete interior solutions, we create spaces that define luxury, functionality, and long-lasting value.</p>
         <div class="cta-buttons">
-          <a href="contact.html" class="btn">Request a Consultation</a>
+          <a href="contact.html" class="btn primary">Request a Consultation</a>
           <a href="#" class="btn secondary">View Our Work</a>
         </div>
       </div>
@@ -182,10 +181,10 @@
   <!-- JavaScript -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Hero Slider
+      // Hero slider
       const slides = document.querySelectorAll(".slide");
       const dots = document.querySelectorAll(".dot");
-      let index = 0;
+      let current = 0;
 
       function showSlide(i) {
         slides.forEach(s => s.classList.remove("active"));
@@ -195,25 +194,21 @@
       }
 
       setInterval(() => {
-        index = (index + 1) % slides.length;
-        showSlide(index);
+        current = (current + 1) % slides.length;
+        showSlide(current);
       }, 5000);
 
       dots.forEach((dot, i) => {
         dot.addEventListener("click", () => {
-          index = i;
-          showSlide(index);
+          current = i;
+          showSlide(current);
         });
       });
 
-      // Mobile Menu Toggle
-      const menuToggle = document.querySelector('.menu-toggle');
+      // Mobile menu toggle
+      const toggle = document.querySelector('.menu-toggle');
       const nav = document.querySelector('.nk-nav');
-      if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-          nav.classList.toggle('show');
-        });
-      }
+      toggle?.addEventListener('click', () => nav.classList.toggle('active'));
     });
   </script>
 </body>
