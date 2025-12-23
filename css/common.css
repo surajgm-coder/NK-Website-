@@ -2,9 +2,10 @@
   --nk-header-height: 80px;
   --nk-footer-height: 80px;
   --gold: #c9a44c;
-  --black: #000;
-  --white: #fff;
-  --dark-text: #111;
+  --black: #000000;
+  --white: #ffffff;
+  --dark-text: #111111;
+  --gray-bg: #f8f8f8;
 }
 
 * {
@@ -14,29 +15,45 @@
 }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   color: var(--dark-text);
-  background: #f9f9f9;
+  background: var(--gray-bg);
   line-height: 1.7;
   padding-top: var(--nk-header-height);
   padding-bottom: var(--nk-footer-height);
 }
 
-h1, h2, .section h2 {
-  font-family: 'Playfair Display', serif;
+/* Headings - Modern & Premium (same style as your reference image) */
+h1, h2, .section h2, .slide h1, .slide h2 {
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   letter-spacing: 0.5px;
+  color: var(--dark-text);
 }
 
+/* Hero & Section Headings */
+.section h2, .slide h1 {
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.slide h2 {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+/* Container */
 .container {
   width: 90%;
-  max-width: 1320px;
+  max-width: 1360px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 25px;
 }
 
-/* Header */
+/* HEADER */
 .nk-header {
   position: fixed;
   top: 0;
@@ -45,7 +62,7 @@ h1, h2, .section h2 {
   height: var(--nk-header-height);
   background: var(--black);
   z-index: 1000;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
 }
 
 .nk-header-inner {
@@ -63,23 +80,23 @@ h1, h2, .section h2 {
 
 .nk-brand-nk {
   color: var(--white);
-  font-size: 44px;
+  font-size: 46px;
   font-weight: 900;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
 }
 
 .nk-brand-ent {
   color: var(--gold);
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 700;
-  margin-left: 10px;
-  letter-spacing: 1px;
+  margin-left: 12px;
+  letter-spacing: 0.8px;
 }
 
 .nk-nav {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 40px;
 }
 
 .nk-nav a {
@@ -90,7 +107,9 @@ h1, h2, .section h2 {
   transition: color 0.3s ease;
 }
 
-.nk-nav a:hover, .nk-nav a.active { color: var(--gold); }
+.nk-nav a:hover, .nk-nav a.active {
+  color: var(--gold);
+}
 
 .nk-cta {
   background: var(--gold);
@@ -100,7 +119,7 @@ h1, h2, .section h2 {
   font-weight: 600;
   border-radius: 6px;
   text-decoration: none;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
 .nk-cta:hover {
@@ -118,7 +137,7 @@ h1, h2, .section h2 {
   box-shadow: 0 3px 12px rgba(201,164,76,0.5);
 }
 
-/* Mobile toggle */
+/* Mobile toggle (hidden on desktop) */
 .menu-toggle {
   display: none;
   background: none;
@@ -128,7 +147,7 @@ h1, h2, .section h2 {
   cursor: pointer;
 }
 
-/* Footer */
+/* FOOTER */
 .nk-footer {
   position: fixed;
   bottom: 0;
@@ -153,18 +172,18 @@ h1, h2, .section h2 {
 }
 
 .footer-logo {
-  height: 48px;
+  height: 50px;
   width: auto;
 }
 
 .footer-right {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 26px;
 }
 
 .footer-right i {
-  font-size: 26px;
+  font-size: 28px;
   color: var(--gold);
   transition: color 0.3s;
 }
@@ -173,7 +192,7 @@ h1, h2, .section h2 {
   color: #d4b16f;
 }
 
-/* General section */
+/* General section styles */
 .section {
   padding: 120px 0;
   min-height: calc(100vh - var(--nk-header-height) - var(--nk-footer-height));
@@ -186,7 +205,7 @@ h1, h2, .section h2 {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0,0,0,0.58);
   z-index: 1;
 }
 
@@ -204,8 +223,8 @@ h1, h2, .section h2 {
 .section p {
   font-size: 1.25rem;
   color: var(--white);
-  max-width: 900px;
-  margin-bottom: 1.5rem;
+  max-width: 920px;
+  margin-bottom: 1.6rem;
 }
 
 .section-links a {
@@ -213,13 +232,14 @@ h1, h2, .section h2 {
   margin-right: 2.5rem;
   font-weight: 600;
   text-decoration: none;
+  transition: opacity 0.3s;
 }
 
 .section-links a:hover {
-  text-decoration: underline;
+  opacity: 0.8;
 }
 
-/* Mobile */
+/* Mobile responsive */
 @media (max-width: 992px) {
   .menu-toggle { display: block; margin-left: auto; margin-right: 20px; }
   .nk-nav { display: none; flex-direction: column; position: absolute; top: var(--nk-header-height); left: 0; width: 100%; background: var(--black); padding: 20px 0; }
@@ -228,4 +248,6 @@ h1, h2, .section h2 {
   .nk-cta { margin: 20px 40px; display: block; text-align: center; }
   .section { padding: 90px 0; }
   .section h2 { font-size: 3rem; }
+  .slide h1 { font-size: 3.6rem; }
+  .slide h2 { font-size: 2.2rem; }
 }
