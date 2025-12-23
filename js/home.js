@@ -1,55 +1,43 @@
 <script>
 (function () {
 
-  let slides = [];
-  let dots = [];
+  const slides = document.querySelectorAll(".nk-slide");
+  const dots   = document.querySelectorAll(".dot");
   let index = 0;
-  let sliderTimer = null;
+  let timer;
 
-  function initHeroSlider() {
-    slides = document.querySelectorAll(".nk-slide");
-    dots   = document.querySelectorAll(".dot");
+  if (!slides.length) return;
 
-    if (!slides.length || !dots.length) {
-      console.error("Hero slider not initialized: slides or dots missing");
-      return;
-    }
-
-    // Reset all
+  function showSlide(i) {
     slides.forEach(s => s.classList.remove("active"));
     dots.forEach(d => d.classList.remove("active"));
 
-    // Force first slide active
-    slides[0].classList.add("active");
-    dots[0].classList.add("active");
-    index = 0;
+    slides[i].classList.add("active");
+    dots[i].classList.add("active");
 
-    startSlider();
+    index = i;
   }
 
-  function startSlider() {
-    stopSlider(); // prevent duplicate intervals
-
-    sliderTimer = setInterval(() => {
-      slides[index].classList.remove("active");
-      dots[index].classList.remove("active");
-
-      index = (index + 1) % slides.length;
-
-      slides[index].classList.add("active");
-      dots[index].classList.add("active");
-    }, 5000); // 5 seconds (premium timing)
+  function startAutoSlide() {
+    timer = setInterval(() => {
+      showSlide((index + 1) % slides.length);
+    }, 6000); // reader-friendly timing
   }
 
-  function stopSlider() {
-    if (sliderTimer) {
-      clearInterval(sliderTimer);
-      sliderTimer = null;
-    }
-  }
+  // DOT CLICK (MANUAL CONTROL)
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      clearInterval(timer);
+      showSlide(i);
+      startAutoSlide();
+    });
+  });
 
-  // Wait for full page load (HTML + images)
-  window.addEventListener("load", initHeroSlider);
+  // INIT
+  window.addEventListener("load", () => {
+    showSlide(0);
+    startAutoSlide();
+  });
 
 })();
 </script>
