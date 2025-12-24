@@ -1,13 +1,10 @@
-/* ========================================================= */
-/* HOME PAGE – NK ENTERPRISES                                 */
-/* Section-wise structured CSS                               */
-/* ========================================================= */
-
-
-/* ========================================================= */
-/* HERO SECTION – SLIDER LAYOUT                               */
-/* ========================================================= */
-
+/* ============================================= */
+/* HERO SLIDER – Updated as per your requirements */
+/* Main heading: Luxury gold, bold */
+/* Secondary: White, semi-bold */
+/* Description: White, readable */
+/* Consistent across all slides */
+/* ============================================= */
 .hero {
   height: calc(100vh - var(--nk-header-height) - var(--nk-footer-height));
   position: relative;
@@ -32,47 +29,25 @@
   opacity: 1;
 }
 
-
-/* ========================================================= */
-/* HERO CONTENT BOX                                           */
-/* ========================================================= */
-
-/* HERO TEXT SIZE – REFINED */
-.slide h1 {
-  font-size: 4.6rem;
-}
-
-.slide h2 {
-  font-size: 2.6rem;
-}
-
-.slide p {
-  font-size: 1.25rem;
-}
-
-/* CONTENT BOX – MORE COMPACT */
 .slide-content {
-  max-width: 680px;
-  padding: 3rem 3.5rem;
+  position: absolute;
+  left: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 780px;
+  padding: 3.5rem 4.5rem;
+  background: rgba(0, 0, 0, 0.58); /* Semi-transparent dark overlay for strong contrast */
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(201, 164, 76, 0.3); /* Subtle gold border */
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.5);
 }
-
-/* CTA BUTTON – REFINED */
-.slide-cta {
-  padding: 14px 40px;
-  font-size: 1.15rem;
-}
-
-
-
-/* ========================================================= */
-/* HERO TYPOGRAPHY                                            */
-/* ========================================================= */
 
 .slide h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 5.4rem;
-  font-weight: 900;
-  color: var(--gold);
+  font-size: 5.4rem; /* Large & commanding */
+  font-weight: 900;  /* Bold as required */
+  color: var(--gold); /* Luxury gold main heading */
   margin-bottom: 0.8rem;
   line-height: 1.05;
   letter-spacing: -1px;
@@ -81,8 +56,8 @@
 .slide h2 {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
-  font-weight: 700;
-  color: var(--white);
+  font-weight: 700; /* Semi-bold */
+  color: var(--white); /* White secondary heading */
   margin-bottom: 1.8rem;
 }
 
@@ -90,16 +65,11 @@
   font-family: 'Inter', sans-serif;
   font-size: 1.4rem;
   line-height: 1.8;
-  color: var(--white);
+  color: var(--white); /* White description text */
   margin-bottom: 2.6rem;
   max-width: 90%;
   opacity: 0.95;
 }
-
-
-/* ========================================================= */
-/* HERO CTA BUTTON                                           */
-/* ========================================================= */
 
 .slide-cta {
   display: inline-block;
@@ -120,11 +90,7 @@
   box-shadow: 0 16px 48px rgba(201, 164, 76, 0.6);
 }
 
-
-/* ========================================================= */
-/* HERO SLIDER DOTS                                          */
-/* ========================================================= */
-
+/* Slider Dots – Elegant & aligned */
 .slider-dots {
   position: absolute;
   bottom: 60px;
@@ -151,11 +117,7 @@
   transform: scale(1.3);
 }
 
-
-/* ========================================================= */
-/* RESPONSIVE – TABLET                                       */
-/* ========================================================= */
-
+/* Responsive adjustments */
 @media (max-width: 992px) {
   .slide-content {
     left: 5%;
@@ -177,39 +139,16 @@
   }
 }
 
-
-/* ========================================================= */
-/* RESPONSIVE – MOBILE                                       */
-/* ========================================================= */
-
 @media (max-width: 576px) {
   .slide-content {
     padding: 2.5rem 2rem;
   }
-
-  .slide h1 {
-    font-size: 3.4rem;
-  }
-
-  .slide h2 {
-    font-size: 2rem;
-  }
+  .slide h1 { font-size: 3.4rem; }
+  .slide h2 { font-size: 2rem; }
 }
 
+/* Keep your existing section backgrounds (unchanged) */
+.section.about { background-image: url('../images/home/about-home.png'); }
+.section.services { background-image: url('../images/home/services-home.png'); }
+.section.products { background-image: url('../images/home/product-home.png'); } /* or fallback */
 
-/* ========================================================= */
-/* HOME PAGE – OTHER SECTION BACKGROUNDS                      */
-/* (Kept unchanged as requested)                              */
-/* ========================================================= */
-
-.section.about {
-  background-image: url('../images/home/about-home.png');
-}
-
-.section.services {
-  background-image: url('../images/home/services-home.png');
-}
-
-.section.products {
-  background-image: url('../images/home/product-home.png');
-}
