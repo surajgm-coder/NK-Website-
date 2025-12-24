@@ -1,3 +1,7 @@
+/* ================= FONT IMPORTS ================= */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ================= ROOT VARIABLES ================= */
 :root {
   --nk-header-height: 80px;
   --nk-footer-height: 80px;
@@ -8,12 +12,14 @@
   --gray-bg: #f8f8f8;
 }
 
+/* ================= GLOBAL RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ================= BASE BODY ================= */
 body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
@@ -22,30 +28,28 @@ body {
   line-height: 1.7;
   padding-top: var(--nk-header-height);
   padding-bottom: var(--nk-footer-height);
+  overflow-x: hidden;
 }
 
-/* Headings - Modern & Premium (same style as your reference image) */
-h1, h2, .section h2, .slide h1, .slide h2 {
+/* ================= HEADINGS ================= */
+h1, h2 {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.5px;
-  color: var(--dark-text);
 }
 
-/* Hero & Section Headings */
-.section h2, .slide h1 {
+.section h2,
+.slide h1 {
   font-size: 3.8rem;
-  font-weight: 800;
   line-height: 1.1;
 }
 
 .slide h2 {
   color: var(--gold);
-  font-weight: 700;
   font-size: 2.4rem;
 }
 
-/* Container */
+/* ================= CONTAINER ================= */
 .container {
   width: 90%;
   max-width: 1360px;
@@ -53,12 +57,10 @@ h1, h2, .section h2, .slide h1, .slide h2 {
   padding: 0 25px;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 .nk-header {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  inset: 0 0 auto 0;
   height: var(--nk-header-height);
   background: var(--black);
   z-index: 1000;
@@ -73,26 +75,24 @@ h1, h2, .section h2, .slide h1, .slide h2 {
 }
 
 .nk-brand {
-  text-decoration: none;
   display: flex;
   align-items: baseline;
+  text-decoration: none;
 }
 
 .nk-brand-nk {
   color: var(--white);
   font-size: 46px;
   font-weight: 900;
-  letter-spacing: 1px;
 }
 
 .nk-brand-ent {
   color: var(--gold);
   font-size: 32px;
-  font-weight: 700;
   margin-left: 12px;
-  letter-spacing: 0.8px;
 }
 
+/* ================= NAVIGATION ================= */
 .nk-nav {
   display: flex;
   align-items: center;
@@ -101,23 +101,24 @@ h1, h2, .section h2, .slide h1, .slide h2 {
 
 .nk-nav a {
   color: var(--white);
-  text-decoration: none;
   font-size: 17px;
   font-weight: 500;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
-.nk-nav a:hover, .nk-nav a.active {
+.nk-nav a:hover,
+.nk-nav a.active {
   color: var(--gold);
 }
 
+/* ================= CTA ================= */
 .nk-cta {
   background: var(--gold);
   color: var(--black);
   padding: 12px 32px;
-  font-size: 16px;
-  font-weight: 600;
   border-radius: 6px;
+  font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -127,27 +128,26 @@ h1, h2, .section h2, .slide h1, .slide h2 {
   transform: translateY(-2px);
 }
 
+/* ================= HEADER DIVIDER ================= */
 .nk-divider {
   position: absolute;
   bottom: 0;
-  left: 0;
   width: 100%;
-  height: 5px;
-  background: linear-gradient(90deg, transparent, var(--gold) 20%, var(--gold) 80%, transparent);
-  box-shadow: 0 3px 12px rgba(201,164,76,0.5);
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
-/* Mobile toggle (hidden on desktop) */
+/* ================= MOBILE MENU ================= */
 .menu-toggle {
   display: none;
   background: none;
   border: none;
-  color: white;
   font-size: 32px;
+  color: var(--white);
   cursor: pointer;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 .nk-footer {
   position: fixed;
   bottom: 0;
@@ -158,11 +158,6 @@ h1, h2, .section h2, .slide h1, .slide h2 {
   z-index: 999;
 }
 
-.nk-footer-divider {
-  height: 5px;
-  background: linear-gradient(90deg, transparent, var(--gold) 20%, var(--gold) 80%, transparent);
-}
-
 .nk-footer-inner {
   height: 100%;
   display: flex;
@@ -171,31 +166,10 @@ h1, h2, .section h2, .slide h1, .slide h2 {
   font-size: 15px;
 }
 
-.footer-logo {
-  height: 50px;
-  width: auto;
-}
-
-.footer-right {
-  display: flex;
-  align-items: center;
-  gap: 26px;
-}
-
-.footer-right i {
-  font-size: 28px;
-  color: var(--gold);
-  transition: color 0.3s;
-}
-
-.footer-right a:hover i {
-  color: #d4b16f;
-}
-
-/* General section styles */
+/* ================= SECTIONS ================= */
 .section {
-  padding: 120px 0;
   min-height: calc(100vh - var(--nk-header-height) - var(--nk-footer-height));
+  padding: 120px 0;
   position: relative;
   background-size: cover;
   background-position: center;
@@ -206,7 +180,6 @@ h1, h2, .section h2, .slide h1, .slide h2 {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.58);
-  z-index: 1;
 }
 
 .section .container {
@@ -215,39 +188,47 @@ h1, h2, .section h2, .slide h1, .slide h2 {
 }
 
 .section h2 {
-  font-size: 3.8rem;
   color: var(--gold);
   margin-bottom: 1.8rem;
 }
 
 .section p {
-  font-size: 1.25rem;
   color: var(--white);
+  font-size: 1.25rem;
   max-width: 920px;
-  margin-bottom: 1.6rem;
 }
 
-.section-links a {
-  color: var(--gold);
-  margin-right: 2.5rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: opacity 0.3s;
-}
-
-.section-links a:hover {
-  opacity: 0.8;
-}
-
-/* Mobile responsive */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 992px) {
-  .menu-toggle { display: block; margin-left: auto; margin-right: 20px; }
-  .nk-nav { display: none; flex-direction: column; position: absolute; top: var(--nk-header-height); left: 0; width: 100%; background: var(--black); padding: 20px 0; }
-  .nk-nav.active { display: flex; }
-  .nk-nav a { padding: 16px 40px; text-align: center; font-size: 18px; }
-  .nk-cta { margin: 20px 40px; display: block; text-align: center; }
-  .section { padding: 90px 0; }
-  .section h2 { font-size: 3rem; }
-  .slide h1 { font-size: 3.6rem; }
-  .slide h2 { font-size: 2.2rem; }
+  .menu-toggle {
+    display: block;
+  }
+
+  .nk-nav {
+    display: none;
+    position: absolute;
+    top: var(--nk-header-height);
+    left: 0;
+    width: 100%;
+    background: var(--black);
+    flex-direction: column;
+  }
+
+  .nk-nav.active {
+    display: flex;
+  }
+
+  .nk-nav a {
+    padding: 16px;
+    font-size: 18px;
+  }
+
+  .nk-cta {
+    margin: 20px;
+    text-align: center;
+  }
+
+  .section h2 {
+    font-size: 2.8rem;
+  }
 }
