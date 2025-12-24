@@ -37,21 +37,31 @@
 /* HERO CONTENT BOX                                           */
 /* ========================================================= */
 
-.slide-content {
-  position: absolute;
-  left: 8%;
-  top: 50%;
-  transform: translateY(-50%);
-  max-width: 780px;
-  padding: 3.5rem 4.5rem;
-
-  background: rgba(0, 0, 0, 0.58);
-  backdrop-filter: blur(10px);
-
-  border-radius: 16px;
-  border: 1px solid rgba(201, 164, 76, 0.3);
-  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.5);
+/* HERO TEXT SIZE – REFINED */
+.slide h1 {
+  font-size: 4.6rem;
 }
+
+.slide h2 {
+  font-size: 2.6rem;
+}
+
+.slide p {
+  font-size: 1.25rem;
+}
+
+/* CONTENT BOX – MORE COMPACT */
+.slide-content {
+  max-width: 680px;
+  padding: 3rem 3.5rem;
+}
+
+/* CTA BUTTON – REFINED */
+.slide-cta {
+  padding: 14px 40px;
+  font-size: 1.15rem;
+}
+
 
 
 /* ========================================================= */
