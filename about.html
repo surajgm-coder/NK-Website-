@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>About NK Enterprises - Premium Interior & Modular Solutions</title>
 
-    <!-- Premium fonts -->
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -18,7 +18,7 @@
 </head>
 <body>
 
-<!-- HEADER (same as home) -->
+<!-- HEADER (shared) -->
 <header class="nk-header">
     <div class="nk-header-inner container">
         <a href="index.html" class="nk-brand">
@@ -42,7 +42,7 @@
     <div class="nk-divider"></div>
 </header>
 
-<!-- HERO SECTION (Slider) -->
+<!-- HERO SECTION - Consistent across all slides -->
 <section class="hero">
     <div class="slider">
         <!-- Slide 1 -->
@@ -51,7 +51,7 @@
                 <h1>About NK Enterprises</h1>
                 <h2>Transforming Spaces with Precision & Passion</h2>
                 <p>Founded in 2023 – delivering premium modular solutions, custom interiors, and renovations with expertise and excellence.</p>
-                <a href="#approach" class="btn gold">Discover More</a>
+                <a href="#who-we-are" class="btn gold">Discover More</a>
             </div>
         </div>
 
@@ -61,7 +61,7 @@
                 <h1>About NK Enterprises</h1>
                 <h2>Where Design Meets Functionality</h2>
                 <p>Specializing in modular kitchens, wardrobes, custom interiors, and turnkey projects – tailored to your lifestyle.</p>
-                <a href="#approach" class="btn gold">Discover More</a>
+                <a href="#who-we-are" class="btn gold">Discover More</a>
             </div>
         </div>
 
@@ -71,7 +71,7 @@
                 <h1>About NK Enterprises</h1>
                 <h2>Crafted with Precision & Care</h2>
                 <p>From concept to completion – we bring your vision to life with quality materials and professional execution.</p>
-                <a href="#approach" class="btn gold">Discover More</a>
+                <a href="#who-we-are" class="btn gold">Discover More</a>
             </div>
         </div>
 
@@ -81,12 +81,12 @@
                 <h1>About NK Enterprises</h1>
                 <h2>Your Trusted Partner in Transformation</h2>
                 <p>Young in years, rich in expertise – committed to creating inspiring, efficient, and timeless spaces.</p>
-                <a href="#approach" class="btn gold">Discover More</a>
+                <a href="#who-we-are" class="btn gold">Discover More</a>
             </div>
         </div>
     </div>
 
-    <!-- Slider Navigation -->
+    <!-- Dots Navigation -->
     <div class="slider-dots">
         <span class="dot active"></span>
         <span class="dot"></span>
@@ -96,10 +96,10 @@
 </section>
 
 <!-- MAIN CONTENT -->
-<main class="about-content">
+<main class="about-main">
 
     <!-- Who We Are -->
-    <section class="section who-we-are">
+    <section class="section about-section" id="who-we-are">
         <div class="container">
             <h2>Who We Are</h2>
             <p>NK Enterprise is a client-focused interior and modular solutions company specializing in:</p>
@@ -115,7 +115,7 @@
     </section>
 
     <!-- Our Approach -->
-    <section class="section approach" id="approach">
+    <section class="section approach-section">
         <div class="container">
             <h2>Our Approach</h2>
             <p>We follow a structured, client-centric process to ensure seamless execution and outstanding results:</p>
@@ -130,7 +130,7 @@
     </section>
 
     <!-- Mission & Vision -->
-    <section class="section mission-vision">
+    <section class="section mission-vision-section">
         <div class="container">
             <div class="mission">
                 <h2>Our Mission</h2>
@@ -144,7 +144,7 @@
     </section>
 </main>
 
-<!-- FOOTER (same as home) -->
+<!-- FOOTER (shared) -->
 <footer class="nk-footer">
     <div class="nk-footer-divider"></div>
     <div class="nk-footer-inner container">
@@ -164,38 +164,42 @@
     </div>
 </footer>
 
-<!-- Simple Slider JavaScript -->
+<!-- Hero Slider JS -->
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const slides = document.querySelectorAll(".slide");
         const dots = document.querySelectorAll(".dot");
         let current = 0;
+        const intervalTime = 5500;
 
         function showSlide(index) {
             slides.forEach(s => s.classList.remove("active"));
             dots.forEach(d => d.classList.remove("active"));
             slides[index].classList.add("active");
             dots[index].classList.add("active");
+            current = index;
         }
 
-        // Auto-slide every 5 seconds
-        setInterval(() => {
+        let auto = setInterval(() => {
             current = (current + 1) % slides.length;
             showSlide(current);
-        }, 5000);
+        }, intervalTime);
 
-        // Click dots
         dots.forEach((dot, i) => {
             dot.addEventListener("click", () => {
-                current = i;
-                showSlide(current);
+                clearInterval(auto);
+                showSlide(i);
+                auto = setInterval(() => {
+                    current = (current + 1) % slides.length;
+                    showSlide(current);
+                }, intervalTime);
             });
         });
 
-        // Mobile menu toggle
-        const toggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('.nk-nav');
-        toggle?.addEventListener('click', () => nav.classList.toggle('active'));
+        // Mobile menu
+        document.querySelector('.menu-toggle')?.addEventListener('click', () => {
+            document.querySelector('.nk-nav').classList.toggle('active');
+        });
     });
 </script>
 
