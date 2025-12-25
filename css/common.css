@@ -160,20 +160,16 @@ h3, h4 {
 .footer-right a:hover i {
     color: #d4b16f;
 }
-/* General section styles - DESKTOP (unchanged) */
+/* General section styles - DESKTOP (no dark overlay on background) */
 .section {
     height: calc(100vh - var(--nk-header-height) - var(--nk-footer-height));
     position: relative;
     background-size: cover;
     background-position: center;
 }
-.section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.58);
-    z-index: 1;
-}
+/* REMOVED: .section::before { ... } → no more dark overlay on background images */
+
+/* Content box (keeps its own dark patch for text readability) */
 .section-content {
     position: absolute;
     left: 8%;
@@ -182,7 +178,7 @@ h3, h4 {
     max-width: 680px;
     color: var(--white);
     padding: 3rem 3.5rem;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.5); /* Keeps dark background for text */
     backdrop-filter: blur(8px);
     border-radius: 12px;
     border: 1px solid rgba(201,164,76,0.25);
@@ -300,11 +296,7 @@ h3, h4 {
 
 /* MOBILE RESPONSIVE - Only affects screens ≤992px */
 @media (max-width: 992px) {
-    .menu-toggle { 
-        display: block; 
-        margin-left: auto; 
-        margin-right: 20px; 
-    }
+    .menu-toggle { display: block; margin-left: auto; margin-right: 20px; }
     .nk-nav { 
         display: none; 
         flex-direction: column; 
@@ -315,26 +307,18 @@ h3, h4 {
         background: var(--black); 
         padding: 20px 0; 
     }
-    .nk-nav.active { 
-        display: flex; 
-    }
-    .nk-nav a { 
-        padding: 16px 40px; 
-        text-align: center; 
-        font-size: 18px; 
-    }
-    .nk-cta { 
-        margin: 20px 40px; 
-        display: block; 
-        text-align: center; 
-    }
+    .nk-nav.active { display: flex; }
+    .nk-nav a { padding: 16px 40px; text-align: center; font-size: 18px; }
+    .nk-cta { margin: 20px 40px; display: block; text-align: center; }
 
-    /* Sections become scrollable and centered on mobile */
+    /* Sections become flexible height */
     .section {
         height: auto;
         min-height: 80vh;
         padding: 100px 0;
     }
+
+    /* Content box adapts for mobile (centered, full width) */
     .section-content {
         position: relative;
         left: auto;
@@ -343,23 +327,11 @@ h3, h4 {
         max-width: 90%;
         margin: 0 auto;
         padding: 2.5rem 2rem;
-        background: rgba(0,0,0,0.6);
         text-align: center;
     }
-    .section-content h2 {
-        font-size: 3rem;
-    }
-    .section-content h3 {
-        font-size: 2.2rem;
-    }
 
-    /* Hero slider text on mobile */
-    .slide h1 { 
-        font-size: 3.6rem; 
-    }
-    .slide h2 { 
-        font-size: 2.2rem; 
-    }
+    .section-content h2 { font-size: 3rem; }
+    .section-content h3 { font-size: 2.2rem; }
 
     /* Cards stack vertically */
     .cards {
@@ -371,12 +343,6 @@ h3, h4 {
         margin: 40px auto;
     }
 
-    .cta-buttons { 
-        flex-direction: column; 
-        align-items: center;
-    }
-    .btn {
-        width: 80%;
-        max-width: 300px;
-    }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    .btn { width: 80%; max-width: 300px; }
 }
