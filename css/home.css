@@ -1,15 +1,88 @@
 /* home.css */
-.hero {
-    height: calc(100vh - var(--nk-header-height) - var(--nk-footer-height));
+
+/* ==================== BASE SECTION & HERO STYLES (New – Required) ==================== */
+.section, .hero {
+    height: 100vh;                    /* Consistent full viewport height */
+    min-height: 800px;
     position: relative;
-    overflow: hidden;
+    background-size: cover;
+    background-position: center;
 }
 
+.section::before, .hero::before {     /* Identical dark overlay everywhere */
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.58);  /* Same opacity & style as Hero */
+    z-index: 1;
+}
+
+/* Text content positioning – same for Hero & all sections */
+.section-content, .slide-content {
+    position: absolute;
+    z-index: 2;
+    left: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 720px;
+    color: white;
+    padding: 3rem 4rem;
+}
+
+/* Luxury gold headings & white text – consistent across all sections */
+h1 { color: var(--gold); font-weight: 900; font-size: 4.5rem; margin-bottom: 0.6rem; }
+h2 { color: white; font-weight: 600; font-size: 2.6rem; margin-bottom: 1.4rem; }
+p  { font-size: 1.3rem; line-height: 1.7; }
+
+/* Premium 3D cards at bottom of Services & Products */
+.premium-cards {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    width: 90%;
+    max-width: 1400px;
+    z-index: 3;
+}
+
+.card.3d {
+    background: rgba(255,255,255,0.92);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(201,164,76,0.4);
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+.card.3d:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.35), 0 0 0 2px var(--gold);
+}
+
+.card.gold-accent h3 { color: var(--gold); }
+
+/* Gold button style */
+.btn.gold {
+    background: var(--gold);
+    color: black;
+    padding: 14px 36px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* ==================== YOUR EXISTING HERO SLIDER STYLES (Keep as is) ==================== */
+.hero {
+    /* Already covered by .hero above – no need to repeat height */
+    overflow: hidden;
+}
 .slider {
     position: relative;
     height: 100%;
 }
-
 .slide {
     position: absolute;
     inset: 0;
@@ -18,45 +91,29 @@
     opacity: 0;
     transition: opacity 1.2s ease;
 }
-
 .slide.active { opacity: 1; }
 
+/* Make slide-content match the new unified positioning */
 .slide-content {
-    position: absolute;
-    left: 8%;
-    top: 50%;
-    transform: translateY(-50%);
-    max-width: 680px;
-    color: var(--white);
-    padding: 3rem 3.5rem;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.5);           /* Keep your blurred box if you like */
     backdrop-filter: blur(8px);
-    border-radius: 12px;
     border: 1px solid rgba(201,164,76,0.25);
     box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    border-radius: 12px;
 }
 
+/* Slightly larger hero headings for impact */
 .slide h1 {
-    font-size: 4.8rem;
-    margin-bottom: 0.8rem;
-    line-height: 1;
-    color: var(--gold);
-    font-weight: 900;
+    font-size: 5rem;                      /* Bigger than section h1 */
 }
-
 .slide h2 {
     font-size: 2.8rem;
-    color: var(--white);
-    margin-bottom: 1.6rem;
-    font-weight: 600;
 }
-
 .slide p {
     font-size: 1.35rem;
-    line-height: 1.7;
-    margin-bottom: 2rem;
 }
 
+/* CTA button in hero */
 .slide-cta {
     background: var(--gold);
     color: var(--black);
@@ -67,13 +124,13 @@
     text-decoration: none;
     transition: all 0.3s;
 }
-
 .slide-cta:hover {
     background: #d4b16f;
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(201,164,76,0.5);
 }
 
+/* Slider dots */
 .slider-dots {
     position: absolute;
     bottom: 40px;
@@ -81,8 +138,8 @@
     transform: translateX(-50%);
     display: flex;
     gap: 14px;
+    z-index: 3;
 }
-
 .dot {
     width: 14px;
     height: 14px;
@@ -91,25 +148,23 @@
     cursor: pointer;
     transition: all 0.3s;
 }
-
 .dot.active {
     background: var(--gold);
     transform: scale(1.3);
 }
 
-/* Section backgrounds (adjust paths as needed) */
-.section.about { background-image: url('../images/home/about-home.png'); }
-.section.services { background-image: url('../images/home/services-home.png'); }
-.section.products { background-image: url('../images/home/products-home.png'); }
+/* Section background images */
+.section.about     { background-image: url('../images/home/about-home.png'); }
+.section.services  { background-image: url('../images/home/services-home.png'); }
+.section.products  { background-image: url('../images/home/products-home.png'); }
 .section.projects-process { background-image: url('../images/home/projects-home.png'); }
 
-/* Split Section – always vertical */
+/* Split Section – only if you still need it later */
 .split-section {
     display: flex;
     flex-direction: column;
     min-height: calc(100vh - var(--nk-header-height) - var(--nk-footer-height));
 }
-
 .split-left, .split-right {
     flex: 1;
     display: flex;
@@ -117,27 +172,27 @@
     justify-content: center;
     padding: 5rem 3rem;
 }
+.split-left  { background: var(--white); color: var(--dark-text); }
+.split-right { background: var(--gold);  color: var(--black); }
+.split-content { max-width: 520px; }
+.split-content h2 { font-size: 3rem; margin-bottom: 2rem; }
+.split-content ol { font-size: 1.2rem; line-height: 2; }
 
-.split-left {
-    background: var(--white);
-    color: var(--dark-text);
-}
-
-.split-right {
-    background: var(--gold);
-    color: var(--black);
-}
-
-.split-content {
-    max-width: 520px;
-}
-
-.split-content h2 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
-}
-
-.split-content ol {
-    font-size: 1.2rem;
-    line-height: 2;
+/* ==================== MOBILE RESPONSIVE (Strongly Recommended) ==================== */
+@media (max-width: 992px) {
+    .section, .hero {
+        height: 90vh;
+        min-height: 700px;
+    }
+    .section-content, .slide-content {
+        left: 5%;
+        padding: 2rem 2.5rem;
+        max-width: 90%;
+    }
+    h1 { font-size: 3.2rem; }
+    h2 { font-size: 2rem; }
+    .premium-cards {
+        bottom: 8%;
+        grid-template-columns: 1fr;     /* Stack cards vertically on mobile */
+    }
 }
