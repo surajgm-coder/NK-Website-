@@ -1,6 +1,6 @@
-/* home.css - UPDATED with 2x2 right-side cards for Services/Products/Projects */
+/* home.css - FINAL VERSION: Larger cards + Golden headings + Perfect visibility */
 
-/* BASE SECTION & HERO STYLES (consistent full height + dark overlay) */
+/* BASE SECTION & HERO STYLES */
 .section,
 .hero {
     height: 100vh;
@@ -19,7 +19,7 @@
     z-index: 1;
 }
 
-/* Unified text content box - left side, same for Hero/About/Services/Products */
+/* Unified text content box - left side */
 .section-content,
 .slide-content {
     position: absolute;
@@ -27,7 +27,7 @@
     left: 8%;
     top: 50%;
     transform: translateY(-50%);
-    max-width: 48%;              /* Reduced width to leave space for right-side cards */
+    max-width: 48%;
     color: white;
     padding: 3rem 4rem;
     background: rgba(0, 0, 0, 0.5);
@@ -37,61 +37,95 @@
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
-/* Luxury typography - consistent across all */
-h1 { color: var(--gold); font-weight: 900; font-size: 4.5rem; margin-bottom: 0.6rem; }
-h2 { color: white; font-weight: 600; font-size: 2.6rem; margin-bottom: 1.4rem; }
-p  { font-size: 1.3rem; line-height: 1.7; }
+/* Luxury typography */
+h1 { 
+    color: var(--gold); 
+    font-weight: 900; 
+    font-size: 4.5rem; 
+    margin-bottom: 0.6rem; 
+}
+h2 { 
+    color: white; 
+    font-weight: 600; 
+    font-size: 2.6rem; 
+    margin-bottom: 1.4rem; 
+}
+p { 
+    font-size: 1.3rem; 
+    line-height: 1.7; 
+}
 
-/* RIGHT-SIDE 2×2 GRID CARDS (Services, Products, Projects/Process) */
+/* RIGHT-SIDE 2×2 LARGER CARDS – INCREASED SIZE + GOLDEN HEADINGS */
 .premium-cards {
     position: absolute;
-    right: 8%;                    /* Right side of screen */
+    right: 6%;                        /* Slightly closer to edge for balance */
     top: 50%;
     transform: translateY(-50%);
     display: grid;
-    grid-template-columns: repeat(2, 1fr);   /* 2 columns */
-    grid-template-rows: repeat(2, auto);     /* 2 rows → perfect 2×2 */
-    gap: 1.8rem;
-    width: 38%;                   /* Compact width for right-side balance */
-    max-width: 520px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2.8rem;                      /* Generous spacing between large cards */
+    width: 50%;                       /* Wider block for bigger cards */
+    max-width: 720px;                 /* Increased max width */
     z-index: 3;
 }
 
 .card.3d {
-    background: rgba(255, 255, 255, 0.94);
-    padding: 1.6rem;
-    border-radius: 12px;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(201, 164, 76, 0.35);
-    transition: all 0.4s ease;
+    background: rgba(255, 255, 255, 0.97);
+    padding: 3rem 2.5rem;             /* MUCH larger padding → significantly bigger cards */
+    border-radius: 20px;              /* Softer, premium corners */
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        0 0 0 2px rgba(201, 164, 76, 0.4);
+    transition: all 0.5s ease;
     text-align: center;
-    backdrop-filter: blur(4px);
-    min-height: 160px;
+    backdrop-filter: blur(8px);
+    min-height: 320px;                /* Much taller cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .card.3d:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.35), 0 0 0 2px var(--gold);
+    transform: translateY(-16px) scale(1.04);
+    box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.4),
+        0 0 0 4px var(--gold);
 }
 
+/* GOLDEN HEADINGS – LARGE & BOLD */
 .card.3d h3 {
     color: var(--gold);
-    font-size: 1.45rem;
-    margin-bottom: 0.9rem;
-    font-weight: 700;
+    font-size: 2.3rem;                /* Much larger golden headings */
+    font-weight: 900;
+    margin-bottom: 1.4rem;
+    line-height: 1.2;
+    letter-spacing: 0.6px;
 }
 
+/* DESCRIPTION TEXT – CLEAR & READABLE */
 .card.3d p {
-    font-size: 1.05rem;
-    color: #333;
-    line-height: 1.5;
+    font-size: 1.35rem;
+    color: #1a1a1a;
+    line-height: 1.7;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
-/* Gold accent for Products cards (optional) */
-.card.gold-accent h3 {
-    color: var(--gold);
+/* Optional elegant underline under golden heading */
+.card.3d h3::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--gold);
+    margin: 1.2rem auto 0;
+    border-radius: 4px;
+    opacity: 0.8;
 }
 
-/* Gold button style */
+/* Gold button */
 .btn.gold {
     background: var(--gold);
     color: black;
@@ -103,10 +137,8 @@ p  { font-size: 1.3rem; line-height: 1.7; }
     margin-top: 1.5rem;
 }
 
-/* ==================== HERO SLIDER STYLES (kept & optimized) ==================== */
-.hero {
-    overflow: hidden;
-}
+/* HERO SLIDER STYLES */
+.hero { overflow: hidden; }
 
 .slider {
     position: relative;
@@ -122,9 +154,7 @@ p  { font-size: 1.3rem; line-height: 1.7; }
     transition: opacity 1.2s ease;
 }
 
-.slide.active {
-    opacity: 1;
-}
+.slide.active { opacity: 1; }
 
 /* Slider dots */
 .slider-dots {
@@ -140,7 +170,7 @@ p  { font-size: 1.3rem; line-height: 1.7; }
 .dot {
     width: 14px;
     height: 14px;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255,255,255,0.4);
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s;
@@ -151,16 +181,15 @@ p  { font-size: 1.3rem; line-height: 1.7; }
     transform: scale(1.3);
 }
 
-/* Section background images (correct paths as per your structure) */
-.section.about           { background-image: url('../images/home/about-home.png'); }
-.section.services        { background-image: url('../images/home/services-home.png'); }
-.section.products        { background-image: url('../images/home/products-home.png'); }
+/* Background images */
+.section.about            { background-image: url('../images/home/about-home.png'); }
+.section.services         { background-image: url('../images/home/services-home.png'); }
+.section.products         { background-image: url('../images/home/products-home.png'); }
 .section.projects-process { background-image: url('../images/home/projects-home.png'); }
 
-/* ==================== MOBILE RESPONSIVE (cards stack, text centers) ==================== */
+/* MOBILE RESPONSIVE */
 @media (max-width: 992px) {
-    .section,
-    .hero {
+    .section, .hero {
         height: auto;
         min-height: 80vh;
         padding: 100px 0 60px;
@@ -186,10 +215,23 @@ p  { font-size: 1.3rem; line-height: 1.7; }
         right: auto;
         top: auto;
         transform: none;
-        grid-template-columns: 1fr;      /* Stack vertically on mobile */
+        grid-template-columns: 1fr;
         width: 90%;
         max-width: none;
-        margin: 2.5rem auto 0;
-        gap: 1.5rem;
+        margin: 3rem auto 0;
+        gap: 2rem;
+    }
+
+    .card.3d {
+        padding: 2.5rem 2rem;
+        min-height: 280px;
+    }
+
+    .card.3d h3 {
+        font-size: 2rem;
+    }
+
+    .card.3d p {
+        font-size: 1.25rem;
     }
 }
