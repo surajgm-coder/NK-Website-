@@ -200,7 +200,6 @@ h1, h2, .section h2, .slide h1, .slide h2 {
 /* SECTIONS - Now clean white with background image support */
 .section {
   padding: 110px 0;
-  min-height: calc(100vh - var(--nk-header-height) - var(--nk-footer-height));
   position: relative;
   background-size: cover;
   background-position: center;
