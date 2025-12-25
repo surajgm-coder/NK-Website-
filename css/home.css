@@ -1,4 +1,9 @@
-/* home.css - FINAL VERSION: Larger cards + Golden headings + Perfect visibility */
+/* home.css - FINAL VERSION: NO BACKGROUND OVERLAY + CLEAR IMAGES + READABLE CONTENT */
+
+:root {
+    --gold: #c9a44c;
+    /* Add other variables if needed from common.css */
+}
 
 /* BASE SECTION & HERO STYLES */
 .section,
@@ -10,16 +15,10 @@
     background-position: center;
 }
 
-.section::before,
-.hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.58);
-    z-index: 1;
-}
+/* IMPORTANT: NO DARK OVERLAY on background → images now clear & bright */
+/* .section::before, .hero::before removed completely */
 
-/* Unified text content box - left side */
+/* Unified text content box - left side (light background for readability) */
 .section-content,
 .slide-content {
     position: absolute;
@@ -30,57 +29,43 @@
     max-width: 48%;
     color: white;
     padding: 3rem 4rem;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.22);      /* Very light tint - adjustable (try 0.18 or 0.15 if needed) */
+    backdrop-filter: blur(12px);          /* Strong blur for contrast */
     border-radius: 12px;
-    border: 1px solid rgba(201, 164, 76, 0.25);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(201, 164, 76, 0.18);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.30);
+    text-shadow: 0 1px 4px rgba(0,0,0,0.7); /* Ensures text pops on any background */
 }
 
 /* Luxury typography */
-h1 { 
-    color: var(--gold); 
-    font-weight: 900; 
-    font-size: 4.5rem; 
-    margin-bottom: 0.6rem; 
-}
-h2 { 
-    color: white; 
-    font-weight: 600; 
-    font-size: 2.6rem; 
-    margin-bottom: 1.4rem; 
-}
-p { 
-    font-size: 1.3rem; 
-    line-height: 1.7; 
-}
+h1 { color: var(--gold); font-weight: 900; font-size: 4.5rem; margin-bottom: 0.6rem; }
+h2 { color: white; font-weight: 600; font-size: 2.6rem; margin-bottom: 1.4rem; }
+p  { font-size: 1.3rem; line-height: 1.7; }
 
-/* RIGHT-SIDE 2×2 LARGER CARDS – INCREASED SIZE + GOLDEN HEADINGS */
+/* RIGHT-SIDE 2×2 LARGER CARDS */
 .premium-cards {
     position: absolute;
-    right: 6%;                        /* Slightly closer to edge for balance */
+    right: 6%;
     top: 50%;
     transform: translateY(-50%);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, auto);
-    gap: 2.8rem;                      /* Generous spacing between large cards */
-    width: 50%;                       /* Wider block for bigger cards */
-    max-width: 720px;                 /* Increased max width */
+    gap: 2.8rem;
+    width: 50%;
+    max-width: 720px;
     z-index: 3;
 }
 
 .card.3d {
     background: rgba(255, 255, 255, 0.97);
-    padding: 3rem 2.5rem;             /* MUCH larger padding → significantly bigger cards */
-    border-radius: 20px;              /* Softer, premium corners */
-    box-shadow: 
-        0 20px 60px rgba(0, 0, 0, 0.3),
-        0 0 0 2px rgba(201, 164, 76, 0.4);
+    padding: 3rem 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 0 2px rgba(201,164,76,0.4);
     transition: all 0.5s ease;
     text-align: center;
     backdrop-filter: blur(8px);
-    min-height: 320px;                /* Much taller cards */
+    min-height: 320px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,22 +74,18 @@ p {
 
 .card.3d:hover {
     transform: translateY(-16px) scale(1.04);
-    box-shadow: 
-        0 30px 80px rgba(0, 0, 0, 0.4),
-        0 0 0 4px var(--gold);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4), 0 0 0 4px var(--gold);
 }
 
-/* GOLDEN HEADINGS – LARGE & BOLD */
 .card.3d h3 {
     color: var(--gold);
-    font-size: 2.3rem;                /* Much larger golden headings */
+    font-size: 2.3rem;
     font-weight: 900;
     margin-bottom: 1.4rem;
     line-height: 1.2;
     letter-spacing: 0.6px;
 }
 
-/* DESCRIPTION TEXT – CLEAR & READABLE */
 .card.3d p {
     font-size: 1.35rem;
     color: #1a1a1a;
@@ -139,12 +120,7 @@ p {
 
 /* HERO SLIDER STYLES */
 .hero { overflow: hidden; }
-
-.slider {
-    position: relative;
-    height: 100%;
-}
-
+.slider { position: relative; height: 100%; }
 .slide {
     position: absolute;
     inset: 0;
@@ -153,7 +129,6 @@ p {
     opacity: 0;
     transition: opacity 1.2s ease;
 }
-
 .slide.active { opacity: 1; }
 
 /* Slider dots */
@@ -166,7 +141,6 @@ p {
     gap: 14px;
     z-index: 3;
 }
-
 .dot {
     width: 14px;
     height: 14px;
@@ -175,7 +149,6 @@ p {
     cursor: pointer;
     transition: all 0.3s;
 }
-
 .dot.active {
     background: var(--gold);
     transform: scale(1.3);
@@ -205,6 +178,8 @@ p {
         margin: 0 auto;
         text-align: center;
         padding: 2.5rem 2rem;
+        background: rgba(0,0,0,0.35); /* Slightly darker on mobile for safety */
+        text-shadow: 0 1px 4px rgba(0,0,0,0.7);
     }
 
     h1 { font-size: 3.2rem; }
@@ -227,11 +202,6 @@ p {
         min-height: 280px;
     }
 
-    .card.3d h3 {
-        font-size: 2rem;
-    }
-
-    .card.3d p {
-        font-size: 1.25rem;
-    }
+    .card.3d h3 { font-size: 2rem; }
+    .card.3d p   { font-size: 1.25rem; }
 }
