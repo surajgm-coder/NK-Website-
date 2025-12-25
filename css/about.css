@@ -1,6 +1,6 @@
-/* about.css - About page only */
+/* about.css */
 
-.about-content {
+.about-main {
     padding: 120px 0 80px;
     background: var(--gray-bg);
 }
@@ -9,44 +9,43 @@
     padding: 80px 0;
 }
 
-.container {
-    max-width: 1200px;
-}
-
 h2 {
-    font-size: 3.2rem;
+    font-size: 3.4rem;
     color: var(--gold);
     text-align: center;
     margin-bottom: 1.5rem;
+    font-weight: 900;
 }
 
 ul, ol {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto 2rem;
-    padding-left: 2rem;
-    font-size: 1.2rem;
-    line-height: 1.8;
+    padding-left: 2.5rem;
+    font-size: 1.25rem;
+    line-height: 1.9;
 }
 
-.mission-vision {
+.mission-vision-section {
     display: flex;
-    gap: 4rem;
+    gap: 5rem;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .mission, .vision {
     flex: 1;
-    min-width: 320px;
+    min-width: 340px;
     background: white;
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
 @media (max-width: 992px) {
-    .mission-vision {
+    .mission-vision-section {
         flex-direction: column;
-        gap: 2rem;
+        gap: 3rem;
     }
+    h2 { font-size: 2.8rem; }
 }
