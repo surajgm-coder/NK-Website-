@@ -1,4 +1,4 @@
-/* common.css */
+/* common.css - FIXED: Clear background images + readable light content box */
 :root {
     --nk-header-height: 80px;
     --nk-footer-height: 80px;
@@ -167,9 +167,9 @@ h3, h4 {
     background-size: cover;
     background-position: center;
 }
-/* REMOVED: .section::before → no more dark overlay on background images */
+/* NO .section::before → background images are now clear */
 
-/* Content box (keeps its own dark patch for text readability) */
+/* Content box - lightened for clear background visibility */
 .section-content {
     position: absolute;
     left: 8%;
@@ -178,12 +178,13 @@ h3, h4 {
     max-width: 680px;
     color: var(--white);
     padding: 3rem 3.5rem;
-    background: rgba(0,0,0,0.5); /* Keeps dark background for text */
-    backdrop-filter: blur(8px);
+    background: rgba(0,0,0,0.22);          /* Light tint - adjustable (try 0.18 or 0.15 if needed) */
+    backdrop-filter: blur(12px);           /* Stronger blur for readability */
     border-radius: 12px;
-    border: 1px solid rgba(201,164,76,0.25);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    border: 1px solid rgba(201,164,76,0.15);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
     z-index: 2;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6); /* Extra contrast for text */
 }
 .section-content h2 {
     font-size: 3.8rem;
@@ -294,31 +295,31 @@ h3, h4 {
     transform: translateY(-3px);
 }
 
-/* MOBILE RESPONSIVE - Only affects screens ≤992px */
+/* MOBILE RESPONSIVE */
 @media (max-width: 992px) {
     .menu-toggle { display: block; margin-left: auto; margin-right: 20px; }
-    .nk-nav { 
-        display: none; 
-        flex-direction: column; 
-        position: absolute; 
-        top: var(--nk-header-height); 
-        left: 0; 
-        width: 100%; 
-        background: var(--black); 
-        padding: 20px 0; 
+    .nk-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: var(--nk-header-height);
+        left: 0;
+        width: 100%;
+        background: var(--black);
+        padding: 20px 0;
     }
     .nk-nav.active { display: flex; }
     .nk-nav a { padding: 16px 40px; text-align: center; font-size: 18px; }
     .nk-cta { margin: 20px 40px; display: block; text-align: center; }
 
-    /* Sections become flexible height */
+    /* Flexible section height on mobile */
     .section {
         height: auto;
         min-height: 80vh;
         padding: 100px 0;
     }
 
-    /* Content box adapts for mobile (centered, full width) */
+    /* Content box centered on mobile */
     .section-content {
         position: relative;
         left: auto;
@@ -327,9 +328,10 @@ h3, h4 {
         max-width: 90%;
         margin: 0 auto;
         padding: 2.5rem 2rem;
+        background: rgba(0,0,0,0.35); /* Slightly darker on mobile for readability */
         text-align: center;
+        text-shadow: 0 1px 4px rgba(0,0,0,0.6);
     }
-
     .section-content h2 { font-size: 3rem; }
     .section-content h3 { font-size: 2.2rem; }
 
