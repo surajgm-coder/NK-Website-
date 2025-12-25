@@ -160,14 +160,14 @@ h3, h4 {
 .footer-right a:hover i {
     color: #d4b16f;
 }
-/* General section styles - DESKTOP (no dark overlay on background) */
+/* General section styles - DESKTOP (NO DARK OVERLAY on background) */
 .section {
     height: calc(100vh - var(--nk-header-height) - var(--nk-footer-height));
     position: relative;
     background-size: cover;
     background-position: center;
 }
-/* REMOVED: .section::before { ... } → no more dark overlay on background images */
+/* REMOVED: .section::before → no more dark overlay on background images */
 
 /* Content box (keeps its own dark patch for text readability) */
 .section-content {
